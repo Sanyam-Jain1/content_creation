@@ -1,0 +1,4 @@
+elevenlabs
+edge-tts
+numpy
+pillow

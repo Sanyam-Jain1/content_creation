@@ -1,0 +1,18 @@
+{
+  "_comment": "Voice casting per character. 'draft' = free Microsoft neural voices (edge-tts) for timing and previews. 'final' = ElevenLabs voices, filled in after casting. Speech settings: rate/pitch apply to edge only.",
+  "provider": "edge",
+  "draft": {
+    "juan":      { "voice": "es-ES-AlvaroNeural",  "rate": "+4%",  "pitch": "+0Hz",  "note": "Spanish native; reads English with a Castilian accent" },
+    "araceli":   { "voice": "es-ES-ElviraNeural",  "rate": "+6%",  "pitch": "+0Hz",  "note": "Spanish native; she was Galician (Lugo)" },
+    "harris":    { "voice": "en-GB-RyanNeural",    "rate": "-4%",  "pitch": "-2Hz",  "note": "Educated London English" },
+    "frederico": { "voice": "de-DE-ConradNeural",  "rate": "-2%",  "pitch": "-2Hz",  "note": "German native reading English" },
+    "officer":   { "voice": "en-GB-RyanNeural",    "rate": "-8%",  "pitch": "+4Hz",  "note": "Bored British diplomat" },
+    "mi5":       { "voice": "en-GB-ThomasNeural",  "rate": "-2%",  "pitch": "-6Hz",  "note": "Clipped senior officer" },
+    "narrator":  { "voice": "en-GB-ThomasNeural",  "rate": "-10%", "pitch": "-10Hz", "note": "Documentary narrator" },
+    "west":      { "voice": "en-GB-RyanNeural",    "rate": "+0%",  "pitch": "+0Hz" },
+    "diplomat":  { "voice": "en-GB-ThomasNeural",  "rate": "-8%",  "pitch": "+2Hz" },
+    "customer":  { "voice": "es-VE-SebastianNeural", "rate": "+0%", "pitch": "+0Hz", "note": "Venezuelan Spanish" },
+    "mi5man":    { "voice": "en-GB-RyanNeural",    "rate": "-4%",  "pitch": "-4Hz" }
+  },
+  "final": {}
+}

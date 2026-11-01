@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#e9e4da;font-family:Georgia,serif}
+.grid{display:grid;grid-template-columns:repeat(4,300px);gap:10px;padding:10px}
+.c{background:#cfc6b6;text-align:center}.c svg{display:block}
+.c div{padding:4px;font-size:14px}
+</style></head><body><div class="grid" id="g"></div>
+<script src="rig.js"></script><script src="cast.js"></script><script>
+const ids = new URLSearchParams(location.search).get('ids');
+const st = JSON.parse(new URLSearchParams(location.search).get('state')||'{}');
+const list = ids ? ids.split(',') : Object.keys(GarboCast);
+const g = document.getElementById('g');
+for (const id of list) {
+  const d = document.createElement('div'); d.className='c';
+  d.innerHTML = `<svg viewBox="40 80 520 820" width="300" height="473">${GarboRig.draw(GarboCast[id], st)}</svg><div>${id}</div>`;
+  g.appendChild(d);
+}
+</script></body></html>

@@ -1,0 +1,6 @@
+# Local secrets written by `elevenlabs onboard`
+/.env.local
+build/
+voices/cache/
+__pycache__/
+voices/GARBO_voice_auditions.mp3
