@@ -20,7 +20,7 @@ const path = require('path');
   const errs = [];
   page.on('pageerror', (e) => errs.push(e.message));
   const html = `<!doctype html><html><head><meta charset="utf-8"><base href="file://${root}/render/">
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@800&family=Playfair+Display:wght@700&display=block" rel="stylesheet">
+  <link href="../assets/fonts/fonts.css" rel="stylesheet">
   <style>html,body{margin:0;background:#000;overflow:hidden}</style></head><body><div id="stage"></div>
   <script src="../characters/rig.js"></script><script src="../characters/cast.js"></script>
   <script src="backgrounds.js"></script><script src="player.js"></script></body></html>`;

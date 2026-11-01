@@ -1,18 +1,114 @@
 {
-  "_comment": "Voice casting per character. 'draft' = free Microsoft neural voices (edge-tts) for timing and previews. 'final' = ElevenLabs voices, filled in after casting. Speech settings: rate/pitch apply to edge only.",
-  "provider": "edge",
-  "draft": {
-    "juan":      { "voice": "es-ES-AlvaroNeural",  "rate": "+4%",  "pitch": "+0Hz",  "note": "Spanish native; reads English with a Castilian accent" },
-    "araceli":   { "voice": "es-ES-ElviraNeural",  "rate": "+6%",  "pitch": "+0Hz",  "note": "Spanish native; she was Galician (Lugo)" },
-    "harris":    { "voice": "en-GB-RyanNeural",    "rate": "-4%",  "pitch": "-2Hz",  "note": "Educated London English" },
-    "frederico": { "voice": "de-DE-ConradNeural",  "rate": "-2%",  "pitch": "-2Hz",  "note": "German native reading English" },
-    "officer":   { "voice": "en-GB-RyanNeural",    "rate": "-8%",  "pitch": "+4Hz",  "note": "Bored British diplomat" },
-    "mi5":       { "voice": "en-GB-ThomasNeural",  "rate": "-2%",  "pitch": "-6Hz",  "note": "Clipped senior officer" },
-    "narrator":  { "voice": "en-GB-ThomasNeural",  "rate": "-10%", "pitch": "-10Hz", "note": "Documentary narrator" },
-    "west":      { "voice": "en-GB-RyanNeural",    "rate": "+0%",  "pitch": "+0Hz" },
-    "diplomat":  { "voice": "en-GB-ThomasNeural",  "rate": "-8%",  "pitch": "+2Hz" },
-    "customer":  { "voice": "es-VE-SebastianNeural", "rate": "+0%", "pitch": "+0Hz", "note": "Venezuelan Spanish" },
-    "mi5man":    { "voice": "en-GB-RyanNeural",    "rate": "-4%",  "pitch": "-4Hz" }
+ "_comment": "Voice casting per character. 'draft' = free Microsoft neural voices (edge-tts) for timing and previews. 'final' = ElevenLabs voices, filled in after casting. Speech settings: rate/pitch apply to edge only.",
+ "provider": "elevenlabs",
+ "draft": {
+  "juan": {
+   "voice": "es-ES-AlvaroNeural",
+   "rate": "+4%",
+   "pitch": "+0Hz",
+   "note": "Spanish native; reads English with a Castilian accent"
   },
-  "final": {}
+  "araceli": {
+   "voice": "es-ES-ElviraNeural",
+   "rate": "+6%",
+   "pitch": "+0Hz",
+   "note": "Spanish native; she was Galician (Lugo)"
+  },
+  "harris": {
+   "voice": "en-GB-RyanNeural",
+   "rate": "-4%",
+   "pitch": "-2Hz",
+   "note": "Educated London English"
+  },
+  "frederico": {
+   "voice": "de-DE-ConradNeural",
+   "rate": "-2%",
+   "pitch": "-2Hz",
+   "note": "German native reading English"
+  },
+  "officer": {
+   "voice": "en-GB-RyanNeural",
+   "rate": "-8%",
+   "pitch": "+4Hz",
+   "note": "Bored British diplomat"
+  },
+  "mi5": {
+   "voice": "en-GB-ThomasNeural",
+   "rate": "-2%",
+   "pitch": "-6Hz",
+   "note": "Clipped senior officer"
+  },
+  "narrator": {
+   "voice": "en-GB-ThomasNeural",
+   "rate": "-10%",
+   "pitch": "-10Hz",
+   "note": "Documentary narrator"
+  },
+  "west": {
+   "voice": "en-GB-RyanNeural",
+   "rate": "+0%",
+   "pitch": "+0Hz"
+  },
+  "diplomat": {
+   "voice": "en-GB-ThomasNeural",
+   "rate": "-8%",
+   "pitch": "+2Hz"
+  },
+  "customer": {
+   "voice": "es-VE-SebastianNeural",
+   "rate": "+0%",
+   "pitch": "+0Hz",
+   "note": "Venezuelan Spanish"
+  },
+  "mi5man": {
+   "voice": "en-GB-RyanNeural",
+   "rate": "-4%",
+   "pitch": "-4Hz"
+  }
+ },
+ "final": {
+  "narrator": {
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "name": "George (premade)",
+   "stability": 0.45,
+   "similarity": 0.8
+  },
+  "juan": {
+   "voice_id": "aeXvzY8qI0V6OAdqpVAn",
+   "name": "GARBO Juan option 1 (designed)",
+   "stability": 0.4,
+   "similarity": 0.85
+  },
+  "araceli": {
+   "voice_id": "c2ylF7ASjpIgP0pJz4RK",
+   "name": "Carolina (library)",
+   "stability": 0.4,
+   "similarity": 0.8
+  },
+  "harris": {
+   "voice_id": "agL69Vji082CshT65Tcy",
+   "name": "Lance Blackwood (library)",
+   "stability": 0.45,
+   "similarity": 0.8
+  },
+  "frederico": {
+   "voice_id": "VmPkIaPdP997cjIfBWRB",
+   "name": "Tobias (library)",
+   "stability": 0.4,
+   "similarity": 0.85
+  },
+  "officer": {
+   "voice_id": "7cOBG34AiHrAzs842Rdi",
+   "name": "Tarquin (library)",
+   "stability": 0.5,
+   "similarity": 0.8
+  },
+  "mi5": {
+   "voice_id": "onwK4e9ZLuTAKqWW03F9",
+   "name": "Daniel (premade)",
+   "stability": 0.5,
+   "similarity": 0.8
+  }
+ },
+ "model": "eleven_v4"
 }

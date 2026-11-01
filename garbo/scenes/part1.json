@@ -1,159 +1,832 @@
 {
-  "part": 1,
-  "of": 4,
-  "title": "The spy nobody wanted",
-  "fps": 30,
-  "music": "tension",
-  "shots": [
-    {
-      "id": "cold_open",
-      "set": "embassyDoor",
-      "minDur": 6.2,
-      "fadeIn": 0.01,
-      "cam": { "from": { "zoom": 1.25, "y": 40 }, "to": { "zoom": 1.05, "y": 0 } },
-      "shakeAt": [0.6, 2.0, 3.4],
-      "sfx": [{ "kind": "door_slam", "at": 0.6 }, { "kind": "door_slam", "at": 2.0 }, { "kind": "door_slam", "at": 3.4 }],
-      "texts": [
-        { "text": "REJECTED", "at": 0.6, "dur": 5.4, "y": 1100, "size": 84, "color": "#c22a2a", "stamp": true, "rot": -9, "mono": true, "fade": 0.05 },
-        { "text": "REJECTED", "at": 2.0, "dur": 4.0, "y": 1270, "size": 84, "color": "#c22a2a", "stamp": true, "rot": 6, "mono": true, "fade": 0.05 },
-        { "text": "REJECTED", "at": 3.4, "dur": 2.6, "y": 1440, "size": 84, "color": "#c22a2a", "stamp": true, "rot": -4, "mono": true, "fade": 0.05 },
-        { "text": "Britain turned him away\nthree times.", "at": 0.2, "dur": 2.6, "y": 420, "size": 62, "panel": true },
-        { "text": "So he became\nHitler's spy.", "at": 3.6, "dur": 2.6, "y": 420, "size": 72, "color": "#e8c56a", "panel": true },
-        { "text": "INSPIRED BY TRUE EVENTS", "at": 0.2, "dur": 6.0, "y": 1450, "size": 26, "mono": true, "spacing": 4, "color": "#c9bfa8" }
-      ]
+ "part": 1,
+ "of": 4,
+ "title": "The spy nobody wanted",
+ "fps": 30,
+ "music": "part1",
+ "shots": [
+  {
+   "id": "hook",
+   "set": "archive",
+   "flash": false,
+   "grade": "#b08a50",
+   "gradeOp": 0.22,
+   "cam": {
+    "from": {
+     "zoom": 1.9,
+     "y": 330
     },
-    {
-      "id": "who",
-      "set": "archive",
-      "lead": 0.5,
-      "tail": 0.8,
-      "cam": { "from": { "zoom": 1.0 }, "to": { "zoom": 1.08, "y": -20 } },
-      "grade": "#b08a50", "gradeOp": 0.25,
-      "chars": [{ "key": "juan", "rig": "juan1941", "x": 540, "y": 760, "s": 1.25, "state": { "smile": 0.25 } }],
-      "nameCards": [{ "title": "JUAN PUJOL", "sub": "29 · chicken farmer · Barcelona", "at": 0.8, "dur": 6.5, "x": 160, "y": 1100 }],
-      "lines": [
-        { "who": "narrator", "text": "Madrid, 1941. Juan Pujol, a chicken farmer from Barcelona, wants to fight Hitler.", "lang": "en" },
-        { "who": "narrator", "text": "Nobody will let him.", "lang": "en", "gap": 0.1 }
-      ]
-    },
-    {
-      "id": "embassy",
-      "set": "embassy",
-      "lead": 0.6,
-      "tail": 0.7,
-      "cam": { "from": { "zoom": 1.0 }, "to": { "zoom": 1.06, "x": 20 } },
-      "chars": [
-        { "key": "juan", "rig": "juan1941", "x": 300, "y": 980, "s": 1.5, "state": { "smile": 0.1, "brow": 0.3 } },
-        { "key": "officer", "rig": "officer", "x": 800, "y": 1010, "s": 1.5, "flip": true, "lookAt": 0, "state": { "lookY": 0.9, "blink": 0.35 } }
-      ],
-      "nameCards": [{ "title": "BRITISH EMBASSY", "sub": "Madrid · January 1941", "at": 0.2, "dur": 2.6, "x": 60, "y": 330 }],
-      "lines": [
-        { "who": "juan", "text": "I want to spy for you. Against Hitler.", "lang": "en" },
-        { "who": "officer", "text": "We don't need amateurs. Good day.", "lang": "en", "gap": 0.6 }
-      ]
-    },
-    {
-      "id": "rejections",
-      "set": "embassyDoor",
-      "minDur": 3.4,
-      "fadeIn": 0.05,
-      "cam": { "from": { "zoom": 1.1 }, "to": { "zoom": 1.25 } },
-      "shakeAt": [0.3, 1.3, 2.3],
-      "sfx": [{ "kind": "door_slam", "at": 0.3 }, { "kind": "door_slam", "at": 1.3 }, { "kind": "door_slam", "at": 2.3 }],
-      "texts": [
-        { "text": "1", "at": 0.3, "dur": 1.0, "y": 1100, "size": 260, "color": "#f3ead7", "fade": 0.05, "stroke": true },
-        { "text": "2", "at": 1.3, "dur": 1.0, "y": 1100, "size": 260, "color": "#f3ead7", "fade": 0.05, "stroke": true },
-        { "text": "3", "at": 2.3, "dur": 1.1, "y": 1100, "size": 260, "color": "#c22a2a", "fade": 0.05, "stroke": true }
-      ]
-    },
-    {
-      "id": "kitchen",
-      "set": "kitchen",
-      "lead": 0.6,
-      "tail": 0.9,
-      "cam": { "from": { "zoom": 1.0 }, "to": { "zoom": 1.1, "y": 30 } },
-      "chars": [
-        { "key": "araceli", "rig": "araceli1941", "x": 300, "y": 1010, "s": 1.5, "state": { "brow": -0.3 } },
-        { "key": "juan", "rig": "juan1941", "x": 790, "y": 980, "s": 1.5, "flip": true, "state": { "brow": -0.5 },
-          "keys": [{ "at": 5.6, "state": { "brow": 0.2, "smile": 0.5 } }] }
-      ],
-      "nameCards": [{ "title": "ARACELI", "sub": "his wife · 21", "at": 0.4, "dur": 3.0, "x": 60, "y": 330 }],
-      "lines": [
-        { "who": "araceli", "text": "Tres veces, Juan. No te van a aceptar nunca.", "lang": "es", "sub": "Three times, Juan. They will never take you." },
-        { "who": "juan", "text": "Entonces haré que me necesiten.", "lang": "es", "sub": "Then I'll make them need me.", "gap": 0.5 },
-        { "who": "juan", "text": "Me haré nazi.", "lang": "es", "sub": "I'll become a Nazi.", "gap": 0.9 }
-      ]
-    },
-    {
-      "id": "abwehr",
-      "set": "abwehr",
-      "lead": 0.5,
-      "tail": 0.8,
-      "cam": { "from": { "zoom": 1.08, "x": -20 }, "to": { "zoom": 1.0 } },
-      "chars": [
-        { "key": "juan", "rig": "juan1941", "x": 300, "y": 990, "s": 1.5, "state": { "smile": 0.6, "brow": 0.5 } },
-        { "key": "frederico", "rig": "frederico", "x": 790, "y": 1000, "s": 1.5, "flip": true, "state": { "smile": 0.2 } }
-      ],
-      "nameCards": [{ "title": "\"FREDERICO\"", "sub": "German spymaster · Madrid", "at": 0.4, "dur": 3.2, "x": 520, "y": 330 }],
-      "lines": [
-        { "who": "juan", "text": "I travel to London on business. Let me serve the Reich.", "lang": "en" },
-        { "who": "frederico", "text": "Recruit agents. Send us everything.", "lang": "en", "gap": 0.5 }
-      ]
-    },
-    {
-      "id": "lisbon",
-      "set": "lisbon",
-      "lead": 0.4,
-      "tail": 0.7,
-      "cam": { "from": { "zoom": 1.0 }, "to": { "zoom": 1.07, "x": -15 } },
-      "chars": [
-        { "key": "araceli", "rig": "araceli1941", "x": 300, "y": 1010, "s": 1.5, "state": { "lookY": 0.7, "brow": 0.6 },
-          "keys": [{ "at": 3.5, "state": { "lookY": 0, "smile": 0.4 } }] },
-        { "key": "juan", "rig": "juan1941", "x": 790, "y": 990, "s": 1.5, "flip": true, "state": { "smile": 0.5 } }
-      ],
-      "nameCards": [{ "title": "LISBON", "sub": "1941 · he never left", "at": 0.2, "dur": 2.6, "x": 60, "y": 330 }],
-      "lines": [
-        { "who": "narrator", "text": "He never went to London. He invented it, from a guidebook and the newsreels.", "lang": "en" },
-        { "who": "araceli", "text": "'My man in Glasgow will do anything for a litre of wine'? The British don't even use litres!", "lang": "en", "gap": 0.4 },
-        { "who": "juan", "text": "Do the Germans know that?", "lang": "en", "gap": 0.4, "state": { "smile": 0.8 } }
-      ]
-    },
-    {
-      "id": "mi5",
-      "set": "mi5",
-      "lead": 0.5,
-      "tail": 0.8,
-      "grade": "#5a7a9a", "gradeOp": 0.18,
-      "cam": { "from": { "zoom": 1.0 }, "to": { "zoom": 1.12 } },
-      "chars": [{ "key": "mi5", "rig": "mi5officer", "x": 540, "y": 990, "s": 1.55, "state": { "brow": -0.4 } }],
-      "nameCards": [{ "title": "MI5", "sub": "London · 1941", "at": 0.2, "dur": 2.6, "x": 60, "y": 330 }],
-      "lines": [
-        { "who": "mi5", "text": "There's a German spy reporting on Britain, and Berlin believes every word. Find him.", "lang": "en" }
-      ]
-    },
-    {
-      "id": "payoff",
-      "set": "lisbon",
-      "lead": 0.6,
-      "tail": 1.0,
-      "cam": { "from": { "zoom": 1.15, "y": 80 }, "to": { "zoom": 1.3, "y": 120 } },
-      "chars": [{ "key": "juan", "rig": "juan1941", "x": 540, "y": 990, "s": 1.6, "state": { "smile": 0.7, "lookY": 0.4 } }],
-      "lines": [
-        { "who": "narrator", "text": "The spy Britain was hunting was the man it had turned away.", "lang": "en" }
-      ]
-    },
-    {
-      "id": "teaser",
-      "set": "title",
-      "minDur": 5.2,
-      "texts": [
-        { "text": "In 1942, Britain finally said yes.", "at": 0.3, "dur": 4.9, "y": 760, "size": 54 },
-        { "text": "Then his own wife\nnearly blew it all.", "at": 1.6, "dur": 3.6, "y": 900, "size": 64, "color": "#e8c56a" },
-        { "text": "PART 2 →", "at": 2.6, "dur": 2.6, "y": 1180, "size": 46, "mono": true, "spacing": 6 }
-      ],
-      "lines": [
-        { "who": "narrator", "text": "In 1942, Britain finally said yes. Then his own wife nearly blew it all.", "lang": "en", "nosub": true }
-      ]
+    "to": {
+     "zoom": 1.15,
+     "y": 60
     }
-  ]
+   },
+   "punch": false,
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 540,
+     "y": 800,
+     "s": 1.25,
+     "state": {
+      "smile": 0.35
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "at": 0.0,
+     "gain": 0.9
+    },
+    {
+     "kind": "camera",
+     "word": "hitler",
+     "offset": -0.1
+    }
+   ],
+   "fx": [
+    {
+     "type": "circle",
+     "word": "never",
+     "x": 540,
+     "y": 700,
+     "r": 230,
+     "label": "THIS GUY",
+     "ly": 420
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This man fooled Adolf Hitler... with an army of spies that never existed.",
+     "emph": [
+      "hitler",
+      "never",
+      "existed."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tease",
+   "set": "embassyDoor",
+   "cam": {
+    "from": {
+     "zoom": 1.05
+    },
+    "to": {
+     "zoom": 1.2
+    }
+   },
+   "shakeWords": [
+    [
+     "lost.",
+     1
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "door_slam",
+     "word": "lost.",
+     "offset": 0.05
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "REJECTED",
+     "word": "lost.",
+     "offset": 0.05,
+     "y": 760,
+     "size": 130,
+     "color": "#ff3b2f",
+     "rot": -8,
+     "box": true,
+     "stroke": 0
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But first, Britain told him to get lost.",
+     "emph": [
+      "lost."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "who",
+   "set": "archive",
+   "grade": "#b08a50",
+   "gradeOp": 0.2,
+   "cam": {
+    "from": {
+     "zoom": 1.0
+    },
+    "to": {
+     "zoom": 1.08
+    }
+   },
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 540,
+     "y": 800,
+     "s": 1.25,
+     "state": {
+      "smile": 0.2
+     }
+    }
+   ],
+   "nameCards": [
+    {
+     "title": "JUAN PUJOL",
+     "sub": "29 · Barcelona",
+     "at": 0.3,
+     "dur": 3.8,
+     "x": 60,
+     "y": 330
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "stamp",
+     "word": "chicken"
+    },
+    {
+     "kind": "stamp",
+     "word": "zero"
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "CHICKEN FARMER",
+     "word": "chicken",
+     "y": 1460,
+     "size": 64,
+     "color": "#ffd23f",
+     "rot": -4,
+     "dur": 1.6
+    },
+    {
+     "type": "slam",
+     "text": "NO TRAINING",
+     "word": "zero",
+     "y": 1460,
+     "size": 72,
+     "color": "#ff3b2f",
+     "rot": 5,
+     "box": true,
+     "stroke": 0,
+     "dur": 1.4
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Madrid, 1941. Juan Pujol. Chicken farmer. Zero spy training. And he wants to take down Hitler.",
+     "emph": [
+      "chicken",
+      "zero",
+      "hitler."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "embassy",
+   "set": "embassy",
+   "follow": true,
+   "nameCards": [
+    {
+     "title": "BRITISH EMBASSY",
+     "sub": "Madrid · 1941",
+     "at": 0.1,
+     "dur": 2.2
+    }
+   ],
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 300,
+     "y": 980,
+     "s": 1.5,
+     "state": {
+      "smile": 0.15,
+      "brow": 0.4
+     }
+    },
+    {
+     "key": "officer",
+     "rig": "officer",
+     "x": 800,
+     "y": 1010,
+     "s": 1.5,
+     "flip": true,
+     "lookAt": 0,
+     "state": {
+      "lookY": 0.8,
+      "blink": 0.4
+     }
+    }
+   ],
+   "lines": [
+    {
+     "who": "juan",
+     "text": "[eager] I want to spy for you. Against Hitler."
+    },
+    {
+     "who": "officer",
+     "text": "[bored, not looking up] We don't need amateurs. Good day."
+    }
+   ]
+  },
+  {
+   "id": "rejections",
+   "set": "embassyDoor",
+   "cam": {
+    "from": {
+     "zoom": 1.1
+    },
+    "to": {
+     "zoom": 1.3
+    }
+   },
+   "shakeWords": [
+    [
+     "rejected.",
+     1
+    ],
+    [
+     "rejected.",
+     2
+    ],
+    [
+     "rejected.",
+     3
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "door_slam",
+     "word": "rejected.",
+     "occ": 1
+    },
+    {
+     "kind": "door_slam",
+     "word": "rejected.",
+     "occ": 2
+    },
+    {
+     "kind": "door_slam",
+     "word": "rejected.",
+     "occ": 3
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "1",
+     "word": "rejected.",
+     "occ": 1,
+     "y": 1000,
+     "size": 300,
+     "color": "#f3ead7"
+    },
+    {
+     "type": "slam",
+     "text": "2",
+     "word": "rejected.",
+     "occ": 2,
+     "y": 1000,
+     "size": 300,
+     "color": "#f3ead7"
+    },
+    {
+     "type": "slam",
+     "text": "3",
+     "word": "rejected.",
+     "occ": 3,
+     "y": 1000,
+     "size": 300,
+     "color": "#ff3b2f"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He came back. Rejected. Came back again. Rejected. And again. Rejected.",
+     "emph": [
+      "rejected."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kitchen",
+   "set": "kitchen",
+   "follow": true,
+   "nameCards": [
+    {
+     "title": "ARACELI",
+     "sub": "his wife · 21",
+     "at": 1.6,
+     "dur": 2.4
+    }
+   ],
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1941",
+     "x": 300,
+     "y": 1010,
+     "s": 1.5,
+     "state": {
+      "brow": -0.4
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 790,
+     "y": 980,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "brow": -0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "glitch",
+     "word": "nazi.",
+     "offset": 0.35
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "A NAZI?!",
+     "word": "nazi.",
+     "offset": 0.35,
+     "y": 640,
+     "size": 140,
+     "color": "#ff3b2f",
+     "rot": -6
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So he came up with the craziest plan of the entire war.",
+     "emph": [
+      "craziest"
+     ]
+    },
+    {
+     "who": "araceli",
+     "text": "[exasperated] ¡Tres veces, Juan! Nunca te van a aceptar.",
+     "lang": "es",
+     "sub": "Three times, Juan! They will never take you."
+    },
+    {
+     "who": "juan",
+     "text": "Then I'll make them need me.",
+     "gap": 0.15
+    },
+    {
+     "who": "juan",
+     "text": "[slyly] I'll become a Nazi.",
+     "gap": 0.2,
+     "emph": [
+      "nazi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abwehr",
+   "set": "abwehr",
+   "follow": true,
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 300,
+     "y": 990,
+     "s": 1.5,
+     "state": {
+      "smile": 0.6,
+      "brow": 0.6
+     }
+    },
+    {
+     "key": "frederico",
+     "rig": "frederico",
+     "x": 790,
+     "y": 1000,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "smile": 0.25
+     }
+    }
+   ],
+   "nameCards": [
+    {
+     "title": "GERMAN SPY HQ",
+     "sub": "Madrid · \"Frederico\"",
+     "at": 0.1,
+     "dur": 2.4
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "cash",
+     "word": "wunderbar",
+     "offset": 0.0
+    },
+    {
+     "kind": "stamp",
+     "word": "everything",
+     "offset": 0.3
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He walked into German intelligence... and gave the performance of his life.",
+     "emph": [
+      "performance"
+     ]
+    },
+    {
+     "who": "juan",
+     "text": "[theatrically proud] I am a true friend of Germany! Let me serve the Reich!"
+    },
+    {
+     "who": "frederico",
+     "text": "[pleased] Wunderbar. Recruit agents. Send us everything."
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "CASH  ·  INVISIBLE INK\nSECRET CODE NAME",
+     "word": "everything",
+     "offset": 0.3,
+     "y": 560,
+     "size": 62,
+     "color": "#ffd23f",
+     "dur": 2.0
+    }
+   ],
+   "tail": 1.6
+  },
+  {
+   "id": "problem",
+   "set": "title",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.0
+    },
+    "to": {
+     "zoom": 1.06
+    }
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": 0.0,
+     "gain": 0.8
+    },
+    {
+     "kind": "impact",
+     "word": "britain.",
+     "offset": -0.2
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "HE HAD NEVER\nBEEN TO BRITAIN",
+     "word": "britain.",
+     "offset": -0.2,
+     "y": 820,
+     "size": 100,
+     "color": "#ffd23f"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "There was just one tiny problem.",
+     "emph": [
+      "problem."
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "He had never been to Britain.",
+     "gap": 0.35,
+     "nosub": true
+    }
+   ]
+  },
+  {
+   "id": "map",
+   "set": "map",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.0,
+     "y": -120
+    },
+    "to": {
+     "zoom": 1.12,
+     "y": -60
+    }
+   },
+   "fx": [
+    {
+     "type": "route",
+     "points": [
+      "Madrid",
+      "Lisbon"
+     ],
+     "dashedLast": "London",
+     "draw": 1.3,
+     "at": 0.3
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So instead of London... he went to Lisbon. And from a hotel room, with a tourist guidebook and the cinema newsreels...",
+     "emph": [
+      "lisbon."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "invent",
+   "set": "lisbon",
+   "grade": "#000",
+   "gradeOp": 0.25,
+   "punch": false,
+   "sfx": [
+    {
+     "kind": "typewriter",
+     "at": 0.2,
+     "gain": 0.7
+    },
+    {
+     "kind": "typewriter",
+     "at": 2.0,
+     "gain": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "agents",
+     "names": [
+      "AGENT 1 · Glasgow",
+      "AGENT 2 · Liverpool",
+      "AGENT 3 · RAF clerk",
+      "AGENT 4 · Dover",
+      "AGENT 5 · sailor",
+      "AGENT 6 · ???"
+     ],
+     "every": 0.45,
+     "y": 560,
+     "at": 0.1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "...he invented Britain. Fake spies. Fake reports. Fake army bases.",
+     "emph": [
+      "invented",
+      "fake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "litre",
+   "set": "lisbon",
+   "follow": true,
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1941",
+     "x": 300,
+     "y": 1010,
+     "s": 1.5,
+     "state": {
+      "lookY": 0.6,
+      "brow": 0.7
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 790,
+     "y": 990,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "smile": 0.55
+     }
+    }
+   ],
+   "lines": [
+    {
+     "who": "araceli",
+     "text": "[laughing] 'My man in Glasgow would kill for a litre of wine'? Juan! The British don't use litres!",
+     "emph": [
+      "litres!"
+     ]
+    },
+    {
+     "who": "juan",
+     "text": "[grinning] Do the Germans know that?"
+    },
+    {
+     "who": "narrator",
+     "text": "They didn't. Berlin believed every single word.",
+     "emph": [
+      "every"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mi5",
+   "set": "mi5",
+   "grade": "#5a7a9a",
+   "gradeOp": 0.18,
+   "chars": [
+    {
+     "key": "mi5",
+     "rig": "mi5officer",
+     "x": 540,
+     "y": 990,
+     "s": 1.55,
+     "state": {
+      "brow": -0.5
+     }
+    }
+   ],
+   "nameCards": [
+    {
+     "title": "MI5",
+     "sub": "London · British security",
+     "at": 0.1,
+     "dur": 2.4
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "radio",
+     "at": 0.0,
+     "gain": 0.6
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Meanwhile, British codebreakers were reading those German messages.",
+     "emph": [
+      "codebreakers"
+     ]
+    },
+    {
+     "who": "mi5",
+     "text": "[grim, urgent] A Nazi spy is running agents all over Britain. Find him. Now."
+    }
+   ]
+  },
+  {
+   "id": "payoff",
+   "set": "lisbon",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.15,
+     "y": 80
+    },
+    "to": {
+     "zoom": 1.45,
+     "y": 200
+    }
+   },
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 540,
+     "y": 990,
+     "s": 1.6,
+     "state": {
+      "smile": 0.75,
+      "lookY": 0.3
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "word": "times.",
+     "offset": -0.1
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "THREE TIMES.",
+     "word": "times.",
+     "offset": -0.1,
+     "y": 600,
+     "size": 120,
+     "color": "#ff3b2f",
+     "rot": -5
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "MI5 was hunting a dangerous Nazi spy...",
+     "emph": [
+      "nazi"
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "and it was the chicken farmer they'd kicked out. Three times.",
+     "gap": 0.3,
+     "emph": [
+      "chicken",
+      "times."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "next",
+   "set": "title",
+   "punch": false,
+   "fadeOut": 0.4,
+   "sfx": [
+    {
+     "kind": "riser",
+     "at": 0.0,
+     "gain": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "title",
+     "text": "PART 2",
+     "at": 0.0,
+     "y": 600,
+     "size": 90,
+     "color": "#ffd23f"
+    },
+    {
+     "type": "title",
+     "text": "The wife who almost\nblew it all",
+     "at": 0.6,
+     "y": 760,
+     "size": 60
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1942, Britain finally let him in. But the biggest threat to the operation... was sleeping in his bed.",
+     "emph": [
+      "threat",
+      "bed."
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "Follow for Part 2.",
+     "gap": 0.25
+    }
+   ],
+   "tail": 0.8
+  }
+ ]
 }

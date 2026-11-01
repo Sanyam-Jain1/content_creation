@@ -69,9 +69,10 @@
     const sway = Math.sin(t * 1.3) * 6;
     let g = `<path d="M${x},${y} Q${x + w / 2},${y + sway} ${x + w},${y} L${x + w},${y + h} Q${x + w / 2},${y + h + sway} ${x},${y + h}Z" fill="#a51d1d"/>`;
     g += `<path d="M${x + w * 0.25},${y + h * 0.04} L${x + w * 0.25},${y + h * 0.96} M${x + w * 0.75},${y + h * 0.04} L${x + w * 0.75},${y + h * 0.96}" stroke="#7a1010" stroke-width="6" opacity="0.5"/>`;
-    // a plain white disc reads as the period flag at a glance; the hooked cross is left out deliberately
-    g += `<circle cx="${x + w / 2}" cy="${y + h * 0.42}" r="${w * 0.3}" fill="#efe9dc"/>`;
-    g += `<circle cx="${x + w / 2}" cy="${y + h * 0.42}" r="${w * 0.12}" fill="#1a1a1a" opacity="0.85"/>`;
+    // white disc with a black eagle silhouette (period banner, simplified)
+    const ex = x + w / 2, ey = y + h * 0.42, r = w * 0.32;
+    g += `<circle cx="${ex}" cy="${ey}" r="${r}" fill="#efe9dc"/>`;
+    g += `<path d="M${ex},${ey - r * 0.55} l${r * 0.12},${r * 0.2} l${r * 0.7},${-r * 0.25} l${-r * 0.2},${r * 0.3} l${r * 0.25},${r * 0.05} l${-r * 0.55},${r * 0.2} l${-r * 0.1},${r * 0.45} l${-r * 0.17},${-r * 0.1} l${-r * 0.17},${r * 0.1} l${-r * 0.1},${-r * 0.45} l${-r * 0.55},${-r * 0.2} l${r * 0.25},${-r * 0.05} l${-r * 0.2},${-r * 0.3} l${r * 0.7},${r * 0.25}Z" fill="#141414"/>`;
     return g;
   }
 
@@ -154,10 +155,31 @@
       back += `<g transform="rotate(-12 720 560)"><rect x="550" y="510" width="340" height="100" fill="none" stroke="#a02424" stroke-width="7"/><text x="720" y="580" font-family="Courier New,monospace" font-size="54" font-weight="bold" fill="#a02424" text-anchor="middle">REJECTED</text></g>`;
       return { back, front: vignette('ar_v', 0.55) };
     },
+
+    // stylised map of western Europe for routes (points in SETS.MAP_POINTS)
+    map(t) {
+      let back = rect(0, 0, W, H, '#1c2a33');
+      for (let y = 0; y < H; y += 80) back += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#2a3c48" stroke-width="2"/>`;
+      for (let x = 0; x < W; x += 80) back += `<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="#2a3c48" stroke-width="2"/>`;
+      const land = '#c9b98f', edge = '#8a7a52';
+      // Great Britain
+      back += `<path d="M560,240 C520,300 590,340 540,400 C500,460 580,500 560,560 C540,620 600,660 640,720 L700,730 C760,700 720,640 700,600 C690,540 740,500 700,450 C670,400 700,340 650,300 C620,260 600,240 560,240Z" fill="${land}" stroke="${edge}" stroke-width="4"/>`;
+      // Ireland
+      back += `<path d="M400,420 C360,460 380,540 430,560 C480,560 500,500 480,450 C460,410 430,400 400,420Z" fill="${land}" stroke="${edge}" stroke-width="4"/>`;
+      // France
+      back += `<path d="M640,820 C700,780 820,790 900,830 L1080,820 L1080,1180 C1000,1220 900,1200 840,1230 C760,1200 700,1190 660,1150 C700,1080 640,1000 600,960 C640,920 610,860 640,820Z" fill="${land}" stroke="${edge}" stroke-width="4"/>`;
+      // Iberia
+      back += `<path d="M300,1250 C380,1220 520,1230 640,1240 C720,1240 800,1250 820,1290 C780,1340 760,1420 700,1500 C660,1580 560,1640 460,1640 C380,1630 330,1600 310,1540 C290,1460 280,1380 300,1250Z" fill="${land}" stroke="${edge}" stroke-width="4"/>`;
+      back += `<path d="M300,1260 C330,1330 320,1440 330,1560 L290,1560 C270,1440 280,1330 300,1260Z" fill="#b8a77d" stroke="${edge}" stroke-width="3"/>`;
+      back += `<text x="380" y="1700" font-family="Georgia" font-size="34" fill="#9fb0bb" font-style="italic">Atlantic Ocean</text>`;
+      back += `<text x="590" y="1440" font-family="Georgia" font-size="36" fill="#6a5a36" letter-spacing="6">SPAIN</text><text x="840" y="1020" font-family="Georgia" font-size="36" fill="#6a5a36" letter-spacing="6">FRANCE</text><text x="560" y="520" font-family="Georgia" font-size="30" fill="#6a5a36" letter-spacing="4">BRITAIN</text>`;
+      return { back, front: vignette('map_v', 0.6) };
+    },
     title(t) {
       return { back: rect(0, 0, W, H, '#0e0d0c') + lightPool('ti_l', 540, 860, 900, '#c8a060', 0.18), front: '' };
     },
   };
 
+  SETS.MAP_POINTS = { Madrid: [560, 1390], Lisbon: [330, 1480], London: [660, 690], Glasgow: [560, 330], Berlin: [1040, 700] };
   root.GarboSets = SETS;
 })(typeof window !== 'undefined' ? window : globalThis);

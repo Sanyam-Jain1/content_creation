@@ -1,0 +1,4 @@
+/* Open Font License fonts, bundled locally so headless renders never depend on the network */
+@font-face { font-family: 'Courier Prime'; font-weight: 400; src: url(CourierPrime-Regular.ttf) format('truetype'); }
+@font-face { font-family: 'Montserrat'; font-weight: 900; src: url(Montserrat-Black.ttf) format('truetype'); }
+@font-face { font-family: 'Playfair Display'; font-weight: 700; src: url(PlayfairDisplay-Bold.ttf) format('truetype'); }

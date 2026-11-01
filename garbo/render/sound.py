@@ -73,3 +73,13 @@ def music(kind, n, sr):
     y = x * 0.12 + beat * 0.35 + np.convolve(tick, [1, -0.6], mode="same") * 0.05
     fade = np.minimum(1, t / 2.0) * np.minimum(1, (n / sr - t) / 2.5)
     return (y * fade).astype(np.float32)
+
+
+def drone(n, sr):
+    """Very quiet low string-like pad: a safety net so no frame is ever silent."""
+    t = np.arange(n) / sr
+    y = np.zeros(n)
+    for f, a in [(55.0, 0.5), (82.41, 0.3), (110.0, 0.2)]:
+        y += a * np.sin(2 * np.pi * f * t + np.sin(2 * np.pi * 0.11 * t) * 0.6)
+    y *= 0.8 + 0.2 * np.sin(2 * np.pi * 0.07 * t)
+    return (y / np.max(np.abs(y))).astype(np.float32)

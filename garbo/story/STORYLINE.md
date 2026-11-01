@@ -41,45 +41,40 @@ the people really spoke, with burned-in English subtitles:
 
 ---
 
-## Part 1: The spy nobody wanted
+## Retention rules (apply to every part)
 
-**Cover hook:** *Britain rejected him three times. So he became Hitler's spy.*
+Learned from the first draft: silence and slow scene-setting kill reels.
 
-**Cold open:** A door slams on a man in a dark suit. Text: *REJECTED. REJECTED. REJECTED.*
+| Rule | How it shows up |
+| --- | --- |
+| Spoken hook in second 1 | The narrator's first line is the most shocking fact of the part. No silent intro. |
+| No dead air | Speech covers 90%+ of runtime; gaps are about 0.1 s; music never drops out. |
+| Change every 2-3 s | Punch-in zoom on every line, speaker cut-ins, whoosh on every cut, slams, stamps, counters, maps. |
+| Kinetic captions | Word-by-word, active word in yellow, key words in red. Many viewers watch muted. |
+| Open loops | "There was just one tiny problem..." Each loop is closed within ~10 s, then a new one opens. |
+| Narrator drives, characters punctuate | Dialogue is short and punchy; the narrator carries the story. |
+| End on a cliffhanger + CTA | The last line teases the next part's hook, then "Follow for Part n". |
 
-**Who & stakes:**
-NARRATOR: "1941. Juan Pujol, a chicken farmer from Barcelona, wants to fight Hitler. Nobody will let him."
-Name card: `JUAN PUJOL · 29 · Barcelona`
+## Part 1: The spy nobody wanted (retention cut, ~109 s)
 
-**Scene 1. Madrid, 1941. The British embassy.**
-- JUAN: "I want to spy for you. Against Hitler."
-- OFFICER *(not looking up)*: "We don't need amateurs. Good day."
-- *Smash cut: the same door, again, again.* Counter: 1… 2… 3.
+The final shot list lives in `../scenes/part1.json`; this is the readable version.
 
-**Scene 2. Their kitchen, that night.**
-Name card: `ARACELI · his wife`
-- ARACELI `[ES]`: "Tres veces, Juan. No te van a aceptar nunca." *(Three times, Juan. They will never take you.)*
-- JUAN `[ES]`: "Entonces haré que me necesiten." *(Then I'll make them need me.)* *(beat)* "Me haré nazi." *(I'll become a Nazi.)*
-
-**Scene 3. A German office in Madrid. Swastika flags.**
-Name card: `"FREDERICO" · German spymaster, Madrid`
-- JUAN *(arm raised, a perfect performance)*: "I travel to London on business. Let me serve the Reich."
-- FREDERICO *(sliding over cash and invisible ink)*: "Recruit agents. Send us everything."
-
-**Scene 4. Lisbon. A hotel room full of maps, newspapers and a guidebook.**
-NARRATOR: "He never went to London. He invented it."
-- ARACELI *(reading his report)*: "'My man in Glasgow will do anything for a litre of wine'? The British don't even use litres!"
-- JUAN *(laughing)*: "Do the Germans know that?"
-
-**Scene 5. London. MI5, around a table of intercepted German messages.**
-- MI5 OFFICER: "There's a German spy reporting on Britain, and Berlin believes every word. Find him."
-
-**Payoff:** Lisbon. Juan seals another envelope and smiles.
-NARRATOR: "The spy Britain was hunting was the man it had turned away."
-
-**Teaser:** *In 1942 Britain finally said yes. Next, his own wife nearly blew it all → Part 2.*
-
----
+| # | Beat | Lines (narrator unless named) | On screen |
+| --- | --- | --- | --- |
+| 1 | Hook | "This man fooled Adolf Hitler... with an army of spies that never existed." | Push in from Juan's eyes; red circle "THIS GUY" |
+| 2 | Tease | "But first, Britain told him to get lost." | Embassy door, REJECTED stamp slam on "lost" |
+| 3 | Who | "Madrid, 1941. Juan Pujol. Chicken farmer. Zero spy training. And he wants to take down Hitler." | Archive file; CHICKEN FARMER / NO TRAINING slams |
+| 4 | Embassy | JUAN: "I want to spy for you. Against Hitler." OFFICER: "We don't need amateurs. Good day." | Speaker cut-ins |
+| 5 | Rejections | "He came back. Rejected. Came back again. Rejected. And again. Rejected." | Door slam + 1-2-3 on each "Rejected" |
+| 6 | The plan | "So he came up with the craziest plan of the entire war." ARACELI `[ES]`: "¡Tres veces, Juan! Nunca te van a aceptar." JUAN: "Then I'll make them need me. I'll become a Nazi." | Record scratch + "A NAZI?!" |
+| 7 | The con | "He walked into German intelligence... and gave the performance of his life." JUAN: "I am a true friend of Germany! Let me serve the Reich!" FREDERICO: "Wunderbar. Recruit agents. Send us everything." | CASH · INVISIBLE INK · SECRET CODE NAME |
+| 8 | Open loop | "There was just one tiny problem." ... "He had never been to Britain." | Heartbeat, slam |
+| 9 | Map | "So instead of London... he went to Lisbon. And from a hotel room, with a tourist guidebook and the cinema newsreels..." | Animated route Madrid → Lisbon, dashed "NEVER WENT" to London |
+| 10 | Invention | "...he invented Britain. Fake spies. Fake reports. Fake army bases." | Six fake agents pop in, typewriter |
+| 11 | The litre | ARACELI: "'My man in Glasgow would kill for a litre of wine'? Juan! The British don't use litres!" JUAN: "Do the Germans know that?" "They didn't. Berlin believed every single word." | Speaker cut-ins |
+| 12 | MI5 | "Meanwhile, British codebreakers were reading those German messages." MI5: "A Nazi spy is running agents all over Britain. Find him. Now." | Radio static |
+| 13 | Payoff | "MI5 was hunting a dangerous Nazi spy... and it was the chicken farmer they'd kicked out. Three times." | Slow push on Juan's smile; THREE TIMES slam |
+| 14 | Cliffhanger | "In 1942, Britain finally let him in. But the biggest threat to the operation... was sleeping in his bed. Follow for Part 2." | PART 2 card |
 
 ## Part 2: The wife
 
