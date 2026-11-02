@@ -75,49 +75,24 @@ The final shot list lives in `../scenes/part1.json`; this is the readable versio
 | 13 | Payoff | "MI5 was hunting a dangerous Nazi spy... and it was the chicken farmer they'd kicked out. Three times." | Slow push on Juan's smile; THREE TIMES slam |
 | 14 | Cliffhanger | "In 1942, Britain finally let him in. But the biggest threat to the operation... was sleeping in his bed. Follow for Part 2." | PART 2 card |
 
-## Part 2: The wife
+## Part 2: The wife (retention cut v1, ~102 s)
 
-**Cover hook:** *He fooled Hitler with 27 fake spies. He couldn't fool his wife.*
+Final shot list: `../scenes/part2.json`.
 
-**Cold open:** A kitchen. Every gas tap on the stove is turned on. A woman sits very still.
-
-**Who & stakes:**
-NARRATOR: "London, 1943. Juan Pujol is Britain's secret weapon: a double agent feeding Hitler lies from 27 spies who don't exist. Only a handful of people know. One of them is his wife."
-Name cards: `JUAN PUJOL · double agent "GARBO"`, `ARACELI · his wife, 23`
-
-**Scene 1. A small house in Hendon, north London. Rain.**
-- ARACELI: "You have your spies, your codes, your Tommy. I have four walls and no one to talk to."
-- ARACELI *(pushing a plate away)*: "Too much macaroni. Too many potatoes. Not enough fish."
-- JUAN: "A few more months. Please."
-- ARACELI: "You said that last year."
-
-**Scene 2. 21 June 1943. The row. She grabs the phone.**
-Name card: `TOMMY HARRIS · his MI5 handler`
-- ARACELI *(shouting into the phone)*: "I don't want to live one more day in England!"
-- ARACELI: "Send me home to Spain, or tomorrow I go to the Spanish embassy and tell them everything."
-- *Silence on the line. Harris slowly puts down his pen.*
-
-**Scene 3. MI5 office. Juan and Harris, late night.**
-- HARRIS: "If she talks, we lose everything. Every agent. Every lie. Maybe the invasion."
-- JUAN *(quietly)*: "Then give her a reason to stay silent. Arrest me."
-- HARRIS: "…You want us to fake your arrest?"
-- JUAN: "Tell her I was sacked because of her threat. That I lost my temper, and you locked me up."
-
-**Scene 4. The house. An MI5 man at the door.**
-- MI5 MAN: "Your husband has been detained, madam."
-- ARACELI *(colour draining)*: "Because of me?"
-
-**Scene 5. Camp 020. A bare interrogation room. Juan walks in wearing prison clothes and won't meet her eyes.**
-- ARACELI *(sobbing)*: "I'll sign anything. I'll never say a word. Just let him go."
-- *She signs a promise never again to endanger his work.*
-
-**Payoff:** Outside, Juan pulls off the prison jacket. Harris hands him his coat.
-- HARRIS: "Your best performance yet."
-- JUAN *(not smiling)*: "My hardest."
-
-**Teaser:** *A year later, he had to convince Hitler that D-Day was a trick → Part 3.*
-
----
+| # | Beat | Lines (narrator unless named) | On screen |
+| --- | --- | --- | --- |
+| 1 | Hook | "The biggest threat to D-Day wasn't Hitler. It was this woman." | Push out from Araceli in the moonlit bedroom; circle "HIS WIFE" |
+| 2 | Who & stakes | "London, 1943. Her husband Juan is Britain's top double agent, feeding Hitler lies from twenty-seven fake spies." | Juan's file; counter 0 → 27 FAKE SPIES |
+| 3 | The secret | "Only a handful of people know the truth. His MI5 handler, Tommy Harris... and his wife." | Harris at MI5, name card |
+| 4 | Lonely | ARACELI: "Four walls, Juan. No friends. No sun." / "And this food! Too much macaroni. Too many potatoes. Not enough fish!" JUAN: "A few more months. Please." ARACELI: "You said that last year." | Hendon kitchen; the real MI5 file quote types out as she says it |
+| 5 | The call | ARACELI (on the phone): "I don't want to live one more day in England!" / "Send me home. Or tomorrow, I tell the Spanish embassy... everything." | 21 JUNE 1943; handset; phone slammed |
+| 6 | Stakes | "That embassy was full of German informers. One sentence from her... and every lie, maybe D-Day itself... finished." | Fake agents pop up; ALL OF IT. GONE. |
+| 7 | Gas | "That night, she turned on every gas tap in the kitchen... and sat down." "MI5's verdict? Ninety percent chance... she was acting." | Gas haze, hiss; the real MI5 report: "90% chance this was mere 'play action'" |
+| 8 | The plan | HARRIS: "If she talks, we lose everything. Maybe even the invasion." JUAN: "Then give her a reason to stay silent. Arrest me." HARRIS: "...You want us to arrest you?" | ARREST ME?! slam |
+| 9 | The door | "So MI5 staged it." MI5 MAN: "Your husband has been detained, madam." ARACELI: "Because of me?" | Knock at the door; trench coat and fedora |
+| 10 | Camp 020 | "Then they let her see him. In prison clothes." ARACELI: "I'll sign anything. I'll never say a word. Just let him go!" "She signed a promise: never to endanger her husband's work." | Cell door clang; the signed statement types out |
+| 11 | Payoff | "Outside, Juan took off the prison jacket." HARRIS: "Your best performance yet." JUAN: "My hardest." | Rainy street at night |
+| 12 | Cliffhanger | "A year later, he had to convince Hitler that D-Day... was a trick. Follow for Part 3." | Map circle on Normandy; PART 3 card |
 
 ## Part 3: The lie that saved D-Day
 

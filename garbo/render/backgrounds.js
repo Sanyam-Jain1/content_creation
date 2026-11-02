@@ -189,6 +189,71 @@
       const front = `<path d="M-20,1560 Q540,1480 1100,1560 L1100,1920 L-20,1920Z" fill="#7a8aa8"/><path d="M-20,1600 Q540,1530 1100,1600" fill="none" stroke="#5a6a88" stroke-width="8"/>`;
       return { back, front: front + vignette('bd_v', 0.8) };
     },
+
+    // Hendon, north London 1943: small English kitchen, floral wallpaper, rain, gas cooker
+    hendon(t, gas = false) {
+      let back = wall(gas ? '#4e5a46' : '#7c8a68', '#5a4636', 1260);
+      for (let y = 40; y < 1240; y += 90) for (let x = (y / 90) % 2 ? 0 : 45; x < W; x += 90) back += `<circle cx="${x}" cy="${y}" r="9" fill="${gas ? '#8a7a5a' : '#c9b48a'}" opacity="0.45"/><circle cx="${x}" cy="${y}" r="4" fill="#a04a3a" opacity="0.4"/>`;
+      back += window_(110, 230, 330, 470, '#3c4a58', '#e8e2d2', { rain: true, t });
+      back += `<rect x="92" y="212" width="366" height="230" fill="#f4f0e6" opacity="0.55"/>`;                    // net curtain
+      for (let x = 100; x < 450; x += 18) back += `<line x1="${x}" y1="212" x2="${x}" y2="442" stroke="#fff" stroke-width="2" opacity="0.4"/>`;
+      // gas cooker (right)
+      back += rect(690, 760, 330, 520, '#e8e4da') + rect(690, 760, 330, 40, '#cfc9bb') + rect(720, 900, 270, 260, '#2a2a2a') + rect(740, 920, 230, 220, '#3a3a3a');
+      for (const [x, y] of [[750, 730], [840, 722], [930, 730]]) back += `<ellipse cx="${x}" cy="${y}" rx="34" ry="9" fill="#2a2a2a"/>`;
+      for (let i = 0; i < 4; i++) back += `<circle cx="${730 + i * 82}" cy="${830}" r="18" fill="#1d1d1d"/><rect x="${727 + i * 82}" y="${814}" width="6" height="16" fill="${gas ? '#ffd23f' : '#888'}" transform="rotate(${gas ? 90 : 0} ${730 + i * 82} ${830})"/>`;
+      back += rect(60, 1000, 400, 24, '#8a6a48');                                                                  // shelf
+      back += `<rect x="90" y="930" width="60" height="70" fill="#c8b890"/><rect x="180" y="950" width="80" height="50" fill="#b0503a"/><rect x="290" y="940" width="50" height="60" fill="#d8d0b8"/>`;
+      back += lightPool('he_l', 540, 380, 820, gas ? '#c8f0a0' : '#ffe2b0', gas ? 0.18 : 0.26);
+      let front = desk(1560, '#7a5a3c', { items: `<ellipse cx="300" cy="1556" rx="96" ry="20" fill="#f0ece2"/><ellipse cx="300" cy="1550" rx="64" ry="12" fill="#e2d28a"/><path d="M262,1546 q12,-10 24,0 q12,-10 24,0 q12,-10 24,0" stroke="#d8b860" stroke-width="5" fill="none"/><rect x="760" y="1486" width="60" height="74" rx="8" fill="#d8d4ca"/>` });
+      if (gas) {
+        for (let i = 0; i < 6; i++) {
+          const y = 1500 - ((t * 60 + i * 260) % 1400);
+          front += `<path d="M-40,${y} Q270,${y - 40 + Math.sin(t + i) * 20} 540,${y} T1120,${y}" stroke="#d8f0b0" stroke-width="70" fill="none" opacity="0.06"/>`;
+        }
+        front += rect(0, 0, W, H, '#b8e090', 'opacity="0.06"');
+      }
+      return { back, front: front + vignette('he_v', gas ? 0.85 : 0.6) };
+    },
+    hendonGas(t) { return SETS.hendon(t, true); },
+
+    // front door of the Hendon house at night, seen from the hall
+    frontdoor(t) {
+      let back = wall('#5a5040', '#3a2e22', 1300);
+      back += rect(300, 260, 480, 1140, '#1a1a22');                                                               // doorway (open)
+      back += rect(300, 260, 480, 1140, '#2a3444');
+      for (let i = 0; i < 50; i++) { const x = 300 + ((i * 97) % 480), y = 260 + ((i * 151 + t * 1100) % 1140); back += `<line x1="${x}" y1="${y}" x2="${x - 6}" y2="${y + 40}" stroke="#cfd8e0" stroke-width="2" opacity="0.4"/>`; }
+      back += rect(280, 240, 520, 26, '#e8e2d2') + rect(280, 240, 26, 1180, '#e8e2d2') + rect(774, 240, 26, 1180, '#e8e2d2');
+      back += `<path d="M800,266 L960,330 L960,1440 L800,1400Z" fill="#14281e"/><circle cx="930" cy="880" r="14" fill="#b8963c"/>`;  // door swung open
+      back += lightPool('fd_l', 540, 300, 600, '#ffe2a0', 0.2);
+      return { back, front: vignette('fd_v', 0.75) };
+    },
+
+    // Camp 020 (Latchmere House): bare interrogation room
+    camp020(t) {
+      let back = rect(0, 0, W, H, '#5c6258');
+      for (let y = 0; y < 1300; y += 70) back += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#4e544a" stroke-width="3"/>`;
+      back += rect(0, 1300, W, 620, '#3e423a');
+      back += rect(400, 200, 280, 170, '#2a3038') + [430, 480, 530, 580, 630].map((x) => rect(x, 200, 12, 170, '#111')).join('');
+      back += `<line x1="540" y1="0" x2="540" y2="440" stroke="#111" stroke-width="4"/><circle cx="540" cy="460" r="26" fill="#fff8d0"/>`;
+      back += lightPool('c2_l', 540, 520, 900, '#fff4c0', 0.28);
+      back += `<text x="880" y="620" font-family="Courier New,monospace" font-size="30" fill="#2a2e28" opacity="0.7">CAMP 020</text>`;
+      const front = desk(1530, '#5a5e60', { items: `<rect x="420" y="1500" width="230" height="40" fill="#efe6cf" transform="rotate(-4 535 1520)"/><rect x="680" y="1500" width="12" height="70" fill="#1a1a1a" transform="rotate(30 686 1535)"/>` });
+      return { back, front: front + vignette('c2_v', 0.8) };
+    },
+
+    // a wet London street at night, outside Camp 020
+    street(t) {
+      let back = rect(0, 0, W, H, '#151c26');
+      back += `<path d="M0,500 L180,500 L180,380 L320,380 L320,520 L520,520 L520,300 L700,300 L700,460 L860,460 L860,360 L1080,360 L1080,1300 L0,1300Z" fill="#232c38"/>`;
+      for (let i = 0; i < 18; i++) back += rect(40 + (i % 6) * 170, 560 + Math.floor(i / 6) * 180, 60, 90, (i * 7) % 5 ? '#2c3644' : '#d8b860', 'opacity="0.8"');
+      back += rect(0, 1300, W, 620, '#1c222c');
+      back += `<line x1="0" y1="1300" x2="${W}" y2="1300" stroke="#3a4656" stroke-width="6"/>`;
+      back += rect(860, 520, 20, 800, '#111') + `<path d="M830,520 L910,520 L890,480 L850,480Z" fill="#111"/><circle cx="870" cy="535" r="18" fill="#ffe8a0"/>`;
+      back += `<path d="M870,540 L700,1320 L1040,1320Z" fill="#ffe8a0" opacity="0.08"/>`;
+      for (let i = 0; i < 60; i++) { const x = (i * 97) % W, y = (i * 151 + t * 1200) % 1300; back += `<line x1="${x}" y1="${y}" x2="${x - 8}" y2="${y + 40}" stroke="#9fb0c4" stroke-width="2" opacity="0.35"/>`; }
+      back += `<ellipse cx="870" cy="1400" rx="160" ry="20" fill="#ffe8a0" opacity="0.1"/>`;
+      return { back, front: vignette('st_v', 0.7) };
+    },
     title(t) {
       return { back: rect(0, 0, W, H, '#0e0d0c') + lightPool('ti_l', 540, 860, 900, '#c8a060', 0.18), front: '' };
     },

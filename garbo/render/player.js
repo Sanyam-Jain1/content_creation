@@ -244,7 +244,7 @@
         }
         yy += 20;
         for (const ln of e.after || []) { doc += `<text x="${x0 + 40}" y="${yy}" font-family="${FONT_MONO}" font-size="32" fill="#2d2a24">${esc(ln)}</text>`; yy += 48; }
-        doc += `<g transform="rotate(-14 ${x0 + w - 170} ${y0 + h - 70})"><rect x="${x0 + w - 300}" y="${y0 + h - 115}" width="260" height="80" fill="none" stroke="#a02424" stroke-width="5"/><text x="${x0 + w - 170}" y="${y0 + h - 60}" text-anchor="middle" font-family="${FONT_MONO}" font-size="36" font-weight="700" fill="#a02424">GEHEIM</text></g>`;
+        doc += `<g transform="rotate(-14 ${x0 + w - 170} ${y0 + h - 70})"><rect x="${x0 + w - 300}" y="${y0 + h - 115}" width="260" height="80" fill="none" stroke="#a02424" stroke-width="5"/><text x="${x0 + w - 170}" y="${y0 + h - 60}" text-anchor="middle" font-family="${FONT_MONO}" font-size="36" font-weight="700" fill="#a02424">${esc(e.stamp || 'GEHEIM')}</text></g>`;
         doc += `</g>`;
         g += `<g opacity="${a}">${doc}</g>`;
       } else if (e.type === 'tag') {
@@ -314,6 +314,14 @@
           [640, 670, 700, 730, 790, 820].map((yy) => `<line x1="210" y1="${yy}" x2="${yy === 730 ? 330 : 390}" y2="${yy}" stroke="#6a6458" stroke-width="5" opacity="0.6"/>`).join('') +
           `<rect x="205" y="756" width="190" height="22" fill="#ffd23f" opacity="0.8"/>` +
           `<ellipse cx="190" cy="850" rx="34" ry="26" fill="${prof.skin}"/><ellipse cx="410" cy="850" rx="34" ry="26" fill="${prof.skin}"/></g>`;
+      }
+      if (c.prop === 'phone' && !(c.propUntil != null && st > c.propUntil)) {
+        // 1940s handset held to the ear (rig coords: head centre 300,300), hand under it
+        prop += `<g><path d="M212,318 L262,402" stroke="#141414" stroke-width="26" stroke-linecap="round"/>` +
+          `<ellipse cx="206" cy="312" rx="28" ry="20" fill="#141414" transform="rotate(-30 206 312)"/>` +
+          `<ellipse cx="266" cy="410" rx="26" ry="17" fill="#141414" transform="rotate(-30 266 410)"/>` +
+          `<path d="M222,330 L250,378" stroke="#4a4a4a" stroke-width="5" stroke-linecap="round"/></g>` +
+          `<ellipse cx="248" cy="392" rx="30" ry="24" fill="${prof.skin}"/><ellipse cx="248" cy="392" rx="30" ry="24" fill="#5a2a14" opacity="0.12"/>`;
       }
       chars += `<g transform="translate(${c.x},${c.y + bob}) scale(${c.flip ? -s : s},${s}) translate(-300,-300)">${draw(prof, state)}${prop}</g>`;
     });

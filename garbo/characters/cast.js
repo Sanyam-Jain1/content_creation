@@ -250,9 +250,27 @@
     clothes: { type: 'suit', jacket: '#5a5c5e', shirt: '#ecebe4', tie: '#2a2a40', tiePattern: 'stripe', tieDot: '#7a6a3a', waistcoat: true, shoulder: 215 },
   };
 
+  // MI5 man at the door (Part 2): trench coat, fedora
+  const mi5man = Object.assign({}, officer, {
+    name: 'MI5 man',
+    skin: '#e6bc9a',
+    moustache: null,
+    eyes: Object.assign({}, officer.eyes, { lid: 0.3, color: '#4a4a3a' }),
+    brows: Object.assign({}, officer.brows, { color: '#5a4a3a', t: 6 }),
+    hairFront: (cx, cy) => `<path d="M${cx - 90},${cy - 20} Q${cx - 92},${cy - 70} ${cx - 70},${cy - 90} L${cx + 70},${cy - 90} Q${cx + 92},${cy - 70} ${cx + 90},${cy - 20} L${cx + 80},${cy - 60} L${cx - 80},${cy - 60}Z" fill="#4a3a2a"/>`,
+    hat: (cx, cy) => {
+      const c = '#3a342c';
+      return `<ellipse cx="${cx}" cy="${cy - 92}" rx="150" ry="26" fill="${c}"/>` +
+        `<path d="M${cx - 92},${cy - 96} Q${cx - 96},${cy - 190} ${cx},${cy - 196} Q${cx + 96},${cy - 190} ${cx + 92},${cy - 96}Z" fill="${c}"/>` +
+        `<path d="M${cx - 40},${cy - 190} Q${cx},${cy - 170} ${cx + 40},${cy - 190}" stroke="#2a2620" stroke-width="8" fill="none"/>` +
+        `<rect x="${cx - 92}" y="${cy - 124}" width="184" height="22" fill="#1e1a16"/>`;
+    },
+    clothes: { type: 'suit', jacket: '#a08a62', shirt: '#ecebe4', tie: '#3a2a2a', tiePattern: null, shoulder: 220 },
+  });
+
   root.GarboCast = {
     juan1941, juan1944, juanPrison, juanDisguise, juan1984,
     araceli1941, araceli1943, araceli1949,
-    harris, frederico, officer, mi5officer, nigelWest,
+    harris, frederico, officer, mi5officer, mi5man, nigelWest,
   };
 })(typeof window !== 'undefined' ? window : globalThis);

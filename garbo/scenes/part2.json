@@ -1,0 +1,868 @@
+{
+ "part": 2,
+ "of": 4,
+ "title": "The wife",
+ "fps": 30,
+ "music": "part2",
+ "shots": [
+  {
+   "id": "hook",
+   "set": "bedroom",
+   "flash": false,
+   "punch": false,
+   "grade": "#3a4a7a",
+   "gradeOp": 0.22,
+   "cam": {
+    "from": {
+     "zoom": 1.5,
+     "y": 260
+    },
+    "to": {
+     "zoom": 1.15,
+     "y": 90
+    }
+   },
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 540,
+     "y": 1010,
+     "s": 1.5,
+     "turn": 0,
+     "state": {
+      "lookX": -0.4,
+      "brow": -0.4,
+      "smile": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "at": 0.0,
+     "gain": 0.9
+    },
+    {
+     "kind": "impact",
+     "word": "woman.",
+     "offset": -0.1,
+     "gain": 0.7
+    }
+   ],
+   "fx": [
+    {
+     "type": "circle",
+     "word": "woman.",
+     "offset": -0.1,
+     "x": 540,
+     "y": 980,
+     "r": 215,
+     "label": "HIS WIFE",
+     "ly": 700
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The biggest threat to D-Day wasn't Hitler. It was this woman.",
+     "emph": [
+      "d-day",
+      "woman."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "who",
+   "set": "archive",
+   "grade": "#b08a50",
+   "gradeOp": 0.2,
+   "cam": {
+    "from": {
+     "zoom": 1.0
+    },
+    "to": {
+     "zoom": 1.08
+    }
+   },
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1944",
+     "x": 540,
+     "y": 800,
+     "s": 1.25,
+     "state": {
+      "smile": 0.35
+     }
+    }
+   ],
+   "nameCards": [
+    {
+     "title": "JUAN PUJOL",
+     "sub": "double agent · codename GARBO",
+     "at": 0.2,
+     "dur": 3.0,
+     "x": 60,
+     "y": 330
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "typewriter",
+     "word": "twenty-seven",
+     "offset": -0.2,
+     "gain": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "counter",
+     "word": "twenty-seven",
+     "offset": -0.2,
+     "from": 0,
+     "to": 27,
+     "count": 1.4,
+     "y": 1480,
+     "size": 170,
+     "label": "FAKE SPIES",
+     "dur": 3.0
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "London, 1943. Her husband Juan is Britain's top double agent, feeding Hitler lies from twenty-seven fake spies.",
+     "emph": [
+      "top",
+      "twenty-seven",
+      "fake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "secret",
+   "set": "mi5",
+   "grade": "#5a7a9a",
+   "gradeOp": 0.15,
+   "chars": [
+    {
+     "key": "harris",
+     "rig": "harris",
+     "x": 540,
+     "y": 990,
+     "s": 1.55,
+     "state": {
+      "smile": 0.3,
+      "brow": 0.2
+     }
+    }
+   ],
+   "nameCards": [
+    {
+     "title": "TOMMY HARRIS",
+     "sub": "his MI5 handler",
+     "at": 0.2,
+     "dur": 2.8
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Only a handful of people know the truth. His MI5 handler, Tommy Harris...",
+     "emph": [
+      "truth."
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "...and his wife.",
+     "gap": 0.15,
+     "emph": [
+      "wife."
+     ]
+    }
+   ],
+   "tail": 0.05
+  },
+  {
+   "id": "lonely",
+   "set": "hendon",
+   "follow": true,
+   "nameCards": [
+    {
+     "title": "ARACELI",
+     "sub": "his wife · 23 · from Spain",
+     "at": 0.1,
+     "dur": 2.6
+    }
+   ],
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 300,
+     "y": 1010,
+     "s": 1.5,
+     "state": {
+      "brow": -0.5,
+      "smile": -0.3
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juan1944",
+     "x": 790,
+     "y": 990,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "brow": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "rain",
+     "at": 0.0,
+     "gain": 0.35
+    }
+   ],
+   "fx": [
+    {
+     "type": "document",
+     "syncLine": 1,
+     "word": "macaroni.",
+     "offset": -0.5,
+     "word_end": "fish!",
+     "header": "MI5 FILE  ·  MRS GARBO  ·  1943",
+     "stamp": "SECRET",
+     "before": [
+      "Subject is homesick, lonely,",
+      "and complains constantly:"
+     ],
+     "quote": "Too much macaroni. Too many potatoes. Not enough fish!",
+     "after": [
+      "— from the real MI5 file"
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "who": "araceli",
+     "text": "[bitter, homesick] Four walls, Juan. No friends. No sun."
+    },
+    {
+     "who": "araceli",
+     "text": "[disgusted] And this food! Too much macaroni. Too many potatoes. Not enough fish!",
+     "emph": [
+      "fish!"
+     ],
+     "nosub": true
+    },
+    {
+     "who": "juan",
+     "text": "[pleading] A few more months. Please."
+    },
+    {
+     "who": "araceli",
+     "text": "[cold] You said that last year."
+    }
+   ]
+  },
+  {
+   "id": "call",
+   "set": "hendon",
+   "punch": true,
+   "grade": "#7a2a2a",
+   "gradeOp": 0.15,
+   "cam": {
+    "from": {
+     "zoom": 1.25,
+     "y": 150
+    },
+    "to": {
+     "zoom": 1.45,
+     "y": 220
+    }
+   },
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 540,
+     "y": 1010,
+     "s": 1.5,
+     "turn": 0.25,
+     "prop": "phone",
+     "state": {
+      "brow": -0.9,
+      "smile": -0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "phone_slam",
+     "word": "everything.",
+     "offset": 0.4,
+     "gain": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "21 JUNE 1943",
+     "at": 0.0,
+     "dur": 1.6,
+     "y": 560,
+     "size": 96,
+     "color": "#ffd23f"
+    }
+   ],
+   "shakeWords": [
+    [
+     "england!",
+     1
+    ]
+   ],
+   "lines": [
+    {
+     "who": "araceli",
+     "text": "[shouting into the phone, furious] I don't want to live one more day in England!",
+     "emph": [
+      "england!"
+     ]
+    },
+    {
+     "who": "araceli",
+     "text": "[threatening, deadly serious] Send me home. Or tomorrow, I tell the Spanish embassy... everything.",
+     "emph": [
+      "embassy...",
+      "everything."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stakes",
+   "set": "lisbon",
+   "punch": false,
+   "grade": "#000",
+   "gradeOp": 0.35,
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": 0.0,
+     "gain": 0.8
+    },
+    {
+     "kind": "impact",
+     "word": "finished.",
+     "offset": -0.1
+    }
+   ],
+   "fx": [
+    {
+     "type": "agents",
+     "names": [
+      "AGENT 1 · Glasgow",
+      "AGENT 2 · Liverpool",
+      "AGENT 3 · RAF clerk",
+      "AGENT 4 · Dover",
+      "AGENT 5 · sailor",
+      "AGENT 6 · ???"
+     ],
+     "every": 0.25,
+     "y": 560,
+     "at": 0.1
+    },
+    {
+     "type": "slam",
+     "text": "ALL OF IT.\nGONE.",
+     "word": "finished.",
+     "offset": -0.1,
+     "y": 1500,
+     "size": 110,
+     "color": "#ff3b2f"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That embassy was full of German informers. One sentence from her... and every lie, maybe D-Day itself... finished.",
+     "emph": [
+      "informers.",
+      "finished."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gas",
+   "set": "hendonGas",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.1,
+     "y": 60
+    },
+    "to": {
+     "zoom": 1.35,
+     "y": 160
+    }
+   },
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 540,
+     "y": 1010,
+     "s": 1.5,
+     "turn": 0,
+     "state": {
+      "lookY": 0.3,
+      "blink": 0.35,
+      "brow": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "gas_hiss",
+     "at": 0.0,
+     "gain": 0.8
+    },
+    {
+     "kind": "stamp",
+     "word": "acting.",
+     "offset": 0.0
+    }
+   ],
+   "fx": [
+    {
+     "type": "document",
+     "word": "verdict?",
+     "offset": -0.2,
+     "header": "MI5 REPORT  ·  WIRELESS OPERATOR",
+     "stamp": "SECRET",
+     "before": [
+      "Found her sitting in the kitchen",
+      "with all the gas taps turned on."
+     ],
+     "quote": "90% chance this was mere 'play action'.",
+     "after": [
+      "— from the real MI5 file"
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That night, she turned on every gas tap in the kitchen... and sat down.",
+     "emph": [
+      "gas"
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "MI5's verdict? Ninety percent chance... she was acting.",
+     "gap": 0.2,
+     "emph": [
+      "ninety",
+      "acting."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "plan",
+   "set": "mi5",
+   "follow": true,
+   "chars": [
+    {
+     "key": "harris",
+     "rig": "harris",
+     "x": 300,
+     "y": 990,
+     "s": 1.5,
+     "state": {
+      "brow": -0.4
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juan1944",
+     "x": 790,
+     "y": 990,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "brow": -0.3
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "glitch",
+     "word": "arrest",
+     "occ": 2,
+     "offset": 0.0
+    }
+   ],
+   "fx": [
+    {
+     "type": "slam",
+     "text": "ARREST ME?!",
+     "word": "arrest",
+     "occ": 2,
+     "offset": 0.1,
+     "y": 600,
+     "size": 120,
+     "color": "#ff3b2f",
+     "rot": -6,
+     "dur": 1.6
+    }
+   ],
+   "lines": [
+    {
+     "who": "harris",
+     "text": "[grim, low] If she talks, we lose everything. Maybe even the invasion."
+    },
+    {
+     "who": "juan",
+     "text": "[quietly] Then give her a reason to stay silent."
+    },
+    {
+     "who": "juan",
+     "text": "[beat, deadly calm] Arrest me.",
+     "gap": 0.3
+    },
+    {
+     "who": "harris",
+     "text": "[stunned] ...You want us to arrest you?",
+     "emph": [
+      "arrest"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "door",
+   "set": "frontdoor",
+   "follow": true,
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 300,
+     "y": 1010,
+     "s": 1.5,
+     "state": {
+      "brow": 0.5
+     }
+    },
+    {
+     "key": "mi5man",
+     "rig": "mi5man",
+     "x": 790,
+     "y": 980,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "brow": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "knock",
+     "at": 0.0,
+     "gain": 0.9
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So MI5 staged it.",
+     "emph": [
+      "staged"
+     ]
+    },
+    {
+     "who": "mi5man",
+     "text": "[formal, cold] Your husband has been detained, madam."
+    },
+    {
+     "who": "araceli",
+     "text": "[colour draining, whisper] Because of me?",
+     "emph": [
+      "me?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "camp",
+   "set": "camp020",
+   "follow": true,
+   "nameCards": [
+    {
+     "title": "CAMP 020",
+     "sub": "secret MI5 interrogation centre",
+     "at": 0.1,
+     "dur": 2.6
+    }
+   ],
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 300,
+     "y": 1010,
+     "s": 1.5,
+     "state": {
+      "brow": 0.9,
+      "smile": -0.6
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juanPrison",
+     "x": 790,
+     "y": 990,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "lookY": 0.6,
+      "lookX": 0.3,
+      "brow": -0.4
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "cell_door",
+     "at": 0.0,
+     "gain": 0.9
+    },
+    {
+     "kind": "pen_sign",
+     "word": "sign",
+     "offset": 0.2,
+     "gain": 0.8
+    }
+   ],
+   "fx": [
+    {
+     "type": "document",
+     "syncLine": 2,
+     "word_end": "work.",
+     "header": "STATEMENT  ·  CAMP 020  ·  1943",
+     "stamp": "SIGNED",
+     "before": [
+      "I, Araceli Gonzalez de Pujol, promise"
+     ],
+     "quote": "not to do anything in future to jeopardise the work being done by my husband.",
+     "after": [
+      "Signed:  A. G. de Pujol"
+     ],
+     "word": "signed",
+     "offset": -0.3
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then they let her see him. In prison clothes.",
+     "emph": [
+      "prison"
+     ]
+    },
+    {
+     "who": "araceli",
+     "text": "[sobbing, desperate] I'll sign anything. I'll never say a word. Just let him go!",
+     "emph": [
+      "anything."
+     ]
+    },
+    {
+     "who": "narrator",
+     "text": "She signed a promise: never to endanger her husband's work.",
+     "emph": [
+      "promise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "payoff",
+   "set": "street",
+   "follow": true,
+   "chars": [
+    {
+     "key": "harris",
+     "rig": "harris",
+     "x": 300,
+     "y": 990,
+     "s": 1.5,
+     "state": {
+      "smile": 0.4
+     }
+    },
+    {
+     "key": "juan",
+     "rig": "juan1944",
+     "x": 790,
+     "y": 990,
+     "s": 1.5,
+     "flip": true,
+     "state": {
+      "lookY": 0.3,
+      "smile": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "rain",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Outside, Juan took off the prison jacket.",
+     "emph": [
+      "jacket."
+     ]
+    },
+    {
+     "who": "harris",
+     "text": "[dry, impressed] Your best performance yet."
+    },
+    {
+     "who": "juan",
+     "text": "[not smiling, tired] My hardest.",
+     "gap": 0.4,
+     "emph": [
+      "hardest."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "next_map",
+   "set": "map",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.3,
+     "x": -40,
+     "y": 160
+    },
+    "to": {
+     "zoom": 1.45,
+     "x": -60,
+     "y": 220
+    }
+   },
+   "fx": [
+    {
+     "type": "circle",
+     "word": "d-day",
+     "offset": 0.0,
+     "x": 640,
+     "y": 900,
+     "r": 170,
+     "label": "D-DAY",
+     "ly": 640
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A year later, he had to convince Hitler that D-Day... was a trick.",
+     "emph": [
+      "hitler",
+      "trick."
+     ]
+    }
+   ],
+   "tail": 0.1
+  },
+  {
+   "id": "next",
+   "set": "archive",
+   "punch": false,
+   "grade": "#b08a50",
+   "gradeOp": 0.25,
+   "cam": {
+    "from": {
+     "zoom": 1.0
+    },
+    "to": {
+     "zoom": 1.12,
+     "y": 40
+    }
+   },
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1944",
+     "x": 540,
+     "y": 800,
+     "s": 1.25,
+     "state": {
+      "smile": 0.6,
+      "brow": 0.4
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "at": 0.0,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "word": "follow",
+     "offset": -0.1,
+     "gain": 0.7
+    }
+   ],
+   "fx": [
+    {
+     "type": "title",
+     "text": "PART 3",
+     "word": "follow",
+     "y": 420,
+     "size": 90,
+     "color": "#ffd23f"
+    },
+    {
+     "type": "title",
+     "text": "The lie that\nsaved D-Day",
+     "word": "follow",
+     "offset": 0.2,
+     "y": 560,
+     "size": 56
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Follow for Part 3.",
+     "emph": [
+      "3."
+     ]
+    }
+   ],
+   "tail": 1.2
+  }
+ ]
+}

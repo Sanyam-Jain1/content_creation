@@ -24,6 +24,12 @@ SFX = {
     "heartbeat":  ("Two slow deep heartbeats, cinematic, tense", 1.6),
     "tick":       ("A ticking pocket watch, close and crisp, steady seconds", 3.0),
     "glitch":     ("A quick record scratch stop, comedic freeze-frame", 0.8),
+    "phone_slam": ("An old 1940s bakelite telephone handset slammed down hard onto its cradle, with a ding", 1.2),
+    "gas_hiss":   ("A steady hiss of gas escaping from an old kitchen cooker, tense and quiet", 4.0),
+    "knock":      ("Three firm knocks on a heavy wooden front door at night, rain outside", 1.6),
+    "cell_door":  ("A heavy steel prison door unlocking and swinging open with a metallic clang and echo", 2.5),
+    "pen_sign":   ("A fountain pen scratching a quick signature on paper", 1.5),
+    "rain":       ("Steady rain against a window at night, cosy and gloomy", 6.0),
 }
 
 # Section-by-section plans so the cue never drops out (reels need constant drive).
@@ -34,6 +40,13 @@ PLANS = {
         ("Playful sly Spanish guitar motif over the same driving pulse, a trickster at work", 30000),
         ("Darker, urgent: low brass and taut snare, a manhunt closing in, constant momentum", 28000),
         ("Big reveal and cliffhanger: full orchestra swell, then a held suspenseful tension chord", 20000),
+    ],
+    "part2": [
+        ("Cold open: a sudden low piano hit and a tense pulse, intimate domestic thriller", 12000),
+        ("Melancholic Spanish guitar over soft ticking percussion and rain-like strings, loneliness, steady rhythm", 30000),
+        ("Rising dread: pulsing low strings, heartbeat percussion, a crisis building, constant momentum", 30000),
+        ("Covert plan: sly pizzicato strings and muted brass, a deception being staged, driving", 25000),
+        ("Emotional climax then a held suspense chord into a cliffhanger", 23000),
     ],
 }
 STYLES = ["cinematic orchestral thriller", "1940s espionage", "staccato strings", "ticking clock percussion",

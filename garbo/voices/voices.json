@@ -111,6 +111,12 @@
    "name": "Daniel (premade)",
    "stability": 0.5,
    "similarity": 0.8
+  },
+  "mi5man": {
+   "voice_id": "onwK4e9ZLuTAKqWW03F9",
+   "name": "Daniel (premade)",
+   "stability": 0.5,
+   "similarity": 0.8
   }
  },
  "model": "eleven_v4"
