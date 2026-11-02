@@ -47,6 +47,35 @@
     return svg(1080, 1080, g, size);
   }
 
+
+  // ---- WAIT, WHAT? concepts ----
+  // A · interrobang: the name as one glyph
+  function pfpInterrobang(size) {
+    let g = `<rect width="1080" height="1080" fill="${Y}"/>`;
+    g += `<text x="560" y="830" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="820" fill="${INK}" letter-spacing="-60">?!</text>`;
+    g += `<circle cx="760" cy="300" r="0" fill="${RED}"/>`;
+    return svg(1080, 1080, g, size);
+  }
+  // B · the reaction: two wide eyes with tiny pupils and a raised brow
+  function pfpEyes(size) {
+    let g = `<rect width="1080" height="1080" fill="${INK}"/>`;
+    for (const [cx, dy, rot] of [[350, 0, -8], [730, -20, 12]]) {
+      g += `<ellipse cx="${cx}" cy="${560 + dy}" rx="175" ry="215" fill="#fff"/>`;
+      g += `<circle cx="${cx + 20}" cy="${590 + dy}" r="46" fill="${INK}"/>`;
+      g += `<circle cx="${cx + 34}" cy="${574 + dy}" r="13" fill="#fff"/>`;
+      g += `<rect x="${cx - 150}" y="${265 + dy - (cx > 500 ? 40 : 0)}" width="300" height="48" rx="24" fill="${Y}" transform="rotate(${rot} ${cx} ${290 + dy})"/>`;
+    }
+    return svg(1080, 1080, g, size);
+  }
+  // C · wordmark bubble
+  function pfpWordmark(size) {
+    let g = `<rect width="1080" height="1080" fill="${Y}"/>`;
+    g += `<path d="M150,240 Q150,160 230,160 L850,160 Q930,160 930,240 L930,720 Q930,800 850,800 L480,800 L330,940 L360,800 L230,800 Q150,800 150,720Z" fill="${INK}"/>`;
+    g += `<text x="540" y="450" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="190" fill="#fff">WAIT,</text>`;
+    g += `<text x="540" y="660" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="190" fill="${Y}">WHAT?</text>`;
+    return svg(1080, 1080, g, size);
+  }
+
   // Highlight covers: yellow icon on ink
   const ICONS = {
     'GARBO': `<ellipse cx="540" cy="640" rx="120" ry="150" fill="${Y}"/><ellipse cx="540" cy="480" rx="240" ry="46" fill="${Y}"/><path d="M395,485 Q395,320 540,315 Q685,320 685,485Z" fill="${Y}"/><rect x="395" y="440" width="290" height="30" fill="${RED}"/>`,
@@ -74,14 +103,14 @@
     return svg(1080, 1920, `<defs><linearGradient id="cv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.6"/></linearGradient></defs>${g}`, size);
   }
 
-  window.BRAND = { pfpCliff, pfpHook, pfpBubble, highlight, coverPart1, HIGHLIGHTS: Object.keys(ICONS) };
+  window.BRAND = { pfpCliff, pfpHook, pfpBubble, pfpInterrobang, pfpEyes, pfpWordmark, highlight, coverPart1, HIGHLIGHTS: Object.keys(ICONS) };
 
   // ---- fill the board if present ----
   const pf = document.getElementById('pfps');
   if (pf) {
-    const opts = [['A · Cliffhanger hand', pfpCliff], ['B · Storyhook ?-hook', pfpHook], ['C · Monogram bubble (any name)', pfpBubble]];
+    const opts = [['A · The reaction (pick)', pfpEyes], ['B · Interrobang ?!', pfpInterrobang], ['C · Wordmark bubble', pfpWordmark]];
     pf.innerHTML = opts.map(([label, fn]) => `<div class="pfp">${fn(280)}<div class="small">${fn(110)}${fn(56)}${fn(32)}</div><div class="cap">${label}</div></div>`).join('');
-    document.getElementById('pfpMini').innerHTML = pfpCliff(170).replace('<svg', '<svg style="border-radius:50%"');
+    document.getElementById('pfpMini').innerHTML = pfpEyes(170).replace('<svg', '<svg style="border-radius:50%"');
     document.getElementById('hls').innerHTML = BRAND.HIGHLIGHTS.map((n) => `<div>${highlight(n, 120)}${n}</div>`).join('');
     document.getElementById('cover').innerHTML = coverPart1(380, true);
   }

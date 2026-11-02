@@ -9,60 +9,62 @@ Visual board: `export/brand_board.png`. All assets: `export/`. Regenerate with
 
 ---
 
-## 1. Name
+## 1. Name: WAIT, WHAT?
 
-| Name | Handle idea | Why |
+Chosen. The viewer's reaction is the name: it promises a twist without tying the page to
+any genre or to the word "stories".
+
+**Handle**: take the first one free on Instagram, TikTok and YouTube (same everywhere):
+
+| # | Handle | Note |
 | --- | --- | --- |
-| **CLIFFHANGER** (top pick) | `@cliffhanger.tales` | Every part ends on one; the name *is* the format. A strong word with an instant mood. Icon: a hand gripping a ledge. |
-| **STORYHOOK** (top pick) | `@storyhook` | Names the promise: a hook in second one. Short, ownable; icon: a hook shaped like a "?". |
-| ONE MORE PART | `@onemorepart` | The binge feeling; playful and made for Part 1/4 series. |
-| Twice Told | `@twicetold.tv` | Real stories, retold. Literary and timeless (after Hawthorne's 1837 *Twice-Told Tales*). |
-| TRUE-ISH | `@trueish.tales` | Honest and funny: true stories, dramatised dialogue. |
-| Papercut Tales | `@papercut.tales` | Matches the flat paper-cut animation style. |
-| THE RETOLD | `@theretold` | Clean, broad, any genre. |
-| WAIT, WHAT? | `@waitwhat.stories` | The viewer's reaction as the name; great for twists. |
+| 1 | `@waitwhat` | Cleanest; probably taken |
+| 2 | `@wait.what` | Same name with a dot |
+| 3 | `@waitwhat.tv` | ".tv" signals a video channel, not "stories" |
+| 4 | `@waitwhaaat` | How people actually say it; memorable and more likely free |
+| 5 | `@thewaitwhat` | |
+| 6 | `@waitwhat.hq` | |
 
-No large channel with these exact names showed up in a web search, but handle availability
-must be checked directly on Instagram, TikTok and YouTube. Grab the same handle on all three.
+All six are valid on all three platforms (letters, dots, underscores; 30 characters max).
+Availability must be checked by hand.
 
 ## 2. Profile picture
 
-| Concept | Read at 32 px | Fits |
+| Concept | Read at 32 px | Notes |
 | --- | --- | --- |
-| A · Cliffhanger hand | Yes: cream hand gripping a black ledge on yellow | CLIFFHANGER, ONE MORE PART |
-| B · Storyhook ?-hook | Yes: yellow hook + red dot on ink | STORYHOOK, WAIT, WHAT? |
-| C · Monogram bubble | Yes: initials in a speech bubble with "…" | Any name (swap the letters) |
+| **A · The reaction** (pick) | Yes | Two wide eyes, tiny pupils, raised yellow brows on ink. A face is recognised fastest in a feed, and it *is* the "wait, what?" feeling. Can be animated as a 0.5 s blink sting at the end of every reel. |
+| B · Interrobang ?! | Yes | Pure type, very bold on yellow. |
+| C · Wordmark bubble | Borderline | The full name in a speech bubble; best for the YouTube banner. |
 
-All three use the video palette (ink, yellow, stamp red), so the page and the reels look
-like one brand.
+Files: `export/pfp_A_reaction.png` (1080×1080). Same palette as the video captions.
 
 ## 3. Bio
 
-**Instagram** (≤150 characters), example for CLIFFHANGER:
+**Instagram** (≤150 characters):
 
 ```
-📖 Stories you won't be able to stop watching
-Real, wild & untold, animated in parts
-⏭️ New story every week 👇
+🤯 Real events that sound made up
+Animated, in parts, no boring bits
+⏭️ New one every week 👇
 ```
 
-- Name field (searchable): `Cliffhanger | Stories in Parts`. Instagram search indexes the name field; put the keyword there.
+- Name field (searchable): `Wait, What? | Unbelievable True Stories`. Instagram search indexes the name field; put the keyword there. The handle stays free of "stories".
 - Category: *Digital creator* or *Entertainment website*.
 - Link: one link page (Linktree / Beacons) → YouTube, TikTok, "Sources for every file".
 
-**TikTok** (≤80 characters): `Wild true stories, animated in parts. New story every week ⏭️`
+**TikTok** (≤80 characters): `Real events that sound made up. Animated, in parts. New one weekly ⏭️`
 
 **YouTube** channel description:
-> Stories you won't be able to stop watching: real, wild and untold, told as fast
-> animated series in parts. Every story is based on real events; dialogue is
-> dramatised. Sources are in each video's description. New story every week.
+> Real events that sound made up, told as fast animated series in parts.
+> Every episode is based on real events; dialogue is dramatised. Sources are in
+> each video's description. New one every week.
 
 ## 4. Profile setup
 
 - **Story highlights** (covers in `export/highlight_*.png`): `GARBO` (one highlight per series) · `SOURCES` (the fact sheet: real vs dramatised) · `NEXT` (polls on which story is next) · `ABOUT`.
 - **Pinned posts** (pin 3): Part 1 (the hook), the best-performing part, and a 30 s "who was Garbo" trailer cut from Parts 1–4.
 - **Grid**: every reel gets a custom cover (template: `export/cover_part1.png`). Rules: one face, a 2–3 word headline in Montserrat Black, the series name + part. Keep everything inside the central 3:4 area (1080×1440) so the grid crop never cuts it.
-- **Series naming**: `GARBO · Part 1/4`. Once the name is final, the in-video badge can carry it too (for example `CLIFFHANGER · GARBO 1/4`).
+- **Series naming**: `GARBO · Part 1/4`. Once the name is final, the in-video badge can carry it too (for example `WAIT, WHAT? · GARBO 1/4`), and the reaction eyes can blink as a 0.5 s sting on the last frame.
 
 ## 5. Captions, hashtags, posting
 
