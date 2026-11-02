@@ -1,5 +1,5 @@
 {
- "_comment": "Voice casting per character. 'draft' = free Microsoft neural voices (edge-tts) for timing and previews. 'final' = ElevenLabs voices, filled in after casting. Speech settings: rate/pitch apply to edge only.",
+ "_comment": "Voice casting per character. 'draft' = free edge-tts voices for timing. 'final' = ElevenLabs. Accented characters use eleven_v3: eleven_v4 measurably flattens accents (whisper language-ID ~0.99 English on v4 vs ~0.5 on v3).",
  "provider": "elevenlabs",
  "draft": {
   "juan": {
@@ -74,16 +74,18 @@
    "similarity": 0.8
   },
   "juan": {
-   "voice_id": "aeXvzY8qI0V6OAdqpVAn",
-   "name": "GARBO Juan option 1 (designed)",
-   "stability": 0.4,
+   "voice_id": "mSpTJdsi4rQkVqaFeFyg",
+   "name": "GARBO Juan v2 (designed, heavy Spanish accent)",
+   "model": "eleven_v3",
+   "stability": 0.5,
    "similarity": 0.85
   },
   "araceli": {
-   "voice_id": "c2ylF7ASjpIgP0pJz4RK",
-   "name": "Carolina (library)",
-   "stability": 0.4,
-   "similarity": 0.8
+   "voice_id": "wQUFRaMu5y3SPMVUVZZo",
+   "name": "GARBO Araceli v2 (designed, heavy Spanish accent)",
+   "model": "eleven_v3",
+   "stability": 0.5,
+   "similarity": 0.85
   },
   "harris": {
    "voice_id": "agL69Vji082CshT65Tcy",
@@ -95,7 +97,8 @@
    "voice_id": "VmPkIaPdP997cjIfBWRB",
    "name": "Tobias (library)",
    "stability": 0.4,
-   "similarity": 0.85
+   "similarity": 0.85,
+   "model": "eleven_v3"
   },
   "officer": {
    "voice_id": "7cOBG34AiHrAzs842Rdi",

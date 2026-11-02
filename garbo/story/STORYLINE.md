@@ -33,11 +33,11 @@ Badge top-left on every frame: `GARBO · PART n/4`.
 | 3 | How do you make Hitler doubt D-Day *while it's happening*? | Tell him the truth too late, then lie when he trusts you most. |
 | 4 | How does the war's greatest spy escape revenge? | He fakes his own death for 35 years, until a historian finds him. |
 
-### Language (mixed)
+### Language
 
-English with true accents by default. Key emotional lines are in the language
-the people really spoke, with burned-in English subtitles:
-`[ES]` Spanish, `[DE]` German. Lines without a tag are English.
+**English only, with real accents** (decision after the Part 1 review): Juan and
+Araceli speak English with a heavy Spanish accent, Frederico with a German accent,
+the officials in British RP. All lines below are written in English.
 
 ---
 
@@ -55,23 +55,22 @@ Learned from the first draft: silence and slow scene-setting kill reels.
 | Narrator drives, characters punctuate | Dialogue is short and punchy; the narrator carries the story. |
 | End on a cliffhanger + CTA | The last line teases the next part's hook, then "Follow for Part n". |
 
-## Part 1: The spy nobody wanted (retention cut, ~109 s)
+## Part 1: The spy nobody wanted (retention cut v3, ~102 s)
 
 The final shot list lives in `../scenes/part1.json`; this is the readable version.
 
 | # | Beat | Lines (narrator unless named) | On screen |
 | --- | --- | --- | --- |
 | 1 | Hook | "This man fooled Adolf Hitler... with an army of spies that never existed." | Push in from Juan's eyes; red circle "THIS GUY" |
-| 2 | Tease | "But first, Britain told him to get lost." | Embassy door, REJECTED stamp slam on "lost" |
+| 2 | Tease | "But first, Britain told him to get lost. Three times." | Embassy door, REJECTED stamp slam on "lost" |
 | 3 | Who | "Madrid, 1941. Juan Pujol. Chicken farmer. Zero spy training. And he wants to take down Hitler." | Archive file; CHICKEN FARMER / NO TRAINING slams |
 | 4 | Embassy | JUAN: "I want to spy for you. Against Hitler." OFFICER: "We don't need amateurs. Good day." | Speaker cut-ins |
-| 5 | Rejections | "He came back. Rejected. Came back again. Rejected. And again. Rejected." | Door slam + 1-2-3 on each "Rejected" |
-| 6 | The plan | "So he came up with the craziest plan of the entire war." ARACELI `[ES]`: "¡Tres veces, Juan! Nunca te van a aceptar." JUAN: "Then I'll make them need me. I'll become a Nazi." | Record scratch + "A NAZI?!" |
+| 6 | The plan | "So he came up with the craziest plan of the entire war." ARACELI: "Three times, Juan! They will never take you!" JUAN: "Then I'll make them need me. I'll become a Nazi." | Record scratch + "A NAZI?!" |
 | 7 | The con | "He walked into German intelligence... and gave the performance of his life." JUAN: "I am a true friend of Germany! Let me serve the Reich!" FREDERICO: "Wunderbar. Recruit agents. Send us everything." | CASH · INVISIBLE INK · SECRET CODE NAME |
 | 8 | Open loop | "There was just one tiny problem." ... "He had never been to Britain." | Heartbeat, slam |
 | 9 | Map | "So instead of London... he went to Lisbon. And from a hotel room, with a tourist guidebook and the cinema newsreels..." | Animated route Madrid → Lisbon, dashed "NEVER WENT" to London |
 | 10 | Invention | "...he invented Britain. Fake spies. Fake reports. Fake army bases." | Six fake agents pop in, typewriter |
-| 11 | The litre | ARACELI: "'My man in Glasgow would kill for a litre of wine'? Juan! The British don't use litres!" JUAN: "Do the Germans know that?" "They didn't. Berlin believed every single word." | Speaker cut-ins |
+| 11 | The litre | ARACELI (reading his typed report aloud): "\"My agent in Glasgow... would do anything... for a litre of wine.\"" Then, laughing: "Juan! The British don't even use litres!" JUAN: "Do the Germans know that?" "They didn't. Berlin believed every single word." | She holds the report; the typed sheet appears on screen and the quote types out word by word as she reads; LITRES?! slam |
 | 12 | MI5 | "Meanwhile, British codebreakers were reading those German messages." MI5: "A Nazi spy is running agents all over Britain. Find him. Now." | Radio static |
 | 13 | Payoff | "MI5 was hunting a dangerous Nazi spy... and it was the chicken farmer they'd kicked out. Three times." | Slow push on Juan's smile; THREE TIMES slam |
 | 14 | Cliffhanger | "In 1942, Britain finally let him in. But the biggest threat to the operation... was sleeping in his bed. Follow for Part 2." | PART 2 card |
@@ -94,7 +93,7 @@ Name cards: `JUAN PUJOL · double agent "GARBO"`, `ARACELI · his wife, 23`
 
 **Scene 2. 21 June 1943. The row. She grabs the phone.**
 Name card: `TOMMY HARRIS · his MI5 handler`
-- ARACELI `[ES]` *(shouting into the phone)*: "¡No quiero vivir ni un día más en Inglaterra!" *(I don't want to live another day in England!)*
+- ARACELI *(shouting into the phone)*: "I don't want to live one more day in England!"
 - ARACELI: "Send me home to Spain, or tomorrow I go to the Spanish embassy and tell them everything."
 - *Silence on the line. Harris slowly puts down his pen.*
 
@@ -109,7 +108,7 @@ Name card: `TOMMY HARRIS · his MI5 handler`
 - ARACELI *(colour draining)*: "Because of me?"
 
 **Scene 5. Camp 020. A bare interrogation room. Juan walks in wearing prison clothes and won't meet her eyes.**
-- ARACELI `[ES]` *(sobbing)*: "Firmo lo que sea. No diré ni una palabra. Pero soltadle." *(I'll sign anything. I'll never say a word. Just let him go.)*
+- ARACELI *(sobbing)*: "I'll sign anything. I'll never say a word. Just let him go."
 - *She signs a promise never again to endanger his work.*
 
 **Payoff:** Outside, Juan pulls off the prison jacket. Harris hands him his coat.
@@ -145,10 +144,10 @@ Name cards: `JUAN PUJOL · double agent "GARBO"`, `TOMMY HARRIS · his MI5 handl
 
 **Scene 3. Madrid. Frederico reads the delayed warning.**
 Name card: `"FREDERICO" · his German handler`
-- FREDERICO `[DE]` *(slamming the desk)*: "Er hat uns gewarnt! Und keiner hat zugehört!" *(He warned us! And nobody was listening!)*
+- FREDERICO *(slamming the desk)*: "He warned us! And nobody was listening!"
 
 **Scene 4. 9 June. Juan's most important message.**
-- JUAN `[ES]` *(dictating)*: "Normandía es una distracción. El golpe principal caerá sobre Calais." *(Normandy is a diversion. The main blow will fall on Calais.)*
+- JUAN *(dictating)*: "Normandy is a diversion. The main blow will fall on Calais."
 - *In a German war room, a hand moves the pins back to Calais. Divisions that could have reached Normandy wait for an attack that never comes.*
 
 **Payoff:** 29 July 1944. German radio: an Iron Cross for their star agent. Juan laughs out loud. In November, King George VI gives him an MBE.
@@ -174,8 +173,8 @@ Name card: `ARACELI · his wife, back in Spain`
 - *Araceli stares past him at their three children playing.*
 
 **Scene 2. Venezuela. A dusty bookshop. Juan, older, behind the counter.**
-- CUSTOMER `[ES]`: "Usted no es de aquí. ¿A qué se dedicaba antes?" *(You're not from here. What did you do before?)*
-- JUAN `[ES]` *(wrapping a book)*: "Nada interesante. Criaba gallinas." *(Nothing interesting. I raised chickens.)*
+- CUSTOMER: "You're not from here. What did you do before?"
+- JUAN *(wrapping a book)*: "Nothing interesting. I raised chickens."
 
 **Scene 3. London, the 1970s–80s. Historian Nigel West, surrounded by files.**
 Name card: `NIGEL WEST · spy historian`
@@ -199,10 +198,8 @@ NARRATOR: "The man who helped save D-Day spent 35 years officially dead. Before 
 | --- | --- |
 | "Who & stakes" narrator line + name cards in every part | Standalone rule: a cold viewer of Parts 2–4 knows who Juan is within ~10 s. |
 | Part 2 set in Hendon; adds "macaroni / potatoes / fish", the gas taps, Camp 020 | Real details from the MI5 files (National Archives, reported by the Irish Times and History.com). |
-| Araceli's outburst in Spanish uses her recorded words ("I don't want to live another day in England!") | Real quote, and she spoke no English. |
+| Araceli's outburst uses her recorded words ("I don't want to live another day in England!") | Real quote. |
 | Part 3 adds Garbo's real complaint "I cannot accept excuses or negligence" | Real line from his D-Day message. |
-| Juan's 9 June message in Spanish | His reports went to Madrid in Spanish. |
-| Frederico's outburst in German | Mixed-language decision; authentic texture. |
 | Part 3 introduces "Arabel", the Germans' codename for him | Makes "Hitler's most trusted spy" concrete for cold viewers. |
-| Part 4 bookshop exchange in Venezuelan Spanish | Realism; he was living in Venezuela. |
 | Teasers name the part they point to | They work as navigation, not as required context. |
+| Dialogue is English only, with heavy Spanish/German accents (Part 1 review) | Requested in the Part 1 review; the accents carry the authenticity. |

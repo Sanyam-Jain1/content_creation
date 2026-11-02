@@ -27,7 +27,7 @@ const path = require('path');
   const tmp = path.join(dir, '_render.html');
   fs.writeFileSync(tmp, html);
   await page.goto('file://' + tmp);
-  await page.evaluate((t) => { GarboPlayer.load(t); renderFrame(0); }, tl);
+  await page.evaluate(async (t) => { GarboPlayer.load(t); await GarboPlayer.ready(); renderFrame(0); }, tl);
   try { await page.evaluate(() => document.fonts.ready); } catch (e) {}
   await page.waitForTimeout(400);
 

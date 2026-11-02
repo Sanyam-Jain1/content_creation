@@ -142,7 +142,19 @@ def build(scene_path, provider=None):
             print(f"  ! word anchor {want!r} #{occ} not found in shot {shot['id']}")
             return dict(e, at=e.get("at", 0))
 
-        shot = dict(shot, fx=[anchor(e) for e in shot.get("fx", [])], sfx=[anchor(e) for e in shot.get("sfx", [])])
+        fxs = []
+        for e in shot.get("fx", []):
+            e = anchor(e)
+            if "syncLine" in e and e["syncLine"] < len(mine):
+                e = dict(e, line=mine[e["syncLine"]]["idx"])
+            if "word_end" in e:
+                e = dict(e, dur=anchor({"word": e["word_end"]})["at"] - e.get("at", 0) + 0.6)
+            fxs.append(e)
+        chars = []
+        for ch in shot.get("chars", []):
+            ch = dict(ch, keys=[anchor(k) for k in ch.get("keys", [])])
+            chars.append(ch)
+        shot = dict(shot, fx=fxs, chars=chars, sfx=[anchor(e) for e in shot.get("sfx", [])])
         if shot.get("shakeWords"):
             shot["shakeAt"] = [anchor({"word": w, "occ": o})["at"] for w, o in shot["shakeWords"]]
         s = {k: v for k, v in shot.items() if k != "lines"}
@@ -203,7 +215,7 @@ def build(scene_path, provider=None):
 <base href="{rel}/render/">
 <script src="{rel}/characters/rig.js"></script><script src="{rel}/characters/cast.js"></script>
 <script src="{rel}/render/backgrounds.js"></script><script src="{rel}/render/player.js"></script>
-<script>window.TIMELINE={json.dumps(timeline)};GarboPlayer.load(TIMELINE);renderFrame(0);
+<script>window.TIMELINE={json.dumps(timeline)};GarboPlayer.load(TIMELINE);GarboPlayer.ready().then(()=>renderFrame(0));
 document.getElementById('go').onclick=()=>GarboPlayer.play(document.getElementById('a'));</script></body></html>""")
     talk = sum(L["end"] - L["start"] for L in lines)
     print(f"part {part}: {len(shots)} shots, {len(lines)} lines, {duration:.1f}s, speech covers {talk / duration:.0%} -> {out}")

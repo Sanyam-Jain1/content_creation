@@ -110,9 +110,10 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "But first, Britain told him to get lost.",
+     "text": "But first, Britain told him to get lost. Three times.",
      "emph": [
-      "lost."
+      "lost.",
+      "three"
      ]
     }
    ]
@@ -248,87 +249,6 @@
    ]
   },
   {
-   "id": "rejections",
-   "set": "embassyDoor",
-   "cam": {
-    "from": {
-     "zoom": 1.1
-    },
-    "to": {
-     "zoom": 1.3
-    }
-   },
-   "shakeWords": [
-    [
-     "rejected.",
-     1
-    ],
-    [
-     "rejected.",
-     2
-    ],
-    [
-     "rejected.",
-     3
-    ]
-   ],
-   "sfx": [
-    {
-     "kind": "door_slam",
-     "word": "rejected.",
-     "occ": 1
-    },
-    {
-     "kind": "door_slam",
-     "word": "rejected.",
-     "occ": 2
-    },
-    {
-     "kind": "door_slam",
-     "word": "rejected.",
-     "occ": 3
-    }
-   ],
-   "fx": [
-    {
-     "type": "slam",
-     "text": "1",
-     "word": "rejected.",
-     "occ": 1,
-     "y": 1000,
-     "size": 300,
-     "color": "#f3ead7"
-    },
-    {
-     "type": "slam",
-     "text": "2",
-     "word": "rejected.",
-     "occ": 2,
-     "y": 1000,
-     "size": 300,
-     "color": "#f3ead7"
-    },
-    {
-     "type": "slam",
-     "text": "3",
-     "word": "rejected.",
-     "occ": 3,
-     "y": 1000,
-     "size": 300,
-     "color": "#ff3b2f"
-    }
-   ],
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "He came back. Rejected. Came back again. Rejected. And again. Rejected.",
-     "emph": [
-      "rejected."
-     ]
-    }
-   ]
-  },
-  {
    "id": "kitchen",
    "set": "kitchen",
    "follow": true,
@@ -392,9 +312,10 @@
     },
     {
      "who": "araceli",
-     "text": "[exasperated] ¡Tres veces, Juan! Nunca te van a aceptar.",
-     "lang": "es",
-     "sub": "Three times, Juan! They will never take you."
+     "text": "[exasperated] Three times, Juan! They will never take you!",
+     "emph": [
+      "three"
+     ]
     },
     {
      "who": "juan",
@@ -625,7 +546,7 @@
   {
    "id": "litre",
    "set": "lisbon",
-   "follow": true,
+   "follow": false,
    "chars": [
     {
      "key": "araceli",
@@ -634,9 +555,22 @@
      "y": 1010,
      "s": 1.5,
      "state": {
-      "lookY": 0.6,
-      "brow": 0.7
-     }
+      "lookY": 0.9,
+      "lookX": 0.2,
+      "brow": 0.6
+     },
+     "keys": [
+      {
+       "word": "juan!",
+       "state": {
+        "lookY": 0,
+        "lookX": 0.7,
+        "smile": 0.6,
+        "brow": 0.9
+       }
+      }
+     ],
+     "prop": "paper"
     },
     {
      "key": "juan",
@@ -653,10 +587,16 @@
    "lines": [
     {
      "who": "araceli",
-     "text": "[laughing] 'My man in Glasgow would kill for a litre of wine'? Juan! The British don't use litres!",
+     "text": "[reading aloud, amused] \"My agent in Glasgow... would do anything... for a litre of wine.\"",
+     "nosub": true
+    },
+    {
+     "who": "araceli",
+     "text": "[bursting out laughing] Juan! The British don't even use litres!",
      "emph": [
       "litres!"
-     ]
+     ],
+     "gap": 0.15
     },
     {
      "who": "juan",
@@ -668,6 +608,53 @@
      "emph": [
       "every"
      ]
+    }
+   ],
+   "cam": {
+    "from": {
+     "zoom": 1.0
+    },
+    "to": {
+     "zoom": 1.05
+    }
+   },
+   "fx": [
+    {
+     "type": "document",
+     "syncLine": 0,
+     "at": 0.0,
+     "word_end": "juan!",
+     "header": "REPORT No. 7  ·  AGENT J(3)  ·  GLASGOW",
+     "before": [
+      "To Madrid. Most secret.",
+      "Troop trains seen moving north."
+     ],
+     "quote": "My agent in Glasgow would do anything for a litre of wine.",
+     "after": [
+      "More to follow.   — ARABEL"
+     ]
+    },
+    {
+     "type": "slam",
+     "text": "LITRES?!",
+     "word": "litres!",
+     "y": 560,
+     "size": 130,
+     "color": "#ff3b2f",
+     "rot": -6,
+     "dur": 1.4
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "typewriter",
+     "at": 0.0,
+     "gain": 0.35
+    },
+    {
+     "kind": "glitch",
+     "word": "litres!",
+     "offset": 0.0
     }
    ]
   },

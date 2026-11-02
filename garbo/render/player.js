@@ -25,7 +25,7 @@
   let _ctx = null;
   function measure(text, size, family = 'Montserrat', weight = 900) {
     if (!_ctx) _ctx = document.createElement('canvas').getContext('2d');
-    _ctx.font = `${weight} ${size}px ${family}`;
+    _ctx.font = `${weight} ${size}px "${family}"`;
     return _ctx.measureText(text).width;
   }
 
@@ -204,6 +204,49 @@
         let inner = `<rect x="${540 - pw / 2}" y="${(e.y ?? 420) - size * 1.05}" width="${pw}" height="${lines.length * size * 1.2 + size * 0.45}" fill="#0b0a09" opacity="0.8" rx="8"/>`;
         lines.forEach((ln, i) => { inner += `<text x="540" y="${(e.y ?? 420) + i * size * 1.2}" text-anchor="middle" font-family="${FONT_SERIF}" font-weight="700" font-size="${size}" fill="${e.color || '#f3ead7'}">${esc(ln)}</text>`; });
         g += `<g opacity="${a}">${inner}</g>`;
+      } else if (e.type === 'document') {
+        // a typed agent report; the quoted line types out in sync with the reader's voice
+        const L = TL.lines.find((l) => l.idx === e.line);
+        const lt2 = L ? t - L.start : 0;
+        const qWords = e.quote.split(' ');
+        let shown = qWords.length;
+        if (L && L.words && L.words.length) {
+          const spoken = L.words.filter((w) => lt2 >= w.start).length;
+          shown = Math.round(qWords.length * spoken / L.words.length);
+          if (t > L.end) shown = qWords.length;
+        }
+        const ins = back(clamp(lt / 0.3, 0, 1));
+        const x0 = 150, y0 = 320, w = 780, h = 500;
+        let doc = `<g transform="translate(540,${y0 + h / 2}) rotate(-2.5) scale(${0.7 + 0.3 * ins}) translate(-540,${-(y0 + h / 2)})">`;
+        doc += `<rect x="${x0 + 10}" y="${y0 + 14}" width="${w}" height="${h}" fill="#000" opacity="0.35"/>`;
+        doc += `<rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="#efe6cf" stroke="#bfb08a" stroke-width="2"/>`;
+        doc += `<text x="${x0 + 40}" y="${y0 + 62}" font-family="${FONT_MONO}" font-size="28" fill="#5a1a14" letter-spacing="1">${esc(e.header)}</text>`;
+        doc += `<line x1="${x0 + 40}" y1="${y0 + 84}" x2="${x0 + w - 40}" y2="${y0 + 84}" stroke="#5a1a14" stroke-width="2"/>`;
+        let yy = y0 + 132;
+        for (const ln of e.before || []) { doc += `<text x="${x0 + 40}" y="${yy}" font-family="${FONT_MONO}" font-size="32" fill="#2d2a24">${esc(ln)}</text>`; yy += 48; }
+        yy += 20;
+        // quoted line, wrapped, revealed word by word with a highlighter
+        const qLines = wrap('“' + e.quote + '”', 30);
+        let wi = 0;
+        for (const ql of qLines) {
+          let xx = x0 + 40;
+          for (const word of ql.split(' ')) {
+            const vis = wi < shown + (wi === 0 ? 1 : 0);
+            const wpx = measure(word, 40, 'Courier Prime', 400);
+            if (vis) {
+              doc += `<rect x="${xx - 4}" y="${yy - 36}" width="${wpx + 12}" height="48" fill="#ffd23f" opacity="0.7"/>`;
+              doc += `<text x="${xx}" y="${yy}" font-family="${FONT_MONO}" font-size="40" fill="#141210">${esc(word)}</text>`;
+            }
+            xx += wpx + measure(' ', 40, 'Courier Prime', 400);
+            wi++;
+          }
+          yy += 58;
+        }
+        yy += 20;
+        for (const ln of e.after || []) { doc += `<text x="${x0 + 40}" y="${yy}" font-family="${FONT_MONO}" font-size="32" fill="#2d2a24">${esc(ln)}</text>`; yy += 48; }
+        doc += `<g transform="rotate(-14 ${x0 + w - 170} ${y0 + h - 70})"><rect x="${x0 + w - 300}" y="${y0 + h - 115}" width="260" height="80" fill="none" stroke="#a02424" stroke-width="5"/><text x="${x0 + w - 170}" y="${y0 + h - 60}" text-anchor="middle" font-family="${FONT_MONO}" font-size="36" font-weight="700" fill="#a02424">GEHEIM</text></g>`;
+        doc += `</g>`;
+        g += `<g opacity="${a}">${doc}</g>`;
       } else if (e.type === 'tag') {
         g += `<g opacity="${a}"><text x="540" y="${e.y ?? 1500}" text-anchor="middle" font-family="${FONT_MONO}" font-size="${e.size || 28}" fill="${e.color || '#d8cdb4'}" letter-spacing="5">${esc(e.text)}</text></g>`;
       }
@@ -262,7 +305,15 @@
       if (c.state && c.state.blink) state.blink = Math.max(state.blink, c.state.blink);
       const s = c.s || 1.5;
       const bob = talking ? Math.sin(t * 6.2) * 3 : 0;
-      chars += `<g transform="translate(${c.x},${c.y + bob}) scale(${c.flip ? -s : s},${s}) translate(-300,-300)">${draw(prof, state)}</g>`;
+      let prop = '';
+      if (c.prop === 'paper' && !(c.propUntil != null && st > c.propUntil)) {
+        // a held sheet in front of the chest, hands as two skin ovals at its lower corners
+        prop = `<g transform="translate(0,-170) rotate(-8 300 720)"><rect x="185" y="600" width="230" height="290" fill="#efe6cf" stroke="#bfb08a" stroke-width="3"/>` +
+          [640, 670, 700, 730, 790, 820].map((yy) => `<line x1="210" y1="${yy}" x2="${yy === 730 ? 330 : 390}" y2="${yy}" stroke="#6a6458" stroke-width="5" opacity="0.6"/>`).join('') +
+          `<rect x="205" y="756" width="190" height="22" fill="#ffd23f" opacity="0.8"/>` +
+          `<ellipse cx="190" cy="850" rx="34" ry="26" fill="${prof.skin}"/><ellipse cx="410" cy="850" rx="34" ry="26" fill="${prof.skin}"/></g>`;
+      }
+      chars += `<g transform="translate(${c.x},${c.y + bob}) scale(${c.flip ? -s : s},${s}) translate(-300,-300)">${draw(prof, state)}${prop}</g>`;
     });
 
     let svg = `<g transform="${camT}">${set.back}${chars}${set.front}</g>`;
@@ -303,6 +354,12 @@
     };
     tick();
   }
-  root.GarboPlayer = { load, renderFrame, renderAt, play };
+  // fonts must be loaded before the first measure(), or widths come from a fallback face
+  async function ready() {
+    const specs = ['900 84px "Montserrat"', '400 40px "Courier Prime"', '700 42px "Playfair Display"'];
+    await Promise.all(specs.map((f) => document.fonts.load(f)));
+    _ctx = null;
+  }
+  root.GarboPlayer = { load, renderFrame, renderAt, play, ready };
   root.renderFrame = renderFrame;
 })(window);
