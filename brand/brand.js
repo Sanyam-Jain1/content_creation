@@ -76,6 +76,48 @@
     return svg(1080, 1080, g, size);
   }
 
+
+  // ---- FINAL: @waitwhattv, the surprised TV ----
+  // A retro TV with antennae whose screen shows the "wait, what?" reaction eyes.
+  function tvMascot(o = {}) {
+    const body = o.body || INK, screen = o.screen || '#1d2b36', brow = o.brow || Y, ant = o.ant || INK;
+    let g = '';
+    g += `<ellipse cx="540" cy="905" rx="300" ry="34" fill="#000" opacity="${o.shadow ?? 0.18}"/>`;           // floor shadow
+    g += `<g transform="rotate(${o.tilt ?? -5} 540 600)">`;
+    // antennae
+    g += `<path d="M520,345 L410,165 M560,345 L700,140" stroke="${ant}" stroke-width="26" stroke-linecap="round"/>`;
+    g += `<circle cx="410" cy="165" r="34" fill="${o.knob || RED}"/><circle cx="700" cy="140" r="34" fill="${o.knob || RED}"/>`;
+    // feet
+    g += `<rect x="310" y="840" width="90" height="56" rx="20" fill="${body}"/><rect x="680" y="840" width="90" height="56" rx="20" fill="${body}"/>`;
+    // body
+    g += `<rect x="180" y="330" width="720" height="540" rx="100" fill="${body}"/>`;
+    g += `<rect x="180" y="330" width="720" height="540" rx="100" fill="url(#tvsh)"/>`;
+    // screen with glow
+    g += `<rect x="232" y="385" width="616" height="430" rx="70" fill="${screen}"/>`;
+    g += `<rect x="232" y="385" width="616" height="430" rx="70" fill="url(#tvgl)"/>`;
+    // eyes
+    for (const [cx, dy, rot, by] of [[410, 8, -10, 0], [672, -6, 14, -26]]) {
+      g += `<ellipse cx="${cx}" cy="${608 + dy}" rx="112" ry="140" fill="#fff"/>`;
+      g += `<circle cx="${cx + 16}" cy="${628 + dy}" r="30" fill="${INK}"/>`;
+      g += `<circle cx="${cx + 27}" cy="${616 + dy}" r="10" fill="#fff"/>`;
+      g += `<rect x="${cx - 100}" y="${432 + dy + by}" width="200" height="34" rx="17" fill="${brow}" transform="rotate(${rot} ${cx} ${450 + dy + by})"/>`;
+    }
+    // screen glare
+    g += `<path d="M262,430 Q262,410 285,410 L420,410" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity="0.35" fill="none"/>`;
+    g += `</g>`;
+    return g;
+  }
+  const TVDEFS = `<defs>
+    <radialGradient id="tvbg" cx="0.5" cy="0.45" r="0.65"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="${Y}"/></radialGradient>
+    <radialGradient id="tvbgInk" cx="0.5" cy="0.45" r="0.7"><stop offset="0" stop-color="#2a2620"/><stop offset="1" stop-color="${INK}"/></radialGradient>
+    <linearGradient id="tvsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.08"/><stop offset="1" stop-color="#000" stop-opacity="0.25"/></linearGradient>
+    <radialGradient id="tvgl" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#4ad0ff" stop-opacity="0.25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>`;
+  function pfpTV(size, variant = 'yellow') {
+    if (variant === 'ink') return svg(1080, 1080, TVDEFS + `<rect width="1080" height="1080" fill="url(#tvbgInk)"/>` + tvMascot({ body: Y, ant: Y, brow: Y, knob: RED, shadow: 0.4 }), size);
+    if (variant === 'red') return svg(1080, 1080, TVDEFS + `<rect width="1080" height="1080" fill="${RED}"/>` + tvMascot({ knob: Y, shadow: 0.2 }), size);
+    return svg(1080, 1080, TVDEFS + `<rect width="1080" height="1080" fill="url(#tvbg)"/>` + tvMascot(), size);
+  }
+
   // Highlight covers: yellow icon on ink
   const ICONS = {
     'GARBO': `<ellipse cx="540" cy="640" rx="120" ry="150" fill="${Y}"/><ellipse cx="540" cy="480" rx="240" ry="46" fill="${Y}"/><path d="M395,485 Q395,320 540,315 Q685,320 685,485Z" fill="${Y}"/><rect x="395" y="440" width="290" height="30" fill="${RED}"/>`,
@@ -103,7 +145,7 @@
     return svg(1080, 1920, `<defs><linearGradient id="cv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.6"/></linearGradient></defs>${g}`, size);
   }
 
-  window.BRAND = { pfpCliff, pfpHook, pfpBubble, pfpInterrobang, pfpEyes, pfpWordmark, highlight, coverPart1, HIGHLIGHTS: Object.keys(ICONS) };
+  window.BRAND = { pfpTV, pfpCliff, pfpHook, pfpBubble, pfpInterrobang, pfpEyes, pfpWordmark, highlight, coverPart1, HIGHLIGHTS: Object.keys(ICONS) };
 
   // ---- fill the board if present ----
   const pf = document.getElementById('pfps');

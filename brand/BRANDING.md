@@ -14,29 +14,23 @@ Visual board: `export/brand_board.png`. All assets: `export/`. Regenerate with
 Chosen. The viewer's reaction is the name: it promises a twist without tying the page to
 any genre or to the word "stories".
 
-**Handle**: take the first one free on Instagram, TikTok and YouTube (same everywhere):
+**Handle: `@waitwhattv`** (chosen and registered). Use the same handle on Instagram,
+TikTok and YouTube.
 
-| # | Handle | Note |
-| --- | --- | --- |
-| 1 | `@waitwhat` | Cleanest; probably taken |
-| 2 | `@wait.what` | Same name with a dot |
-| 3 | `@waitwhat.tv` | ".tv" signals a video channel, not "stories" |
-| 4 | `@waitwhaaat` | How people actually say it; memorable and more likely free |
-| 5 | `@thewaitwhat` | |
-| 6 | `@waitwhat.hq` | |
+## 2. Profile picture (final)
 
-All six are valid on all three platforms (letters, dots, underscores; 30 characters max).
-Availability must be checked by hand.
+**The surprised TV**: a retro TV with red-tipped antennae whose screen shows the
+"wait, what?" reaction eyes (one brow up, tiny pupils), on brand yellow. The TV ties
+to the `tv` in the handle; the antennae give it an outline that reads at 32 px.
 
-## 2. Profile picture
+| File | Use |
+| --- | --- |
+| `export/PROFILE_PICTURE_waitwhattv.png` | **Upload this** (1080×1080, yellow) |
+| `export/pfp_waitwhattv_ink.png`, `export/pfp_waitwhattv_red.png` | Alternate colourways (event/seasonal swaps) |
+| `export/pfp_waitwhattv_preview.png` | How it looks in light/dark mode and at 110/56/32 px |
 
-| Concept | Read at 32 px | Notes |
-| --- | --- | --- |
-| **A · The reaction** (pick) | Yes | Two wide eyes, tiny pupils, raised yellow brows on ink. A face is recognised fastest in a feed, and it *is* the "wait, what?" feeling. Can be animated as a 0.5 s blink sting at the end of every reel. |
-| B · Interrobang ?! | Yes | Pure type, very bold on yellow. |
-| C · Wordmark bubble | Borderline | The full name in a speech bubble; best for the YouTube banner. |
-
-Files: `export/pfp_A_reaction.png` (1080×1080). Same palette as the video captions.
+The mascot can also be animated as a 0.5 s end sting on every reel (the eyes blink, one
+brow pops up).
 
 ## 3. Bio
 
