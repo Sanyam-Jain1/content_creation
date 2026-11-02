@@ -175,6 +175,20 @@
       back += `<text x="590" y="1440" font-family="Georgia" font-size="36" fill="#6a5a36" letter-spacing="6">SPAIN</text><text x="840" y="1020" font-family="Georgia" font-size="36" fill="#6a5a36" letter-spacing="6">FRANCE</text><text x="560" y="520" font-family="Georgia" font-size="30" fill="#6a5a36" letter-spacing="4">BRITAIN</text>`;
       return { back, front: vignette('map_v', 0.6) };
     },
+
+    // London bedroom at night (Part 1 cliffhanger / Part 2): moonlight, headboard, rain
+    bedroom(t) {
+      let back = wall('#2c3446', null);
+      back += window_(600, 220, 330, 520, '#1a2338', '#3a3f4e', { rain: true, t, city: `<circle cx="820" cy="320" r="34" fill="#e8ecf4" opacity="0.85"/>` });
+      back += `<path d="M600,740 L930,740 L1080,1500 L380,1500Z" fill="#c8d4f0" opacity="0.08"/>`;
+      back += frame_(130, 330, 220, 280, rect(130, 330, 220, 280, '#3a3a44') + `<ellipse cx="240" cy="450" rx="54" ry="70" fill="#8a7a6a" opacity="0.7"/>`, '#6a5a3a');
+      back += lightPool('bd_l', 760, 520, 760, '#b8c8f0', 0.22);
+      // headboard + pillows behind the character, bed in the foreground
+      back += `<path d="M90,1180 Q90,1040 240,1040 L840,1040 Q990,1040 990,1180 L990,1320 L90,1320Z" fill="#4a3424"/>`;
+      back += `<ellipse cx="330" cy="1300" rx="190" ry="60" fill="#d8dce6"/><ellipse cx="750" cy="1300" rx="190" ry="60" fill="#cfd4de"/>`;
+      const front = `<path d="M-20,1560 Q540,1480 1100,1560 L1100,1920 L-20,1920Z" fill="#7a8aa8"/><path d="M-20,1600 Q540,1530 1100,1600" fill="none" stroke="#5a6a88" stroke-width="8"/>`;
+      return { back, front: front + vignette('bd_v', 0.8) };
+    },
     title(t) {
       return { back: rect(0, 0, W, H, '#0e0d0c') + lightPool('ti_l', 540, 860, 900, '#c8a060', 0.18), front: '' };
     },

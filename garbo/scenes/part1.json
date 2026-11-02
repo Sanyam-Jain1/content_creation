@@ -413,16 +413,43 @@
   },
   {
    "id": "problem",
-   "set": "title",
+   "set": "abwehr",
    "punch": false,
    "cam": {
     "from": {
-     "zoom": 1.0
+     "zoom": 1.35,
+     "y": 160
     },
     "to": {
-     "zoom": 1.06
+     "zoom": 1.7,
+     "y": 330
     }
    },
+   "chars": [
+    {
+     "key": "juan",
+     "rig": "juan1941",
+     "x": 540,
+     "y": 990,
+     "s": 1.5,
+     "turn": 0,
+     "state": {
+      "smile": 0.7,
+      "brow": 0.4
+     },
+     "keys": [
+      {
+       "word": "problem.",
+       "state": {
+        "smile": -0.3,
+        "brow": -0.2,
+        "lookX": -0.6,
+        "lookY": -0.1
+       }
+      }
+     ]
+    }
+   ],
    "sfx": [
     {
      "kind": "heartbeat",
@@ -430,20 +457,10 @@
      "gain": 0.8
     },
     {
-     "kind": "impact",
-     "word": "britain.",
-     "offset": -0.2
-    }
-   ],
-   "fx": [
-    {
-     "type": "slam",
-     "text": "HE HAD NEVER\nBEEN TO BRITAIN",
-     "word": "britain.",
-     "offset": -0.2,
-     "y": 820,
-     "size": 100,
-     "color": "#ffd23f"
+     "kind": "glitch",
+     "word": "problem.",
+     "offset": 0.0,
+     "gain": 0.7
     }
    ],
    "lines": [
@@ -453,14 +470,65 @@
      "emph": [
       "problem."
      ]
+    }
+   ],
+   "tail": 0.1
+  },
+  {
+   "id": "never",
+   "set": "map",
+   "punch": false,
+   "cam": {
+    "from": {
+     "zoom": 1.45,
+     "x": -110,
+     "y": 560
     },
+    "to": {
+     "zoom": 1.6,
+     "x": -128,
+     "y": 576
+    }
+   },
+   "sfx": [
+    {
+     "kind": "impact",
+     "word": "britain.",
+     "offset": -0.15
+    }
+   ],
+   "fx": [
+    {
+     "type": "circle",
+     "word": "britain.",
+     "offset": -0.2,
+     "x": 540,
+     "y": 760,
+     "r": 300,
+     "label": "NEVER BEEN HERE",
+     "ly": 380
+    },
+    {
+     "type": "slam",
+     "text": "?",
+     "word": "never",
+     "y": 900,
+     "size": 320,
+     "color": "#ff3b2f",
+     "stroke": 18
+    }
+   ],
+   "lines": [
     {
      "who": "narrator",
      "text": "He had never been to Britain.",
-     "gap": 0.35,
-     "nosub": true
+     "emph": [
+      "never",
+      "britain."
+     ]
     }
-   ]
+   ],
+   "tail": 0.5
   },
   {
    "id": "map",
@@ -770,38 +838,121 @@
    ]
   },
   {
-   "id": "next",
-   "set": "title",
+   "id": "next_map",
+   "set": "map",
    "punch": false,
-   "fadeOut": 0.4,
+   "cam": {
+    "from": {
+     "zoom": 1.0,
+     "y": -120
+    },
+    "to": {
+     "zoom": 1.12,
+     "y": -40
+    }
+   },
+   "fx": [
+    {
+     "type": "route",
+     "points": [
+      "Lisbon",
+      "London"
+     ],
+     "draw": 1.6,
+     "at": 0.2,
+     "color": "#ffd23f"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1942, Britain finally let him in.",
+     "emph": [
+      "finally"
+     ]
+    }
+   ],
+   "tail": 0.1
+  },
+  {
+   "id": "next",
+   "set": "bedroom",
+   "punch": false,
+   "grade": "#3a4a7a",
+   "gradeOp": 0.25,
+   "cam": {
+    "from": {
+     "zoom": 1.0,
+     "y": 0
+    },
+    "to": {
+     "zoom": 1.25,
+     "y": 110
+    }
+   },
+   "chars": [
+    {
+     "key": "araceli",
+     "rig": "araceli1943",
+     "x": 540,
+     "y": 1010,
+     "s": 1.5,
+     "turn": 0,
+     "state": {
+      "lookX": -0.5,
+      "lookY": 0.2,
+      "brow": -0.4,
+      "smile": -0.2
+     }
+    }
+   ],
    "sfx": [
     {
      "kind": "riser",
-     "at": 0.0,
+     "word": "sleeping",
+     "offset": -0.6,
      "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "word": "bed.",
+     "offset": 0.0,
+     "gain": 0.8
     }
    ],
    "fx": [
     {
+     "type": "circle",
+     "word": "bed.",
+     "offset": 0.0,
+     "x": 540,
+     "y": 980,
+     "r": 210,
+     "label": "HIS WIFE",
+     "ly": 700,
+     "dur": 1.6
+    },
+    {
      "type": "title",
      "text": "PART 2",
-     "at": 0.0,
-     "y": 600,
+     "word": "follow",
+     "y": 420,
      "size": 90,
      "color": "#ffd23f"
     },
     {
      "type": "title",
      "text": "The wife who almost\nblew it all",
-     "at": 0.6,
-     "y": 760,
-     "size": 60
+     "word": "follow",
+     "offset": 0.2,
+     "y": 560,
+     "size": 56
     }
    ],
    "lines": [
     {
      "who": "narrator",
-     "text": "In 1942, Britain finally let him in. But the biggest threat to the operation... was sleeping in his bed.",
+     "text": "But the biggest threat to the whole operation... was sleeping in his bed.",
      "emph": [
       "threat",
       "bed."
@@ -810,10 +961,10 @@
     {
      "who": "narrator",
      "text": "Follow for Part 2.",
-     "gap": 0.25
+     "gap": 0.35
     }
    ],
-   "tail": 0.8
+   "tail": 1.0
   }
  ]
 }

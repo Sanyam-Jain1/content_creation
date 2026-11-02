@@ -281,6 +281,8 @@
         cy = clamp(cy + (shot.followY ?? 140), -960 * (z - 1) + 4, 960 * (z - 1) - 4);
       }
     }
+    // never reveal past the edge of the set
+    { const lx = Math.max(0, 540 * (z - 1)), ly = Math.max(0, 960 * (z - 1)); cx = clamp(cx, -lx, lx); cy = clamp(cy, -ly, ly); }
     let shake = 0;
     for (const s of shot.shakeAt || []) if (st >= s && st < s + 0.22) shake = (hash(t * 60) - 0.5) * 26 * (1 - (st - s) / 0.22);
     const camT = `translate(${540 + cx + shake},${960 + cy}) scale(${z}) translate(-540,-960)`;
