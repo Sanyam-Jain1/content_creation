@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Brand board</title>
+<link href="../garbo/assets/fonts/fonts.css" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--paper:#efe6cf;--yellow:#ffd23f;--red:#ff3b2f;--manila:#d9c08a}
+body{margin:0;background:#1a1816;color:#f3ead7;font-family:'Montserrat',sans-serif;width:1080px}
+.sec{padding:40px 48px;border-bottom:2px solid #2c2925}
+h1{font:900 64px Montserrat;margin:0 0 6px;letter-spacing:1px} h2{font:900 30px Montserrat;color:var(--yellow);margin:0 0 18px;letter-spacing:3px}
+.mono{font-family:'Courier Prime',monospace}
+.row{display:flex;gap:28px;align-items:flex-start}
+.pfp{width:300px;text-align:center}.pfp svg{border-radius:50%;display:block;margin:0 auto 12px}
+.small{display:flex;gap:10px;justify-content:center;margin-bottom:10px}.small svg{border-radius:50%}
+.cap{font:400 22px 'Courier Prime';color:#d8cdb4}
+.name{background:var(--ink);border-radius:10px;padding:22px 26px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.tag{font:400 22px 'Courier Prime';color:var(--yellow)}
+.profile{background:#000;border-radius:16px;padding:28px;display:flex;gap:26px}
+.bio{font:400 26px/1.45 'Inter',Helvetica,Arial,sans-serif;color:#fff}
+.hl{display:flex;gap:26px}.hl div{text-align:center;font:400 20px Arial;color:#ddd}
+.hl svg{border-radius:50%;border:3px solid #444;display:block;margin-bottom:8px}
+.sw{display:flex;gap:14px}.sw div{width:140px;height:110px;border-radius:8px;display:flex;align-items:flex-end;padding:8px;box-sizing:border-box;font:400 18px 'Courier Prime'}
+</style></head><body>
+<div class="sec"><h1>PAGE BRANDING</h1><div class="cap">Animated true stories: spies, cons, cover-ups. Launch series: FILE 001 · GARBO</div></div>
+
+<div class="sec"><h2>1 · NAME OPTIONS</h2>
+ <div class="name"><div><div style="font:900 54px Montserrat">EYES <span style="background:#000;color:var(--yellow);padding:0 10px;border:3px solid var(--yellow)">ONLY</span></div><div class="tag">@eyesonly.files · "stories never meant for your eyes"</div></div><div class="tag" style="color:#7ee08a">RECOMMENDED</div></div>
+ <div class="name"><div><div style="font:700 50px 'Playfair Display'">The Double Cross</div><div class="tag">@thedoublecross.tv · spies &amp; betrayal</div></div></div>
+ <div class="name"><div><div style="font:900 52px Montserrat;color:var(--paper)">PAPER<span style="color:var(--red)">SPIES</span></div><div class="tag">@paperspies · playful, animated</div></div></div>
+</div>
+
+<div class="sec"><h2>2 · PROFILE PICTURE CONCEPTS</h2><div class="row" id="pfps"></div>
+ <div class="cap" style="margin-top:16px">Each shown large and at the real feed sizes (110 / 56 / 32 px). A pfp must read at 32 px.</div></div>
+
+<div class="sec"><h2>3 · PROFILE SETUP (EYES ONLY)</h2>
+ <div class="profile"><div id="pfpMini"></div><div>
+  <div style="font:700 30px Arial;margin-bottom:6px">Eyes Only</div>
+  <div class="bio">🕵️ Real stories they never wanted you to see<br>Spies · cons · cover-ups, animated<br>📁 New file every week 👇<br><span style="color:#9bd">linktr.ee/eyesonly</span></div>
+ </div></div>
+ <div class="hl" style="margin-top:24px" id="hls"></div>
+</div>
+
+<div class="sec"><h2>4 · REEL COVER (GRID-SAFE)</h2><div class="row"><div id="cover"></div>
+ <div class="cap" style="max-width:420px">Full 9:16 cover. The dashed box is the 3:4 area the profile grid shows, so the headline and face stay inside it.<br><br>Every cover: one face + a 3-word headline + FILE number. The grid reads like a case wall.</div></div></div>
+
+<div class="sec"><h2>5 · PALETTE &amp; TYPE</h2><div class="sw">
+ <div style="background:#0f0e0c;color:#fff;border:1px solid #444">INK #0f0e0c</div><div style="background:#ffd23f;color:#000">YELLOW #ffd23f</div>
+ <div style="background:#ff3b2f;color:#000">STAMP #ff3b2f</div><div style="background:#efe6cf;color:#000">PAPER #efe6cf</div><div style="background:#d9c08a;color:#000">MANILA #d9c08a</div></div>
+ <div style="margin-top:18px;font:900 40px Montserrat">MONTSERRAT BLACK <span class="cap">captions, headlines</span></div>
+ <div style="font:400 34px 'Courier Prime'">Courier Prime <span class="cap">files, labels</span></div>
+ <div style="font:700 36px 'Playfair Display'">Playfair Display <span class="cap">titles</span></div></div>
+
+<script src="../garbo/characters/rig.js"></script><script src="../garbo/characters/cast.js"></script>
+<script src="brand.js"></script>
+</body></html>
