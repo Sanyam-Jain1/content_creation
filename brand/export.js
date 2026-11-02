@@ -9,9 +9,9 @@ const { chromium } = require('playwright'); const path = require('path'); const 
   await p.evaluate(() => { const s = document.createElement('script'); s.src = 'brand.js'; document.body.appendChild(s); });
   await p.waitForTimeout(500);
   await p.screenshot({ path: path.join(out, 'brand_board.png'), fullPage: true });
-  const assets = [['pfp_A_agent', 'BRAND.pfpAgent(1080)', 1080, 1080], ['pfp_B_garbo', 'BRAND.pfpCharacter(1080)', 1080, 1080], ['pfp_C_stamp', 'BRAND.pfpStamp(1080)', 1080, 1080],
+  const assets = [['pfp_A_cliffhanger', 'BRAND.pfpCliff(1080)', 1080, 1080], ['pfp_B_storyhook', 'BRAND.pfpHook(1080)', 1080, 1080], ['pfp_C_monogram', 'BRAND.pfpBubble(1080)', 1080, 1080],
     ['cover_part1', 'BRAND.coverPart1(1080,false)', 1080, 1920]].concat(
-    ['FILE 001', 'SOURCES', 'NEXT', 'ABOUT'].map(n => [`highlight_${n.replace(' ', '').toLowerCase()}`, `BRAND.highlight(${JSON.stringify(n)},1080)`, 1080, 1080]));
+    ['GARBO', 'SOURCES', 'NEXT', 'ABOUT'].map(n => [`highlight_${n.replace(' ', '').toLowerCase()}`, `BRAND.highlight(${JSON.stringify(n)},1080)`, 1080, 1080]));
   for (const [name, expr, w, h] of assets) {
     await p.setViewportSize({ width: w, height: h });
     await p.evaluate((e) => { document.body.innerHTML = `<div style="width:${0}">` + eval(e) + '</div>'; document.body.style.margin = 0; document.body.style.width = 'auto'; }, expr);
