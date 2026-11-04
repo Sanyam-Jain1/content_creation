@@ -18,10 +18,9 @@ Current schedule (edit `queue.json`; times are in `config.timezone`, currently `
 
 ---
 
-## Step 1: put this on the default branch
-GitHub only runs scheduled workflows from the repository's **default branch**. Merge the branch
-`claude/zealous-rubin-ps5rhy` into the default branch (open a pull request on GitHub and merge it).
-Then set `"branch"` in `queue.json` to the default branch's name. This is only a fallback; the Action fills it in automatically.
+## Step 1: default branch (done)
+GitHub only runs scheduled workflows from the repository's **default branch** (`claude/epic-dirac-c85o6e`).
+The reels, the queue and the workflow are merged there already. If you ever change the default branch, update `"branch"` in `queue.json`.
 
 ## Step 2: Instagram (official API, no Facebook Page needed)
 1. In the Instagram app, switch @waitwhattv to a **Professional account** (Settings → Account type and tools).
