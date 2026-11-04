@@ -1,0 +1,88 @@
+{
+ "slug": "eat_sunlight",
+ "title": "What if you could eat sunlight?",
+ "fps": 30,
+ "hook": {"line1": "WHAT IF YOU COULD", "line2": "EAT SUNLIGHT?", "pulse": "plant"},
+ "badge": "WHAT IF? · PLANT HUMANS",
+ "endCard": {"shot": "end", "cue": "end", "title": "WOULD YOU GO GREEN?", "sub": "TELL ME IN THE COMMENTS ↓"},
+ "sfx": {
+  "sparkle": ["A magical sparkle chime transformation shimmer, bright and whimsical", 1.2],
+  "birds": ["Cheerful morning birdsong in a sunny park, gentle", 4.0],
+  "chalk": ["Fast squeaky chalk writing on a chalkboard", 1.5],
+  "calculator": ["Fast calculator button beeps followed by a sad error beep", 1.2],
+  "battery": ["A phone low battery warning beep, two descending tones", 0.8],
+  "plate": ["A ceramic plate set down on a wooden table with a small clink", 0.8],
+  "stomach": ["A long loud comedic stomach growl", 1.5],
+  "wind": ["A strong gust of wind with a huge fabric sail flapping loudly", 2.5],
+  "tennis": ["A single tennis ball hit, a crisp pok", 0.5],
+  "jog_collapse": ["Heavy jogging footsteps slowing down, exhausted panting, then a wooden thud collapse", 2.2],
+  "crowd_cheer": ["A small crowd cheering and applauding", 2.0]
+ },
+ "score": {
+  "A": "Bright sunny whimsical ukulele, glockenspiel and hand claps, nature, cheerful morning, gentle magic, constant bouncy rhythm",
+  "B": "Comedic reality check: deadpan plucky bassoon and pizzicato over a ticking groove, nerdy math vibe, building silliness",
+  "C": "Goofy windy finale: whistling woodwinds, bouncy tuba and snare, slapstick and silly, ending on a lazy resolved chord"
+ },
+ "shots": [
+  {"id": "hook", "scene": "mirror", "music": "A", "header": true, "lead": 0.15, "tail": 0.1, "flash": false,
+   "cues": {"green": {"word": "green.", "offset": -0.1}, "plant": {"word": "plant."}},
+   "sfx": [{"kind": "birds", "at": 0, "gain": 0.35}, {"kind": "sparkle", "word": "green.", "offset": -0.15, "gain": 0.9}, {"kind": "pop", "word": "plant.", "gain": 0.6}],
+   "lines": [
+    {"text": "Tomorrow morning, you wake up green.", "emph": ["green."]},
+    {"text": "Your skin can photosynthesize, just like a plant.", "gap": 0.12, "emph": ["photosynthesize,"]}
+   ]},
+  {"id": "dream", "scene": "dream", "music": "A", "lead": 0.05, "tail": 0.25,
+   "cues": {"groceries": {"word": "groceries."}, "cooking": {"word": "cooking."}, "lunch": {"word": "standing", "offset": -0.3}},
+   "sfx": [{"kind": "buzzer", "word": "groceries.", "gain": 0.45}, {"kind": "buzzer", "word": "cooking.", "gain": 0.45}, {"kind": "ding", "word": "outside.", "gain": 0.6}],
+   "lines": [
+    {"text": "No groceries. No cooking.", "emph": []},
+    {"text": "Lunch is just... standing outside.", "gap": 0.12, "emph": ["outside."]}
+   ]},
+  {"id": "math", "scene": "math", "music": "B", "lead": 0.05, "tail": 0.25,
+   "cues": {"math": {"word": "math.", "offset": -0.1}},
+   "sfx": [{"kind": "scratch", "at": 0.6, "gain": 0.8}, {"kind": "calculator", "word": "math.", "gain": 0.8}],
+   "lines": [
+    {"text": "Sounds perfect.", "emph": []},
+    {"text": "[serious] Until you do the math.", "gap": 0.25, "emph": ["math."]}
+   ]},
+  {"id": "skin", "scene": "skin", "music": "B", "lead": 0.05, "tail": 0.25,
+   "cues": {"door": {"word": "door.", "offset": -0.1}},
+   "sfx": [{"kind": "pop", "word": "door.", "gain": 0.7}],
+   "lines": [{"text": "All your skin together is only about the size of a door.", "emph": ["door."]}]},
+  {"id": "sun", "scene": "sunbathe", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"all": {"word": "day"}, "one": {"word": "one", "offset": -0.05}},
+   "sfx": [{"kind": "battery", "word": "percent", "gain": 0.8}],
+   "lines": [
+    {"text": "Even if you lay in full sunshine all day long...", "emph": ["all", "day"]},
+    {"text": "you'd make about one percent of the energy you need.", "gap": 0.12, "emph": ["one", "percent"], "show": {"one": "1", "percent": "%"}}
+   ]},
+  {"id": "crackers", "scene": "crackers", "music": "B", "lead": 0.05, "tail": 0.45,
+   "cues": {"crackers": {"word": "crackers.", "offset": -0.2}},
+   "shakeWords": [["crackers.", 1]],
+   "sfx": [{"kind": "plate", "word": "crackers.", "offset": -0.2, "gain": 0.9}, {"kind": "stomach", "word": "crackers.", "offset": 0.4, "gain": 0.6}],
+   "lines": [{"text": "A whole day of sunbathing earns you... two crackers.", "emph": ["two", "crackers."], "show": {"two": "2"}}]},
+  {"id": "tennis", "scene": "tennis", "music": "B", "lead": 0.05, "tail": 0.4,
+   "cues": {"court": {"word": "tennis", "offset": -0.3}},
+   "sfx": [{"kind": "tennis", "at": 0.2, "gain": 0.6}, {"kind": "whoosh", "word": "tennis", "offset": -0.35, "gain": 0.6}, {"kind": "crowd_gasp", "word": "court.", "gain": 0.6}],
+   "fx": [{"type": "tag", "text": "≈ 200 m² OF SKIN", "word": "court.", "y": 470, "size": 56, "color": "#ffd23f"}],
+   "lines": [{"text": "To actually live on sunlight, you'd need skin the size of a tennis court.", "emph": ["tennis", "court."]}]},
+  {"id": "cape", "scene": "cape", "music": "C", "lead": 0.05, "tail": 0.35,
+   "cues": {"cape": {"word": "cape.", "offset": -0.3}},
+   "sfx": [{"kind": "wind", "word": "giant", "offset": -0.1, "gain": 0.8}, {"kind": "boing", "word": "cape.", "offset": 0.2, "gain": 0.5}],
+   "lines": [
+    {"text": "So, new body plan: tiny human...", "emph": ["tiny"]},
+    {"text": "giant flappy skin cape.", "gap": 0.12, "emph": ["giant", "cape."]}
+   ]},
+  {"id": "weather", "scene": "weather", "music": "C", "lead": 0.05, "tail": 0.3,
+   "cues": {"cloudy": {"word": "cloudy"}, "starve": {"word": "starve.", "offset": -0.1}},
+   "sfx": [{"kind": "rain", "word": "cloudy", "gain": 0.6}, {"kind": "stomach", "word": "starve.", "gain": 0.8}],
+   "lines": [{"text": "And one cloudy week? You starve.", "emph": ["cloudy", "starve."]}]},
+  {"id": "end", "scene": "trees", "music": "C", "lead": 0.15, "tail": 2.4,
+   "cues": {"jog": {"word": "jogging.", "offset": -0.4}, "afford": {"word": "afford"}, "end": {"word": "it.", "offset": 0.4}},
+   "sfx": [{"kind": "jog_collapse", "word": "jogging.", "offset": -0.3, "gain": 0.7}],
+   "lines": [
+    {"text": "Which is exactly why trees don't go jogging.", "emph": ["jogging."]},
+    {"text": "They literally can't afford it.", "gap": 0.3, "emph": ["afford"]}
+   ]}
+ ]
+}

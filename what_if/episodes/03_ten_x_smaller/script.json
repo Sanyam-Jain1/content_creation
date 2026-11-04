@@ -1,0 +1,88 @@
+{
+ "slug": "ten_x_smaller",
+ "title": "What if you shrank 10x smaller?",
+ "fps": 30,
+ "hook": {"line1": "WHAT IF YOU WOKE UP", "line2": "10× SMALLER?", "pulse": "tenth"},
+ "badge": "WHAT IF? · 10× SMALLER",
+ "endCard": {"shot": "end", "cue": "end", "title": "WHAT WOULD YOU DO AT 17 CM?", "sub": "TELL ME IN THE COMMENTS ↓"},
+ "sfx": {
+  "shrink": ["A cartoon shrinking sound effect, a fast descending slide whistle ending in a tiny pop", 1.5],
+  "purr": ["A huge deep cat purr, extremely close, slowed down and menacing", 2.5],
+  "meow": ["A deep slowed-down giant cat meow, menacing and hungry", 1.6],
+  "slide_whistle": ["A long descending slide whistle, comedic falling", 2.0],
+  "shiver": ["Teeth chattering from cold, a shivering brrr", 1.5],
+  "wind_cold": ["Cold winter wind howling outside a window", 3.0],
+  "phone_tap": ["Several smartphone screen tap clicks", 0.8],
+  "drawer": ["A wooden drawer sliding open slowly with a creak", 1.5],
+  "munch": ["A tiny cartoon creature munching crumbs very fast, cute", 1.2],
+  "grunt": ["A tiny squeaky high-pitched grunt of effort, cartoon", 1.0]
+ },
+ "score": {
+  "A": "Mysterious whimsical music box and celesta, a giant world seen from below, curious and magical, gentle pulse",
+  "B": "Comedic adventure: bouncy pizzicato strings and bassoon, mischievous and playful, then shivery xylophone, constant rhythm",
+  "C": "Cozy warm ending with soft strings and music box, then a comic suspense sting with low creeping pizzicato for a lurking cat"
+ },
+ "shots": [
+  {"id": "hook", "scene": "pillow", "music": "A", "header": true, "lead": 0.15, "tail": 0.15, "flash": false,
+   "cues": {"tenth": {"word": "tenth"}, "tall": {"word": "17", "offset": -0.1}},
+   "sfx": [{"kind": "shrink", "word": "shrink", "offset": -0.1, "gain": 0.9}, {"kind": "ding", "word": "tall.", "gain": 0.5}],
+   "lines": [
+    {"text": "Tonight, you shrink to one tenth of your size.", "emph": ["tenth"]},
+    {"text": "You wake up 17 centimeters tall.", "gap": 0.15, "emph": ["17", "centimeters"], "show": {"centimeters": "CM"}}
+   ]},
+  {"id": "cat", "scene": "cat", "music": "A", "lead": 0.05, "tail": 0.35,
+   "cues": {"horse": {"word": "horse."}, "snack": {"word": "snack.", "offset": -0.2}},
+   "shakeWords": [["snack.", 1]],
+   "sfx": [{"kind": "purr", "at": 0.1, "gain": 0.7}, {"kind": "meow", "word": "snack.", "offset": -0.1, "gain": 0.8}],
+   "lines": [
+    {"text": "Your cat is now bigger than a horse.", "emph": ["horse."]},
+    {"text": "And it's looking at you like a snack.", "gap": 0.15, "emph": ["snack."]}
+   ]},
+  {"id": "fall", "scene": "fall", "music": "B", "lead": 0.05, "tail": 0.35,
+   "cues": {"jump": {"word": "fall", "offset": -0.1}, "walk": {"word": "walk", "offset": -0.3}},
+   "sfx": [{"kind": "slide_whistle", "word": "fall", "gain": 0.7}, {"kind": "boing", "word": "walk", "offset": -0.3, "gain": 0.8}],
+   "lines": [
+    {"text": "The good news? You're basically indestructible.", "emph": ["indestructible."]},
+    {"text": "Fall off a skyscraper, and you'd just... walk away.", "gap": 0.12, "emph": ["walk", "away."]}
+   ]},
+  {"id": "cookie", "scene": "cookie", "music": "B", "lead": 0.05, "tail": 0.35,
+   "cues": {"cookie": {"word": "cookie"}, "five": {"word": "five", "offset": -0.05}},
+   "sfx": [{"kind": "munch", "word": "cookie", "gain": 0.7}, {"kind": "ding", "word": "five", "gain": 0.6}],
+   "lines": [{"text": "And one cookie now feeds you for five whole days.", "emph": ["five", "days."], "show": {"five": "5"}}]},
+  {"id": "catch", "scene": "cubes", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"heat": {"word": "heat"}},
+   "sfx": [{"kind": "scratch", "at": 0.0, "gain": 0.8}, {"kind": "wind_cold", "word": "heat", "gain": 0.5}],
+   "lines": [
+    {"text": "But there's a catch.", "emph": ["catch."]},
+    {"text": "Small bodies lose heat way faster than big ones.", "gap": 0.15, "emph": ["heat", "faster"]}
+   ]},
+  {"id": "cold", "scene": "cold", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"summer": {"word": "summer.", "offset": -0.1}},
+   "sfx": [{"kind": "shiver", "at": 0.1, "gain": 0.8}],
+   "lines": [{"text": "So you're freezing. All the time. Even in summer.", "emph": ["freezing.", "summer."]}]},
+  {"id": "voice", "scene": "voice", "music": "B", "lead": 0.05, "tail": 0.35,
+   "cues": {"squeak": {"word": "Tiny", "offset": -0.05}},
+   "lines": [
+    {"text": "Oh, and your voice?", "emph": ["voice?"]},
+    {"text": "[excited] Tiny vocal cords. You now sound like this!", "gap": 0.2, "pitch": 1.7, "emph": ["this!"]}
+   ]},
+  {"id": "phone", "scene": "tinyphone", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"workout": {"word": "workout.", "offset": -0.3}},
+   "sfx": [{"kind": "grunt", "word": "full-body", "gain": 0.7}, {"kind": "phone_tap", "word": "workout.", "gain": 0.7}],
+   "lines": [{"text": "And unlocking your phone is a full-body workout.", "emph": ["workout."]}]},
+  {"id": "drawer", "scene": "drawer", "music": "C", "lead": 0.05, "tail": 0.3,
+   "cues": {"drawer": {"word": "sock"}, "proof": {"word": "cat-proof.", "offset": -0.1}},
+   "sfx": [{"kind": "drawer", "word": "sock", "offset": -0.2, "gain": 0.7}, {"kind": "sigh", "word": "warm,", "gain": 0.4}],
+   "lines": [
+    {"text": "Your best plan? Move into the sock drawer.", "emph": ["sock", "drawer."]},
+    {"text": "Warm, soft, and cat-proof.", "gap": 0.15, "emph": ["cat-proof."]}
+   ]},
+  {"id": "end", "scene": "drawerEnd", "music": "C", "lead": 0.15, "tail": 2.4,
+   "cues": {"eye": {"word": "cat", "offset": -0.2}, "end": {"word": "days.", "offset": 0.45}},
+   "sfx": [{"kind": "purr", "word": "cat", "offset": -0.2, "gain": 0.7}, {"kind": "heartbeat", "word": "days.", "gain": 0.6}],
+   "lines": [
+    {"text": "Mostly cat-proof.", "emph": ["mostly"]},
+    {"text": "The cat has been waiting outside for three days.", "gap": 0.3, "emph": ["three", "days."], "show": {"three": "3"}}
+   ]}
+ ]
+}

@@ -1,4 +1,0 @@
-/.env.local
-build/
-voice/cache/*_x*.wav
-__pycache__/

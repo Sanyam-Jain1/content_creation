@@ -1,0 +1,93 @@
+{
+ "slug": "time_freeze",
+ "title": "What if time froze for everyone but you?",
+ "fps": 30,
+ "hook": {"line1": "WHAT IF TIME FROZE", "line2": "FOR EVERYONE BUT YOU?", "pulse": "except"},
+ "badge": "WHAT IF? · TIME FREEZE",
+ "endCard": {"shot": "end", "cue": "end", "title": "WHAT WOULD YOU DO FIRST?", "sub": "TELL ME IN THE COMMENTS ↓"},
+ "hud": {"startShot": "twomin", "startCue": "two", "endShot": "restart", "endCue": "again", "seconds": 120},
+ "sfx": {
+  "freeze": ["Time stopping sound effect: a sudden reverse whoosh that snaps into an eerie high ringing silence", 2.0],
+  "shop": ["Small corner shop ambience, fridge hum, beeping till, muffled street traffic outside", 4.0],
+  "blackout": ["A heavy electrical power-down thunk, all the lights switching off at once", 1.0],
+  "strain": ["A man straining very hard, grunting with effort, pushing against something heavy that will not move", 1.6],
+  "no_air": ["A person trying desperately to inhale but no air comes in, a tight squeaky throat, comedic", 1.2],
+  "big_gasp": ["One huge desperate gasp for air after holding breath for too long, then heavy panting", 2.0],
+  "unfreeze": ["Time resuming: a fast rising whoosh that bursts into busy shop noise, sound rushing back", 1.5],
+  "spill": ["Hot coffee splashing onto a man, then the man yelping in surprise", 1.5],
+  "sneeze": ["A loud comedic human sneeze", 1.0]
+ },
+ "score": {
+  "A": "Light bouncy playful pizzicato and glockenspiel, an ordinary morning in a corner shop, then a magical shimmering freeze",
+  "B": "Tense comedic countdown: loud ticking clock percussion, low pulsing synth bass, suspense, rising urgency, constant rhythm",
+  "C": "Sudden release: a bright comedic orchestral hit, then a goofy, awkward, embarrassed tuba and pizzicato ending that resolves"
+ },
+ "shots": [
+  {"id": "hook", "scene": "shop", "music": "A", "header": true, "lead": 0.15, "tail": 0.1, "flash": false,
+   "cues": {"freeze": {"word": "freezes", "offset": -0.05}, "except": {"word": "except"}},
+   "sfx": [{"kind": "shop", "at": 0, "gain": 0.4}, {"kind": "tick", "at": 0, "gain": 0.4}, {"kind": "freeze", "word": "freezes", "offset": -0.1, "gain": 0.9}, {"kind": "pop", "word": "except", "gain": 0.7}],
+   "lines": [
+    {"text": "Right now, time freezes for everyone on Earth.", "emph": ["freezes"]},
+    {"text": "Except you.", "gap": 0.25, "emph": ["you."]}
+   ]},
+  {"id": "fantasy", "scene": "fantasy", "music": "A", "lead": 0.05, "tail": 0.1,
+   "cues": {"school": {"word": "school."}, "bills": {"word": "bills."}, "snacks": {"word": "snacks"}},
+   "sfx": [{"kind": "buzzer", "word": "school.", "gain": 0.5}, {"kind": "buzzer", "word": "bills.", "gain": 0.5}, {"kind": "cash", "word": "snacks", "gain": 0.7}],
+   "lines": [{"text": "No school. No bills. Free snacks forever.", "emph": ["free", "snacks"]}]},
+  {"id": "twomin", "scene": "twomin", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"two": {"word": "two", "offset": -0.05}},
+   "shakeWords": [["two", 1]],
+   "sfx": [{"kind": "scratch", "at": 0, "gain": 0.8}, {"kind": "impact", "word": "two", "offset": -0.05, "gain": 0.9}, {"kind": "heartbeat", "word": "live.", "gain": 0.7}],
+   "lines": [{"text": "[serious] Enjoy it. Because you have about two minutes to live.", "emph": ["two", "minutes"], "show": {"two": "2"}}]},
+  {"id": "dark", "scene": "dark", "music": "B", "lead": 0.05, "tail": 0.25,
+   "cues": {"black": {"word": "black.", "offset": -0.05}, "frozen": {"word": "frozen"}, "blind": {"word": "blind."}},
+   "sfx": [{"kind": "blackout", "word": "black.", "offset": -0.08, "gain": 0.9}, {"kind": "impact", "word": "blind.", "gain": 0.5}],
+   "fx": [{"type": "slam", "text": "BLIND", "word": "blind.", "y": 640, "size": 170, "color": "#ff4d3d", "rot": -6}],
+   "lines": [
+    {"text": "Problem one: the world goes pitch black.", "emph": ["black."]},
+    {"text": "Light is frozen too. Nothing new reaches your eyes.", "gap": 0.12, "emph": ["frozen"]},
+    {"text": "You're blind.", "gap": 0.15, "emph": ["blind."]}
+   ]},
+  {"id": "air", "scene": "air", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"push": {"word": "won't"}, "cement": {"word": "cement.", "offset": -0.1}},
+   "sfx": [{"kind": "strain", "word": "won't", "gain": 0.8}, {"kind": "thud", "word": "cement.", "gain": 0.6}],
+   "fx": [{"type": "slam", "text": "AIR = CEMENT", "word": "cement.", "offset": -0.1, "y": 560, "size": 120, "color": "#ffd23f", "rot": -4}],
+   "lines": [
+    {"text": "Problem two: the air stops moving.", "emph": ["air"]},
+    {"text": "Its molecules won't get out of your way, so every step is like pushing through wet cement.", "gap": 0.1, "emph": ["cement."]}
+   ]},
+  {"id": "lungs", "scene": "lungs", "music": "B", "lead": 0.05, "tail": 0.3,
+   "cues": {"pull": {"word": "pull..."}, "cant": {"word": "can't", "occ": 2}},
+   "sfx": [{"kind": "no_air", "word": "pull...", "gain": 0.9}, {"kind": "buzzer", "word": "can't", "occ": 2, "gain": 0.5}],
+   "lines": [
+    {"text": "Problem three: you can't breathe.", "emph": ["breathe."]},
+    {"text": "Your lungs pull...", "gap": 0.12},
+    {"text": "but frozen air can't flow in.", "gap": 0.1, "emph": ["can't"]}
+   ]},
+  {"id": "scream", "scene": "scream", "music": "B", "musicGain": 0.0, "lead": 0.05, "tail": 1.0,
+   "cues": {"scream": {"word": "scream.", "offset": -0.05}},
+   "lines": [{"text": "And sound needs moving air. So you can't even hear yourself scream.", "emph": ["scream."]}]},
+  {"id": "stuck", "scene": "stuck", "music": "B", "lead": 0.05, "tail": 0.4,
+   "cues": {"blind": {"word": "blind,"}, "deaf": {"word": "deaf,"}, "stuck": {"word": "stuck..."}, "purple": {"word": "purple.", "offset": -0.2}},
+   "sfx": [{"kind": "pop", "word": "blind,", "gain": 0.8}, {"kind": "pop", "word": "deaf,", "gain": 0.8}, {"kind": "pop", "word": "stuck...", "gain": 0.8}, {"kind": "squeeze", "word": "purple.", "gain": 0.8}],
+   "lines": [
+    {"text": "So the most powerful person in history is blind, deaf, stuck...", "emph": ["blind,", "deaf,", "stuck..."]},
+    {"text": "and turning slightly purple.", "gap": 0.2, "emph": ["purple."]}
+   ]},
+  {"id": "restart", "scene": "shop", "music": "C", "lead": 0.05, "tail": 0.35,
+   "cues": {"again": {"word": "again.", "offset": -0.1}},
+   "sfx": [{"kind": "heartbeat", "at": 0.0, "gain": 0.6}, {"kind": "unfreeze", "word": "again.", "offset": -0.25, "gain": 0.9}, {"kind": "big_gasp", "word": "again.", "offset": 0.05, "gain": 0.9}, {"kind": "spill", "word": "again.", "offset": 0.4, "gain": 0.7}],
+   "lines": [
+    {"text": "Then, right before you pass out...", "emph": ["pass", "out..."]},
+    {"text": "time starts again.", "gap": 0.2, "emph": ["again."]}
+   ]},
+  {"id": "end", "scene": "end", "music": "C", "lead": 0.1, "tail": 2.4,
+   "cues": {"except": {"word": "except"}, "candy": {"word": "candy", "offset": -0.2}, "end": {"word": "for.", "offset": 0.45}},
+   "sfx": [{"kind": "thud", "at": 0.05, "gain": 0.7}, {"kind": "ding", "word": "candy", "gain": 0.6}],
+   "lines": [
+    {"text": "Nobody noticed a thing.", "emph": []},
+    {"text": "Except the shopkeeper.", "gap": 0.15, "emph": ["shopkeeper."]},
+    {"text": "Because you're lying on the floor, holding a candy bar you never paid for.", "gap": 0.2, "emph": ["candy", "never"]}
+   ]}
+ ]
+}
