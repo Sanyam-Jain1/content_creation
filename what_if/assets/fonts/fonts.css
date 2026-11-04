@@ -1,0 +1,4 @@
+/* Bundled fonts so headless renders never depend on the network.
+   Montserrat Black (OFL) for captions, Luckiest Guy (Apache 2.0) for cartoon slams. */
+@font-face { font-family: 'Montserrat'; font-weight: 900; src: url(Montserrat-Black.ttf) format('truetype'); }
+@font-face { font-family: 'Luckiest Guy'; font-weight: 400; src: url(LuckiestGuy-Regular.ttf) format('truetype'); }
