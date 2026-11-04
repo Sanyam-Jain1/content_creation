@@ -1,0 +1,87 @@
+# Auto-posts the WHAT IF? reels listed in what_if/publish/queue.json to Instagram Reels and YouTube Shorts.
+# Runs every hour (scheduled workflows only run on the repository's DEFAULT branch), posts whatever is due,
+# and commits the results (post ids, links, errors) back into queue.json.
+# Manual run: Actions tab -> "Publish reels" -> Run workflow (mode: plan / check / run, optional entry id).
+name: Publish reels
+
+on:
+  schedule:
+    - cron: "7 * * * *"      # hourly: post anything that is due
+    - cron: "23 4 * * 1"     # Mondays: refresh the 60-day Instagram token
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "plan = dry run, check = test credentials, run = post what is due"
+        type: choice
+        options: [plan, check, run]
+        default: plan
+      only:
+        description: "Post just this queue entry now, ignoring its time (e.g. ep00). Needs mode=run."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-reels
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '7 * * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3
+      - name: Publish
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          MODE: ${{ github.event.inputs.mode || 'run' }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          if [ "$MODE" = "run" ] && [ -n "$ONLY" ]; then
+            python3 what_if/publish/publish.py run --only "$ONLY"
+          else
+            python3 what_if/publish/publish.py "$MODE"
+          fi
+      - name: Save results to queue.json
+        if: always()
+        run: |
+          if ! git diff --quiet what_if/publish/queue.json; then
+            git config user.name "reel-publisher[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add what_if/publish/queue.json
+            git commit -m "publish: update queue results [skip ci]"
+            git pull --rebase --autostash && git push
+          fi
+
+  refresh-instagram-token:
+    if: github.event.schedule == '23 4 * * 1'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3
+      - name: Refresh and store IG_ACCESS_TOKEN
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ] || [ -z "$IG_ACCESS_TOKEN" ]; then
+            echo "::warning::GH_PAT or IG_ACCESS_TOKEN secret missing: the Instagram token will expire 60 days after you created it."
+            exit 0
+          fi
+          NEW=$(python3 what_if/publish/publish.py ig-refresh)
+          echo "::add-mask::$NEW"
+          gh secret set IG_ACCESS_TOKEN --body "$NEW" --repo "$GITHUB_REPOSITORY"
+          echo "Instagram token refreshed."

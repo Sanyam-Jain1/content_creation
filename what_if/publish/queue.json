@@ -1,0 +1,143 @@
+{
+ "config": {
+  "enabled": true,
+  "timezone": "UTC",
+  "platforms": [
+   "instagram",
+   "youtube"
+  ],
+  "repo": "Sanyam-Jain1/content_creation",
+  "branch": "claude/zealous-rubin-ps5rhy",
+  "youtube_privacy": "public",
+  "youtube_category": "24",
+  "youtube_synthetic_disclosure": false,
+  "max_attempts": 3,
+  "_help": "Times are 'YYYY-MM-DD HH:MM' in `timezone` (IANA name, e.g. America/New_York, Europe/London, Asia/Kolkata). Set approved=false to hold a post. enabled=false pauses everything."
+ },
+ "queue": [
+  {
+   "id": "ep00",
+   "post_at": "2026-11-08 19:00",
+   "approved": true,
+   "file": "what_if/episodes/00_ten_x_stronger/export/ten_x_stronger.mp4",
+   "cover": "what_if/episodes/00_ten_x_stronger/export/cover.png",
+   "instagram": {
+    "caption": "What if everyone woke up 10× stronger tomorrow? 💪 It goes wrong FAST.\n\nYour muscles get 10× stronger… your bones don't. 🦴\nWhat would YOU break first? 👇\n\n#whatif #science #funny #animation #hypothetical #strength #reels",
+    "first_comment": "Honestly the pickle jar is the most realistic part 🥒 What would you break first?"
+   },
+   "youtube": {
+    "title": "What if everyone became 10× stronger? 💪 #shorts #whatif",
+    "description": "Tonight, every human on Earth becomes ten times stronger. Sounds awesome... it's a disaster.\nYour muscles get 10× stronger, but your bones don't.\n\nWhat would YOU break first? Comment below 👇\n\nAnimated by WAIT, WHAT? · narration voice is AI-generated.\n#shorts #whatif #science",
+    "tags": [
+     "what if",
+     "10x stronger",
+     "science",
+     "animation",
+     "funny",
+     "hypothetical"
+    ]
+   },
+   "state": {
+    "instagram": {
+     "status": "pending"
+    },
+    "youtube": {
+     "status": "pending"
+    }
+   }
+  },
+  {
+   "id": "ep03",
+   "post_at": "2026-11-10 19:00",
+   "approved": true,
+   "file": "what_if/episodes/03_ten_x_smaller/export/ten_x_smaller.mp4",
+   "cover": "what_if/episodes/03_ten_x_smaller/export/cover.png",
+   "instagram": {
+    "caption": "What if you woke up 10× smaller? 🐭 You'd survive falling off a skyscraper…\n\n…but your cat is now bigger than a horse. 🐈😳\nWhat would you do at 17 cm? 👇\n\n#whatif #science #animation #squarecubelaw #cat #funny #reels",
+    "first_comment": "Part of the 10× series. 10× STRONGER is on the profile 💪 What would you do at 17 cm?"
+   },
+   "youtube": {
+    "title": "What if you shrank 10x smaller? 🐭 #shorts #whatif",
+    "description": "You wake up 17 cm tall. You can survive any fall, one cookie feeds you for 5 days... and you're freezing all the time (square-cube law).\n\nScience: J.B.S. Haldane, 'On Being the Right Size' (1926); Kleiber's law.\nWhat would you do at 17 cm? 👇\n\nAnimated by WAIT, WHAT? · narration voice is AI-generated.\n#shorts #whatif #science",
+    "tags": [
+     "what if",
+     "10x smaller",
+     "square cube law",
+     "science",
+     "animation",
+     "cat"
+    ]
+   },
+   "state": {
+    "instagram": {
+     "status": "pending"
+    },
+    "youtube": {
+     "status": "pending"
+    }
+   }
+  },
+  {
+   "id": "ep01",
+   "post_at": "2026-11-12 19:00",
+   "approved": true,
+   "file": "what_if/episodes/01_time_freeze/export/time_freeze.mp4",
+   "cover": "what_if/episodes/01_time_freeze/export/cover.png",
+   "instagram": {
+    "caption": "What if time froze for everyone… except you? ⏸️ You'd have about 2 minutes to live.\n\nLight freezes (you're blind). Air freezes (you can't breathe). 😶\nWhat would you do first? 👇\n\n#whatif #science #physics #animation #timestop #funny #reels",
+    "first_comment": "The shopkeeper saw EVERYTHING 😭 What would you do with 2 frozen minutes?"
+   },
+   "youtube": {
+    "title": "What if time froze for everyone but you? ⏸️ #shorts #whatif",
+    "description": "Time freezes for everyone except you. Free snacks forever... except light is frozen (you're blind) and air is frozen (you can't breathe).\nA playful physics thought experiment.\n\nWhat would you do first? 👇\n\nAnimated by WAIT, WHAT? · narration voice is AI-generated.\n#shorts #whatif #science",
+    "tags": [
+     "what if",
+     "time stop",
+     "physics",
+     "science",
+     "animation",
+     "funny"
+    ]
+   },
+   "state": {
+    "instagram": {
+     "status": "pending"
+    },
+    "youtube": {
+     "status": "pending"
+    }
+   }
+  },
+  {
+   "id": "ep02",
+   "post_at": "2026-11-14 19:00",
+   "approved": true,
+   "file": "what_if/episodes/02_eat_sunlight/export/eat_sunlight.mp4",
+   "cover": "what_if/episodes/02_eat_sunlight/export/cover.png",
+   "instagram": {
+    "caption": "What if you could eat sunlight? 🌱☀️ Free food forever… until you do the math.\n\nA whole day sunbathing = 2 crackers. 🫠\nWould you go green? 👇\n\n#whatif #science #biology #photosynthesis #animation #funny #reels",
+    "first_comment": "Trees really said \"jogging? in this economy?\" 🌳 Would you go green?"
+   },
+   "youtube": {
+    "title": "What if humans could photosynthesize? 🌱 #shorts #whatif",
+    "description": "You wake up green and can photosynthesize. But your skin is only about the size of a door: a full day of sun covers ~1% of your energy (two crackers). You'd need skin the size of a tennis court.\n\nSources: Live Science (plant ecologist Lindsay Turnbull); The Naked Scientists.\nWould you go green? 👇\n\nAnimated by WAIT, WHAT? · narration voice is AI-generated.\n#shorts #whatif #science",
+    "tags": [
+     "what if",
+     "photosynthesis",
+     "biology",
+     "science",
+     "animation",
+     "funny"
+    ]
+   },
+   "state": {
+    "instagram": {
+     "status": "pending"
+    },
+    "youtube": {
+     "status": "pending"
+    }
+   }
+  }
+ ]
+}

@@ -19,6 +19,12 @@ Each `export/` folder holds the MP4 (1080×1920, 30 fps, H.264/AAC, −14 LUFS) 
 Each episode's `NOTES.md` has the post caption, hashtags, pinned comment and science sources.
 `IDEAS.md` has the researched backlog for the next episodes.
 
+## Auto-posting
+
+`publish/` posts the reels to **Instagram Reels** and **YouTube Shorts** on a schedule, through the official APIs and a GitHub Action
+(`.github/workflows/publish-reels.yml`, runs hourly). The queue, captions, first comments and post times are in `publish/queue.json`.
+For the one-time account setup and secrets, see `publish/SETUP.md`. Dry run: `python3 what_if/publish/publish.py plan`.
+
 ## Engine
 
 | File | What it does |
