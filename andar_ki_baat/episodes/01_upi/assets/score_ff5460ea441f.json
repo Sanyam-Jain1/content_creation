@@ -1,0 +1,26 @@
+[
+ {
+  "section": "A",
+  "duration_ms": 13102
+ },
+ {
+  "section": "B",
+  "duration_ms": 20346
+ },
+ {
+  "section": "C",
+  "duration_ms": 8155
+ },
+ {
+  "section": "B",
+  "duration_ms": 3839
+ },
+ {
+  "section": "C",
+  "duration_ms": 8002
+ },
+ {
+  "section": "D",
+  "duration_ms": 8831
+ }
+]

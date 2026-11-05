@@ -1,0 +1,4 @@
+episodes/*/build/
+voice_cache/*_x*.wav
+voice_cache/*_p*.wav
+__pycache__/

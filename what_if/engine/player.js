@@ -27,6 +27,7 @@
     if (L._chunks) return L._chunks;
     const out = []; let cur = [];
     L.words.forEach((w, i) => {
+      if (!w.text) return; // show: {"word": ""} hides a spoken word
       cur.push(w);
       const punct = /[.,!?;:…]$/.test(w.text);
       if (cur.length >= 3 || punct || (cur.length >= 2 && (L.words[i + 1]?.text || '').length > 8)) { out.push(cur); cur = []; }
@@ -48,10 +49,11 @@
     const emph = new Set((L.emph || []).map((s) => s.toLowerCase().replace(/[^a-z0-9']/g, '')));
     const words = c.map((w) => w.text.toUpperCase().replace(/\.\.\.$/, '…'));
     let size = 92;
-    const gap = () => size * 0.32;
-    let widths = words.map((w) => measure(w, size));
+    const gap = () => size * 0.34;
+    // +8%: active/key words scale up 1.08 and must not collide with neighbours
+    let widths = words.map((w) => measure(w, size) * 1.08);
     let total = widths.reduce((a, b) => a + b, 0) + gap() * (words.length - 1);
-    if (total > 940) { size = Math.floor((size * 940) / total); widths = words.map((w) => measure(w, size)); total = widths.reduce((a, b) => a + b, 0) + gap() * (words.length - 1); }
+    if (total > 940) { size = Math.floor((size * 940) / total); widths = words.map((w) => measure(w, size) * 1.08); total = widths.reduce((a, b) => a + b, 0) + gap() * (words.length - 1); }
     let x = 540 - total / 2;
     const y = shot.capY || 1400;
     let s = `<g transform="translate(540,${y}) scale(${0.65 + 0.35 * pop}) translate(-540,${-y})">`;

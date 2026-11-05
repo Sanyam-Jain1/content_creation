@@ -29,6 +29,7 @@ ENGINE = Path(__file__).resolve().parent
 sys.path.insert(0, str(ENGINE))
 import voice  # noqa: E402
 import assets  # noqa: E402
+import synth  # noqa: E402
 
 SR = 48000
 TEMPO = 1.12  # pitch-preserving speed-up for reel pacing
@@ -50,7 +51,8 @@ def write_wav(path, x, sr=SR):
         w.writeframes((st * 32767).astype(np.int16).tobytes())
 
 
-def faster(r, pitch=1.0):
+def faster(r, pitch=1.0, tempo=None):
+    TEMPO = tempo or globals()["TEMPO"]
     src = Path(r["audio"])
     tag = f"_x{TEMPO:.2f}" + (f"_p{pitch:.2f}" if pitch != 1 else "")
     dst = src.with_name(f"{src.stem}{tag}.wav")
@@ -79,6 +81,19 @@ def build(ep, rescore=False):
     fps = script.get("fps", 30)
     out = ep / "build"
     out.mkdir(exist_ok=True)
+    series = ep.parent.parent  # <series>/episodes/<ep>
+    vcfg = script.get("voice", {})
+    tempo = script.get("tempo", TEMPO)
+
+    def say(L):
+        if vcfg.get("engine") == "edge":
+            return voice.synth_edge(L["text"], L.get("say"), L.get("voice", vcfg.get("name", "madhur")),
+                                    L.get("rate", vcfg.get("rate", "+8%")), L.get("vpitch", vcfg.get("pitch", "+0Hz")),
+                                    cache=series / "voice_cache")
+        return voice.synth(L["text"], take=L.get("take", 0))
+
+    def sfx_file(kind):
+        return synth.sfx(kind, series / "assets" / "sfx") or assets.sfx_path(kind, script.get("sfx"))
 
     t = 0.0
     shots, lines, sfx, audio = [], [], [], []
@@ -88,7 +103,7 @@ def build(ep, rescore=False):
         cursor = start + shot.get("lead", 0.05)
         mine = []
         for i, L in enumerate(shot.get("lines", [])):
-            r = faster(voice.synth(L["text"], take=L.get("take", 0)), L.get("pitch", 1.0))
+            r = faster(say(L), L.get("pitch", 1.0), tempo)
             if i > 0:
                 cursor += L.get("gap", 0.1)
             show = L.get("show", {})
@@ -152,7 +167,10 @@ def build(ep, rescore=False):
         sections[-1][2] = duration + 0.5
         plan = [(m, b - a) for m, a, b in sections]
         existing = sorted((ep / "assets").glob("score_*.mp3"), key=lambda p: p.stat().st_mtime) if (ep / "assets").exists() else []
-        score = assets.score_path(ep, script["score"], plan, script.get("scoreStyles")) if (rescore or not existing) else existing[-1]
+        if script["score"].get("engine") == "synth":
+            score = synth.score(ep, plan, script["score"])
+        else:
+            score = assets.score_path(ep, script["score"], plan, script.get("scoreStyles")) if (rescore or not existing) else existing[-1]
         if score:
             sm = decode(score)
             sm /= max(1e-6, np.max(np.abs(sm)))
@@ -189,7 +207,7 @@ def build(ep, rescore=False):
     cache = {}
     for e in sfx:
         if e["kind"] not in cache:
-            p = assets.sfx_path(e["kind"], script.get("sfx"))
+            p = sfx_file(e["kind"])
             a = decode(p) if p else np.zeros(10, np.float32)
             cache[e["kind"]] = a / max(1e-6, np.max(np.abs(a))) * 0.9
         a = cache[e["kind"]] * e["gain"]
@@ -205,12 +223,14 @@ def build(ep, rescore=False):
     mix /= max(1.0, np.max(np.abs(mix)) / 0.97)
     write_wav(out / "mix.wav", mix)
 
+    import os
+    eng = os.path.relpath(ENGINE, out)
     (out / "preview.html").write_text(f"""<!doctype html><html><head><meta charset="utf-8"><title>{script.get('title', 'preview')}</title>
-<link href="../../../assets/fonts/fonts.css" rel="stylesheet">
+<link href="{eng}/../assets/fonts/fonts.css" rel="stylesheet">
 <style>body{{margin:0;background:#111;display:flex;flex-direction:column;align-items:center}}
 #stage svg{{width:min(100vw,56.25vh);height:auto}}button{{margin:8px;padding:8px 18px}}</style></head><body>
 <div id="stage"></div><button id="go">Play</button><audio id="a" src="mix.wav"></audio>
-<script src="../../../engine/kit.js"></script><script src="../scenes.js"></script><script src="../../../engine/player.js"></script>
+<script src="{eng}/kit.js"></script><script src="../scenes.js"></script><script src="{eng}/player.js"></script>
 <script>Player.load({json.dumps(timeline)});Player.ready().then(()=>renderFrame(0));
 document.getElementById('go').onclick=()=>Player.play(document.getElementById('a'));</script></body></html>""")
     talk = sum(L["end"] - L["start"] for L in lines)

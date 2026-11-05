@@ -1,0 +1,81 @@
+{
+ "slug": "upi_kaise_chalta",
+ "title": "UPI se paisa 2 second mein kaise pahunchta hai?",
+ "fps": 30,
+ "tempo": 1.0,
+ "voice": {"engine": "edge", "name": "madhur", "rate": "+14%"},
+ "hook": {"line1": "UPI SE PAISA", "line2": "2 SECOND MEIN KAISE?", "pulse": "do"},
+ "badge": "ANDAR KI BAAT · 01",
+ "endCard": {"shot": "end", "cue": "end", "title": "SAVE KARO, FAMILY KO BHEJO", "sub": "AGLA TOPIC? COMMENT KARO ↓"},
+ "score": {"engine": "synth", "bpm": 108, "key": "D", "seed": 7,
+  "sections": {"A": {"mood": "curious", "level": 1}, "B": {"mood": "bright", "level": 2}, "C": {"mood": "tense", "level": 1}, "D": {"mood": "warm", "level": 1}}},
+ "shots": [
+  {"id": "hook", "scene": "stall", "music": "A", "header": true, "lead": 0.15, "tail": 0.15, "flash": false,
+   "cues": {"scan": {"word": "scan"}, "ting": {"word": "ting!"}, "box": {"word": "prapt", "offset": -0.3}, "do": {"word": "do"}, "kaise": {"word": "kaise?"}},
+   "sfx": [{"kind": "phone_tap", "word": "scan", "gain": 0.6}, {"kind": "chime", "word": "ting!", "gain": 0.8}, {"kind": "tick", "word": "kaise?", "gain": 0.5}],
+   "lines": [
+    {"text": "Chai ke dus rupaye, scan kiya, aur ting!", "say": "चाय के दस रुपये, scan किया, और टिंग!", "emph": ["ting!"], "show": {"dus": "₹10"}},
+    {"text": "Dus rupaye prapt hue.", "say": "दस रुपये प्राप्त हुए।", "voice": "swara", "rate": "+0%", "vpitch": "+25Hz", "gap": 0.15, "pitch": 1.05, "emph": ["prapt"], "show": {"Dus": "₹10"}},
+    {"text": "Do second mein paisa pahunch gaya. Par kaise?", "say": "दो second में पैसा पहुँच गया। पर कैसे?", "gap": 0.2, "emph": ["kaise?"], "show": {"Do": "2"}}
+   ]},
+  {"id": "fly", "scene": "fly", "music": "A", "lead": 0.05, "tail": 0.3,
+   "cues": {"nahi": {"word": "Nahi.", "offset": -0.05}},
+   "shakeWords": [["Nahi.", 1]],
+   "sfx": [{"kind": "slide_whistle", "at": 0.2, "gain": 0.4}, {"kind": "buzzer", "word": "Nahi.", "gain": 0.6}],
+   "lines": [
+    {"text": "Kya sach mein note udd ke dukaan tak gaya?", "say": "क्या सच में नोट उड़ के दुकान तक गया?", "emph": ["udd"]},
+    {"text": "Nahi. Paisa kahin nahi jaata.", "say": "नहीं। पैसा कहीं नहीं जाता।", "gap": 0.15, "emph": ["Nahi.", "kahin"]}
+   ]},
+  {"id": "flow1", "scene": "flow", "step": 1, "music": "B", "lead": 0.05, "tail": 0.25,
+   "cues": {"send": {"word": "bhejta", "offset": -0.2}, "npci": {"word": "NPCI"}, "police": {"word": "police"}},
+   "sfx": [{"kind": "whoosh", "word": "bhejta", "gain": 0.5}, {"kind": "pop", "word": "NPCI", "gain": 0.6}, {"kind": "ding", "word": "police", "gain": 0.4}],
+   "lines": [
+    {"text": "Scan karte hi aapka app ek message bhejta hai NPCI ko.", "say": "Scan करते ही आपका app एक message भेजता है NPCI को।", "emph": ["NPCI"]},
+    {"text": "Ye UPI ka traffic police hai.", "say": "ये UPI का traffic police है।", "gap": 0.12, "emph": ["traffic", "police"]}
+   ]},
+  {"id": "flow2", "scene": "flow", "step": 2, "music": "B", "lead": 0.05, "tail": 0.25, "whoosh": false,
+   "cues": {"ask": {"word": "poochta", "offset": -0.2}, "pin": {"word": "PIN"}, "bal": {"word": "Balance"}, "minus": {"word": "ghata"}},
+   "sfx": [{"kind": "whoosh", "word": "poochta", "gain": 0.4}, {"kind": "ding", "word": "sahi", "gain": 0.5}, {"kind": "ding", "word": "Balance", "gain": 0.5}, {"kind": "calculator", "word": "ghata", "gain": 0.5}],
+   "lines": [
+    {"text": "NPCI aapke bank se poochta hai: PIN sahi hai? Balance hai?", "say": "NPCI आपके bank से पूछता है: PIN सही है? Balance है?", "emph": ["PIN", "Balance"]},
+    {"text": "Bank aapke khaate se dus rupaye ghata deta hai.", "say": "Bank आपके खाते से दस रुपये घटा देता है।", "gap": 0.12, "emph": ["ghata"], "show": {"dus": "₹10"}}
+   ]},
+  {"id": "flow3", "scene": "flow", "step": 3, "music": "B", "lead": 0.05, "tail": 0.3, "whoosh": false,
+   "cues": {"tell": {"word": "bolta", "offset": -0.2}, "plus": {"word": "plus"}, "two": {"word": "do"}},
+   "sfx": [{"kind": "whoosh", "word": "bolta", "gain": 0.4}, {"kind": "cash", "word": "plus", "gain": 0.6}, {"kind": "chime", "word": "do", "gain": 0.7}],
+   "lines": [
+    {"text": "Phir NPCI chaiwale ke bank ko bolta hai: plus dus.", "say": "फिर NPCI चायवाले के bank को बोलता है: plus दस।", "emph": ["plus", "dus."], "show": {"dus.": "₹10."}},
+    {"text": "Ye sab, do second mein.", "say": "ये सब, दो second में।", "gap": 0.12, "emph": ["do", "second"], "show": {"do": "2"}}
+   ]},
+  {"id": "ledger", "scene": "ledger", "music": "C", "lead": 0.05, "tail": 0.3,
+   "cues": {"entries": {"word": "entries"}, "settle": {"word": "settle"}, "kai": {"word": "kai"}},
+   "sfx": [{"kind": "scratch", "at": 0.0, "gain": 0.7}, {"kind": "stamp", "word": "entries", "gain": 0.5}, {"kind": "tick", "word": "kai", "gain": 0.5}],
+   "lines": [
+    {"text": "Matlab note nahi chala, sirf hisaab ki entries badli.", "say": "मतलब नोट नहीं चला, सिर्फ़ हिसाब की entries बदलीं।", "emph": ["hisaab", "entries"]},
+    {"text": "Asli paisa banks aapas mein baad mein settle karte hain, din mein kai baar.", "say": "असली पैसा banks आपस में बाद में settle करते हैं, दिन में कई बार।", "gap": 0.15, "emph": ["baad", "settle"]}
+   ]},
+  {"id": "scale", "scene": "crowd", "music": "B", "lead": 0.05, "tail": 0.35,
+   "cues": {"num": {"word": "do", "offset": -0.1}},
+   "fx": [{"word": "do", "offset": -0.1, "type": "counter", "from": 1, "to": 2000, "count": 1.4, "y": 640, "size": 190, "label": "CRORE+ HAR MAHINE", "commas": true}],
+   "sfx": [{"kind": "riser", "at": 0.0, "gain": 0.4}, {"kind": "crowd_gasp", "word": "zyada", "gain": 0.35}],
+   "lines": [
+    {"text": "Aur aisa hota hai har mahine do hazaar crore se zyada baar.", "say": "और ऐसा होता है हर महीने दो हज़ार करोड़ से ज़्यादा बार।", "emph": ["do", "crore"], "show": {"do": "2,000", "hazaar": ""}}
+   ]},
+  {"id": "scam", "scene": "scam", "music": "C", "lead": 0.05, "tail": 0.35,
+   "cues": {"yaad": {"word": "yaad"}, "never": {"word": "kabhi"}, "scam": {"word": "scam", "offset": -0.05}},
+   "shakeWords": [["scam", 1]],
+   "sfx": [{"kind": "scratch", "at": 0.0, "gain": 0.6}, {"kind": "buzzer", "word": "kabhi", "gain": 0.5}, {"kind": "stamp", "word": "scam", "gain": 0.9}],
+   "lines": [
+    {"text": "Ek baat yaad rakhna.", "say": "एक बात याद रखना।", "emph": ["yaad"]},
+    {"text": "Paisa lene ke liye PIN kabhi nahi daalna padta.", "say": "पैसा लेने के लिए PIN कभी नहीं डालना पड़ता।", "gap": 0.12, "emph": ["lene", "kabhi", "nahi"]},
+    {"text": "Koi bole PIN daalo, paise aayenge, toh samjho scam hai.", "say": "कोई बोले PIN डालो, पैसे आएँगे, तो समझो scam है।", "gap": 0.15, "emph": ["scam"]}
+   ]},
+  {"id": "end", "scene": "stallEnd", "music": "D", "lead": 0.1, "tail": 2.4,
+   "cues": {"ting": {"word": "ting"}, "andar": {"word": "andar"}, "cold": {"word": "thandi", "offset": -0.1}, "end": {"word": "gayi.", "offset": 0.4}},
+   "sfx": [{"kind": "chime", "word": "ting", "gain": 0.6}, {"kind": "crickets", "word": "thandi", "offset": 0.4, "gain": 0.5}],
+   "lines": [
+    {"text": "Ab agli baar ting sunoge, toh pata hoga andar kya chala.", "say": "अब अगली बार टिंग सुनोगे, तो पता होगा अंदर क्या चला।", "emph": ["ting", "andar"]},
+    {"text": "Bhaiya, chai thandi ho gayi.", "say": "Bhaiya, chai thandi ho gayi.", "voice": "en-IN-PrabhatNeural", "rate": "+0%", "vpitch": "-8Hz", "gap": 0.35, "emph": ["thandi"]}
+   ]}
+ ]
+}

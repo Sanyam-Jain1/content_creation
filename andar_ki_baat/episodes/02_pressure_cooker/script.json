@@ -1,0 +1,533 @@
+{
+ "slug": "cooker_ki_seeti",
+ "title": "Pressure cooker ki seeti: andar kya chal raha hai?",
+ "fps": 30,
+ "tempo": 1.0,
+ "voice": {
+  "engine": "edge",
+  "name": "madhur",
+  "rate": "+20%"
+ },
+ "hook": {
+  "line1": "COOKER KI SEETI",
+  "line2": "ANDAR KYA HO RAHA HAI?",
+  "pulse": "seeti"
+ },
+ "badge": "ANDAR KI BAAT · 02",
+ "endCard": {
+  "shot": "end",
+  "cue": "end",
+  "title": "AAPKE GHAR MEIN KITNI SEETI?",
+  "sub": "COMMENT KARO ↓  SHARE WITH MUMMY"
+ },
+ "score": {
+  "engine": "synth",
+  "bpm": 100,
+  "key": "F",
+  "seed": 21,
+  "sections": {
+   "A": {
+    "mood": "warm",
+    "level": 1
+   },
+   "B": {
+    "mood": "bright",
+    "level": 2
+   },
+   "C": {
+    "mood": "curious",
+    "level": 1
+   },
+   "D": {
+    "mood": "bright",
+    "level": 2
+   }
+  }
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "kitchen",
+   "music": "A",
+   "header": true,
+   "lead": 0.15,
+   "tail": 0.2,
+   "flash": false,
+   "cues": {
+    "teen": {
+     "word": "Teen"
+    },
+    "seeti": {
+     "word": "Har",
+     "offset": -0.25
+    },
+    "kya": {
+     "word": "kya?"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "flame",
+     "at": 0.0,
+     "gain": 0.4
+    },
+    {
+     "kind": "cooker_whistle",
+     "word": "Har",
+     "offset": -0.45,
+     "gain": 0.55
+    }
+   ],
+   "lines": [
+    {
+     "text": "Teen seeti aane do, phir gas band karna!",
+     "say": "तीन सीटी आने दो, फिर gas बंद करना!",
+     "voice": "swara",
+     "rate": "+6%",
+     "emph": [
+      "Teen",
+      "seeti"
+     ],
+     "show": {
+      "Teen": "3"
+     }
+    },
+    {
+     "text": "Har ghar ki awaaz. Par ye seeti hai kya?",
+     "say": "हर घर की आवाज़। पर ये सीटी है क्या?",
+     "gap": 0.3,
+     "emph": [
+      "seeti",
+      "kya?"
+     ]
+    }
+   ],
+   "capY": 1700
+  },
+  {
+   "id": "pot",
+   "scene": "pot",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.25,
+   "cues": {
+    "aag": {
+     "word": "badhao,"
+    },
+    "wahi": {
+     "word": "wahi"
+    },
+    "bhaap": {
+     "word": "bhaap"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "boil",
+     "at": 0.1,
+     "gain": 0.6
+    },
+    {
+     "kind": "flame",
+     "word": "badhao,",
+     "gain": 0.6
+    },
+    {
+     "kind": "buzzer",
+     "word": "wahi",
+     "gain": 0.35
+    },
+    {
+     "kind": "steam_hiss",
+     "word": "bhaap",
+     "gain": 0.4
+    }
+   ],
+   "lines": [
+    {
+     "text": "Khule bartan mein paani 100 °C pe ubalta hai.",
+     "say": "खुले बर्तन में पानी सौ degree पे उबलता है।",
+     "emph": [
+      "100",
+      "°C"
+     ]
+    },
+    {
+     "text": "Uske baad aag badhao, temperature wahi rehta hai. Bas bhaap banti hai.",
+     "say": "उसके बाद आग बढ़ाओ, temperature वही रहता है। बस भाप बनती है।",
+     "gap": 0.15,
+     "emph": [
+      "wahi",
+      "bhaap"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sealed",
+   "scene": "sealed",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.25,
+   "cues": {
+    "band": {
+     "word": "band"
+    },
+    "nahi": {
+     "word": "nahi"
+    },
+    "pressure": {
+     "word": "pressure"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "stamp",
+     "word": "band",
+     "gain": 0.5
+    },
+    {
+     "kind": "boing",
+     "word": "nahi",
+     "gain": 0.5
+    },
+    {
+     "kind": "riser",
+     "word": "pressure",
+     "gain": 0.4
+    }
+   ],
+   "lines": [
+    {
+     "text": "Cooker band hota hai. Bhaap bahar nahi nikal paati, toh andar pressure badhta hai.",
+     "say": "Cooker बंद होता है। भाप बाहर नहीं निकल पाती, तो अंदर pressure बढ़ता है।",
+     "emph": [
+      "band",
+      "pressure"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "boil120",
+   "scene": "thermo",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "nahi": {
+     "word": "nahi,"
+    },
+    "t120": {
+     "word": "120"
+    },
+    "jaldi": {
+     "word": "jaldi"
+    }
+   },
+   "shakeWords": [
+    [
+     "120",
+     1
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "word": "nahi,",
+     "gain": 0.4
+    },
+    {
+     "kind": "ding",
+     "word": "120",
+     "gain": 0.7
+    },
+    {
+     "kind": "rewind",
+     "word": "jaldi",
+     "gain": 0.35
+    }
+   ],
+   "lines": [
+    {
+     "text": "Aur pressure mein paani 100 pe nahi, lagbhag 120 _ _ °C pe ubalta hai.",
+     "say": "और pressure में पानी सौ पे नहीं, लगभग एक सौ बीस degree पे उबलता है।",
+     "emph": [
+      "120",
+      "°C"
+     ],
+     "show": {
+      "_": ""
+     }
+    },
+    {
+     "text": "20 degree zyada garmi, toh dal kai guna jaldi pakti hai.",
+     "say": "बीस degree ज़्यादा गर्मी, तो दाल कई गुना जल्दी पकती है।",
+     "gap": 0.15,
+     "emph": [
+      "kai",
+      "guna",
+      "jaldi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "whistle",
+   "scene": "whistle",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "wazan": {
+     "word": "wazan"
+    },
+    "utha": {
+     "word": "utha",
+     "offset": -0.1
+    },
+    "seeti": {
+     "word": "Seeti!",
+     "offset": -0.15,
+     "occ": 2
+    }
+   },
+   "shakeWords": [
+    [
+     "Seeti!",
+     2
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "thud",
+     "word": "wazan",
+     "gain": 0.5
+    },
+    {
+     "kind": "steam_hiss",
+     "word": "utha",
+     "gain": 0.5
+    },
+    {
+     "kind": "cooker_whistle",
+     "word": "Seeti!",
+     "offset": -0.3,
+     "gain": 0.8,
+     "occ": 2
+    }
+   ],
+   "lines": [
+    {
+     "text": "Ab seeti. Wo upar ek wazan hai.",
+     "say": "अब सीटी। वो ऊपर एक वज़न है।",
+     "emph": [
+      "wazan"
+     ]
+    },
+    {
+     "text": "Pressure zyada hua, toh bhaap usse utha deti hai. Seeti!",
+     "say": "Pressure ज़्यादा हुआ, तो भाप उसे उठा देती है। सीटी!",
+     "gap": 0.12,
+     "emph": [
+      "utha",
+      "Seeti!"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "safety",
+   "scene": "safety",
+   "music": "C",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "valve": {
+     "word": "safety"
+    },
+    "atak": {
+     "word": "atak"
+    },
+    "plug": {
+     "word": "plug",
+     "offset": -0.2
+    }
+   },
+   "sfx": [
+    {
+     "kind": "ding",
+     "word": "valve",
+     "gain": 0.5
+    },
+    {
+     "kind": "buzzer",
+     "word": "atak",
+     "gain": 0.35
+    },
+    {
+     "kind": "pop",
+     "word": "plug",
+     "gain": 0.7
+    },
+    {
+     "kind": "steam_hiss",
+     "word": "plug",
+     "gain": 0.4
+    }
+   ],
+   "lines": [
+    {
+     "text": "Matlab seeti koi alarm nahi, safety valve hai.",
+     "say": "मतलब सीटी कोई alarm नहीं, safety valve है।",
+     "emph": [
+      "safety",
+      "valve"
+     ]
+    },
+    {
+     "text": "Aur agar ye atak jaaye, toh dhakkan pe ek aur safety plug hai.",
+     "say": "और अगर ये अटक जाए, तो ढक्कन पे एक और safety plug है।",
+     "gap": 0.15,
+     "emph": [
+      "atak",
+      "plug"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mountain",
+   "scene": "mountain",
+   "music": "C",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "kam": {
+     "word": "kam"
+    },
+    "t88": {
+     "word": "88"
+    },
+    "dal": {
+     "word": "Dal"
+    },
+    "cooker": {
+     "word": "cooker"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "scratch",
+     "at": 0.0,
+     "gain": 0.7
+    },
+    {
+     "kind": "wind_cold",
+     "at": 0.2,
+     "gain": 0.5
+    },
+    {
+     "kind": "buzzer",
+     "word": "88",
+     "gain": 0.4
+    },
+    {
+     "kind": "sparkle",
+     "word": "cooker",
+     "gain": 0.6
+    }
+   ],
+   "lines": [
+    {
+     "text": "Aur pahadon pe? Wahan hawa ka pressure kam hai.",
+     "say": "और पहाड़ों पे? वहाँ हवा का pressure कम है।",
+     "emph": [
+      "pahadon",
+      "kam"
+     ]
+    },
+    {
+     "text": "Leh mein paani sirf 88 °C pe ubal jaata hai. Dal kabhi galegi hi nahi.",
+     "say": "लेह में पानी सिर्फ़ अठासी degree पे उबल जाता है। दाल कभी गलेगी ही नहीं।",
+     "gap": 0.15,
+     "emph": [
+      "88",
+      "°C",
+      "galegi"
+     ]
+    },
+    {
+     "text": "Isliye wahan cooker zaroori hai.",
+     "say": "इसलिए वहाँ cooker ज़रूरी है।",
+     "gap": 0.12,
+     "emph": [
+      "cooker",
+      "zaroori"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "scene": "kitchenEnd",
+   "music": "D",
+   "lead": 0.1,
+   "tail": 2.6,
+   "cues": {
+    "ask": {
+     "word": "Kitni"
+    },
+    "pata": {
+     "word": "Pata"
+    },
+    "end": {
+     "word": "tha.",
+     "offset": 0.3
+    }
+   },
+   "sfx": [
+    {
+     "kind": "cooker_whistle",
+     "word": "tha.",
+     "offset": -0.1,
+     "gain": 0.8
+    },
+    {
+     "kind": "cooker_whistle",
+     "word": "tha.",
+     "offset": 0.9,
+     "gain": 0.6
+    },
+    {
+     "kind": "cooker_whistle",
+     "word": "tha.",
+     "offset": 1.8,
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Kitni seeti hui?",
+     "say": "कितनी सीटी हुई?",
+     "voice": "swara",
+     "rate": "+6%",
+     "emph": [
+      "Kitni"
+     ]
+    },
+    {
+     "text": "Pata nahi mummy, physics samjha raha tha.",
+     "say": "Pata nahi mummy, physics samjha raha tha.",
+     "voice": "en-IN-PrabhatNeural",
+     "rate": "+4%",
+     "gap": 0.3,
+     "emph": [
+      "physics"
+     ]
+    }
+   ],
+   "capY": 1700
+  }
+ ]
+}

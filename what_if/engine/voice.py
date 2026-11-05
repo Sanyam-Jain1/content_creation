@@ -95,3 +95,78 @@ def synth(text, v=NARRATOR, take=0):
         print(f"  [tts] {text}")
     m = json.loads(meta.read_text())
     return {"audio": str(mp3), "words": m["words"], "dur": duration(mp3)}
+
+
+# ---------------------------------------------------------------------------
+# Free neural voices (Microsoft Edge read-aloud, via edge-tts) for the Hinglish
+# series. No key needed. A line has two forms:
+#   text: what the captions show (Hinglish in Latin script, word by word)
+#   say:  what the voice reads (Hindi words in Devanagari, English words as is)
+# Both must have the same number of words; word timings map 1:1. If the counts
+# differ, timings are spread by word length across the spoken span.
+EDGE_VOICES = {
+    "madhur": "hi-IN-MadhurNeural",   # male narrator
+    "swara": "hi-IN-SwaraNeural",     # female (mummy, the soundbox, ...)
+}
+
+
+def _edge_stream(say, voice, rate, pitch, mp3):
+    import asyncio
+    import certifi
+    # behind a TLS-terminating proxy, trust its bundle (edge-tts pins certifi's)
+    bundle = os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt"
+    if Path(bundle).exists():
+        certifi.where = lambda: bundle
+    import edge_tts
+
+    async def run():
+        c = edge_tts.Communicate(say, voice, rate=rate, pitch=pitch, boundary="WordBoundary")
+        words, buf = [], bytearray()
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                buf.extend(ch["data"])
+            elif ch["type"] == "WordBoundary":
+                s = ch["offset"] / 1e7
+                words.append({"text": ch["text"], "start": s, "end": s + ch["duration"] / 1e7})
+        return bytes(buf), words
+
+    data, words = asyncio.run(run())
+    tmp = mp3.with_suffix(".24k.mp3")
+    tmp.write_bytes(data)
+    # resample to 44.1 kHz so the build's pitch tricks (asetrate=44100*k) hold
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(tmp), "-ar", "44100", "-b:a", "160k", str(mp3)], check=True)
+    tmp.unlink()
+    return words
+
+
+def _map_words(caption, spoken):
+    cap = caption.split()
+    if not spoken:
+        return [{"text": w, "start": None, "end": None} for w in cap]
+    if len(cap) == len(spoken):
+        return [dict(s, text=c) for c, s in zip(cap, spoken)]
+    print(f"  ! word count differs ({len(cap)} caption vs {len(spoken)} spoken): {caption!r}")
+    t0, t1 = spoken[0]["start"], spoken[-1]["end"]
+    wts = [len(re.sub(r"\W", "", w)) + 1 for w in cap]
+    tot, acc, out = sum(wts), 0, []
+    for c, wt in zip(cap, wts):
+        a = t0 + (t1 - t0) * acc / tot
+        acc += wt
+        out.append({"text": c, "start": a, "end": t0 + (t1 - t0) * acc / tot})
+    return out
+
+
+def synth_edge(text, say=None, voice="madhur", rate="+8%", pitch="+0Hz", cache=None):
+    """text = caption form, say = spoken form (defaults to text)."""
+    cache = Path(cache or CACHE)
+    cache.mkdir(parents=True, exist_ok=True)
+    vname = EDGE_VOICES.get(voice, voice)
+    say = say or text
+    k = hashlib.sha1("|".join(["edge", vname, rate, pitch, say]).encode()).hexdigest()[:16]
+    mp3, meta = cache / f"{k}.mp3", cache / f"{k}.json"
+    if not (mp3.exists() and meta.exists()):
+        spoken = _edge_stream(strip_tags(say), vname, rate, pitch, mp3)
+        meta.write_text(json.dumps({"say": say, "voice": vname, "spoken": spoken}, ensure_ascii=False))
+        print(f"  [tts:{voice}] {say}")
+    m = json.loads(meta.read_text())
+    return {"audio": str(mp3), "words": _map_words(strip_tags(text), m["spoken"]), "dur": duration(mp3)}

@@ -1,0 +1,484 @@
+{
+ "slug": "patri_ke_patthar",
+ "title": "Railway track ke neeche patthar kyun hote hain?",
+ "fps": 30,
+ "tempo": 1.0,
+ "voice": {
+  "engine": "edge",
+  "name": "madhur",
+  "rate": "+18%"
+ },
+ "hook": {
+  "line1": "RAILWAY TRACK PE",
+  "line2": "YE PATTHAR KYUN?",
+  "pulse": "patthar"
+ },
+ "badge": "ANDAR KI BAAT · 03",
+ "endCard": {
+  "shot": "end",
+  "cue": "end",
+  "title": "AGLA TOPIC AAP BATAO",
+  "sub": "COMMENT KARO ↓"
+ },
+ "score": {
+  "engine": "synth",
+  "bpm": 112,
+  "key": "A",
+  "seed": 33,
+  "sections": {
+   "A": {
+    "mood": "curious",
+    "level": 1
+   },
+   "B": {
+    "mood": "bright",
+    "level": 2
+   },
+   "C": {
+    "mood": "warm",
+    "level": 1
+   }
+  }
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "track",
+   "music": "A",
+   "header": true,
+   "lead": 0.15,
+   "tail": 0.2,
+   "flash": false,
+   "cues": {
+    "patthar": {
+     "word": "patthar"
+    },
+    "saja": {
+     "word": "Sajaavat"
+    },
+    "nahi": {
+     "word": "nahi."
+    }
+   },
+   "shakeWords": [
+    [
+     "nahi.",
+     1
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "train_clack",
+     "at": 0.0,
+     "gain": 0.6
+    },
+    {
+     "kind": "train_horn",
+     "at": 0.2,
+     "gain": 0.35
+    },
+    {
+     "kind": "sparkle",
+     "word": "Sajaavat",
+     "gain": 0.5
+    },
+    {
+     "kind": "buzzer",
+     "word": "nahi.",
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Train ki patri ke neeche ye patthar kyun bichhe hote hain?",
+     "say": "Train की पटरी के नीचे ये पत्थर क्यों बिछे होते हैं?",
+     "emph": [
+      "patthar",
+      "kyun"
+     ]
+    },
+    {
+     "text": "Sajaavat ke liye? Bilkul nahi.",
+     "say": "सजावट के लिए? बिल्कुल नहीं।",
+     "gap": 0.2,
+     "emph": [
+      "Sajaavat",
+      "nahi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "weight",
+   "scene": "sink",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "ton": {
+     "word": "hazaaron"
+    },
+    "mitti": {
+     "word": "mitti"
+    },
+    "dhans": {
+     "word": "dhans",
+     "offset": -0.2
+    }
+   },
+   "shakeWords": [
+    [
+     "dhans",
+     1
+    ]
+   ],
+   "sfx": [
+    {
+     "kind": "thunk",
+     "word": "hazaaron",
+     "gain": 0.8
+    },
+    {
+     "kind": "train_clack",
+     "word": "Seedha",
+     "gain": 0.4
+    },
+    {
+     "kind": "slide_whistle",
+     "word": "dhans",
+     "offset": -0.2,
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Ek maalgaadi ka wazan hazaaron ton hota hai.",
+     "say": "एक मालगाड़ी का वज़न हज़ारों टन होता है।",
+     "emph": [
+      "hazaaron",
+      "ton"
+     ]
+    },
+    {
+     "text": "Seedha mitti pe chale, toh patri mitti mein dhans jaaye.",
+     "say": "सीधा मिट्टी पे चले, तो पटरी मिट्टी में धँस जाए।",
+     "gap": 0.15,
+     "emph": [
+      "dhans"
+     ]
+    }
+   ],
+   "capY": 1720
+  },
+  {
+   "id": "layers",
+   "scene": "section",
+   "mode": "layers",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "patri": {
+     "word": "patri,"
+    },
+    "sleeper": {
+     "word": "sleeper,"
+    },
+    "patthar": {
+     "word": "patthar."
+    },
+    "ballast": {
+     "word": "ballast",
+     "offset": -0.1
+    }
+   },
+   "sfx": [
+    {
+     "kind": "pop",
+     "word": "patri,",
+     "gain": 0.6
+    },
+    {
+     "kind": "thud",
+     "word": "sleeper,",
+     "gain": 0.6
+    },
+    {
+     "kind": "gravel",
+     "word": "patthar.",
+     "gain": 0.8
+    },
+    {
+     "kind": "stamp",
+     "word": "ballast",
+     "gain": 0.7
+    }
+   ],
+   "lines": [
+    {
+     "text": "Isliye layers hoti hain: patri, uske neeche sleeper, aur sleeper ke neeche ye patthar.",
+     "say": "इसलिए layers होती हैं: पटरी, उसके नीचे sleeper, और sleeper के नीचे ये पत्थर।",
+     "emph": [
+      "patri,",
+      "sleeper,",
+      "patthar."
+     ]
+    },
+    {
+     "text": "Ise ballast kehte hain.",
+     "say": "इसे ballast कहते हैं।",
+     "gap": 0.15,
+     "emph": [
+      "ballast"
+     ]
+    }
+   ],
+   "capY": 1720
+  },
+  {
+   "id": "spread",
+   "scene": "section",
+   "mode": "spread",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "faila": {
+     "word": "faila"
+    },
+    "bade": {
+     "word": "bade"
+    },
+    "zameen": {
+     "word": "zameen"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "thunk",
+     "at": 0.1,
+     "gain": 0.6
+    },
+    {
+     "kind": "whoosh",
+     "word": "faila",
+     "gain": 0.5
+    },
+    {
+     "kind": "ding",
+     "word": "zameen",
+     "gain": 0.6
+    }
+   ],
+   "lines": [
+    {
+     "text": "Ballast train ka wazan faila deta hai, bade area mein, taaki zameen na dhanse.",
+     "say": "Ballast train का वज़न फैला देता है, बड़े area में, ताकि ज़मीन न धँसे।",
+     "emph": [
+      "faila",
+      "bade",
+      "area"
+     ]
+    }
+   ],
+   "capY": 1720
+  },
+  {
+   "id": "sharp",
+   "scene": "sharp",
+   "music": "B",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "nukeele": {
+     "word": "nukeele",
+     "occ": 1
+    },
+    "fas": {
+     "word": "fas"
+    },
+    "gol": {
+     "word": "Gol",
+     "occ": 2
+    },
+    "lud": {
+     "word": "ludhak"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "scratch",
+     "at": 0.0,
+     "gain": 0.6
+    },
+    {
+     "kind": "gravel",
+     "word": "fas",
+     "gain": 0.7
+    },
+    {
+     "kind": "slide_whistle",
+     "word": "ludhak",
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Aur dhyaan do, patthar nukeele hain, gol nahi.",
+     "say": "और ध्यान दो, पत्थर नुकीले हैं, गोल नहीं।",
+     "emph": [
+      "nukeele",
+      "gol"
+     ]
+    },
+    {
+     "text": "Nukeele patthar ek doosre mein fas jaate hain, toh sleeper hilta nahi. Gol hote toh ludhak jaate.",
+     "say": "नुकीले पत्थर एक दूसरे में फँस जाते हैं, तो sleeper हिलता नहीं। गोल होते तो लुढ़क जाते।",
+     "gap": 0.15,
+     "emph": [
+      "fas",
+      "hilta",
+      "ludhak"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rain",
+   "scene": "section",
+   "mode": "rain",
+   "music": "C",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "nikal": {
+     "word": "nikal"
+    },
+    "keechad": {
+     "word": "keechad,"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "rain",
+     "at": 0.0,
+     "gain": 0.6
+    },
+    {
+     "kind": "ding",
+     "word": "keechad,",
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Baarish mein paani patthron ke beech se nikal jaata hai. Na keechad, na patri dhansti.",
+     "say": "बारिश में पानी पत्थरों के बीच से निकल जाता है। न कीचड़, न पटरी धँसती।",
+     "emph": [
+      "beech",
+      "keechad,"
+     ]
+    }
+   ],
+   "capY": 1720
+  },
+  {
+   "id": "bonus",
+   "scene": "bonus",
+   "music": "C",
+   "lead": 0.05,
+   "tail": 0.3,
+   "cues": {
+    "ghaas": {
+     "word": "ghaas"
+    },
+    "nahi": {
+     "word": "nahi"
+    },
+    "vib": {
+     "word": "vibration"
+    }
+   },
+   "sfx": [
+    {
+     "kind": "sparkle",
+     "at": 0.0,
+     "gain": 0.4
+    },
+    {
+     "kind": "buzzer",
+     "word": "nahi",
+     "gain": 0.35
+    },
+    {
+     "kind": "train_clack",
+     "word": "vibration",
+     "gain": 0.4
+    }
+   ],
+   "lines": [
+    {
+     "text": "Bonus: ghaas aur paudhe bhi aasaani se nahi ugte, aur vibration bhi kam hota hai.",
+     "say": "Bonus: घास और पौधे भी आसानी से नहीं उगते, और vibration भी कम होता है।",
+     "emph": [
+      "Bonus:",
+      "ghaas",
+      "vibration"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "scene": "trackEnd",
+   "music": "C",
+   "lead": 0.1,
+   "tail": 2.4,
+   "cues": {
+    "thank": {
+     "word": "thank"
+    },
+    "koi": {
+     "word": "Koi"
+    },
+    "end": {
+     "word": "nahi!",
+     "offset": 0.3
+    }
+   },
+   "sfx": [
+    {
+     "kind": "train_clack",
+     "at": 0.0,
+     "gain": 0.5
+    },
+    {
+     "kind": "sparkle",
+     "word": "Koi",
+     "gain": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "text": "Toh agli baar train mein baitho, toh in pattharon ko thank you bolna.",
+     "say": "तो अगली बार train में बैठो, तो इन पत्थरों को thank you बोलना।",
+     "emph": [
+      "thank",
+      "you"
+     ]
+    },
+    {
+     "text": "Koi baat nahi!",
+     "say": "कोई बात नहीं!",
+     "voice": "swara",
+     "rate": "+10%",
+     "pitch": 1.45,
+     "gap": 0.3,
+     "emph": [
+      "nahi!"
+     ]
+    }
+   ]
+  }
+ ]
+}
