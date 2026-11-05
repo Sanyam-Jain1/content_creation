@@ -33,7 +33,10 @@ REPO = HERE.parent.parent
 QUEUE = HERE / "queue.json"
 
 IG_VERSION = os.environ.get("IG_API_VERSION", "v25.0")
-IG_GRAPH = os.environ.get("IG_GRAPH_BASE", "https://graph.instagram.com")
+# Two kinds of Instagram tokens work:
+#   Instagram Login tokens ("IG...")                    -> graph.instagram.com, 60 days, refreshable
+#   Unified / Facebook Login system-user tokens ("EAA...") -> graph.facebook.com, never expire, need IG_USER_ID
+IG_GRAPH = os.environ.get("IG_GRAPH_BASE")
 IG_RUPLOAD = os.environ.get("IG_RUPLOAD_BASE", "https://rupload.facebook.com")
 GOOGLE_TOKEN = os.environ.get("GOOGLE_TOKEN_URL", "https://oauth2.googleapis.com/token")
 YT_UPLOAD = os.environ.get("YT_UPLOAD_BASE", "https://www.googleapis.com/upload/youtube/v3/videos")
@@ -68,9 +71,13 @@ def raw_url(q, rel):
 
 # ======================= Instagram =======================
 class IG:
-    def __init__(self, token):
-        self.token = token
-        self.base = f"{IG_GRAPH}/{IG_VERSION}"
+    def __init__(self, token, user_id=None):
+        self.token = token.strip()
+        self.fb = self.token.startswith("EAA")
+        host = IG_GRAPH or ("https://graph.facebook.com" if self.fb else "https://graph.instagram.com")
+        self.host = host
+        self.base = f"{host}/{IG_VERSION}"
+        self.user_id = (user_id or "").strip() or None
 
     def _check(self, r):
         try:
@@ -82,7 +89,28 @@ class IG:
         return j
 
     def me(self):
-        return self._check(requests.get(f"{self.base}/me", params={"fields": "user_id,username,account_type", "access_token": self.token}, timeout=TIMEOUT))
+        """-> {"user_id", "username"} of the Instagram account we post to."""
+        if not self.fb:
+            return self._check(requests.get(f"{self.base}/me", params={"fields": "user_id,username,account_type", "access_token": self.token}, timeout=TIMEOUT))
+        if not self.user_id:  # find the Instagram account linked to this token
+            for path, fields in (("me", "instagram_business_account{id,username}"),
+                                 ("me/accounts", "instagram_business_account{id,username}")):
+                try:
+                    j = self._check(requests.get(f"{self.base}/{path}", params={"fields": fields, "access_token": self.token}, timeout=TIMEOUT))
+                except RuntimeError:
+                    continue
+                items = j.get("data", [j])
+                for it in items:
+                    acc = it.get("instagram_business_account")
+                    if acc:
+                        self.user_id = acc["id"]
+                        break
+                if self.user_id:
+                    break
+            if not self.user_id:
+                raise RuntimeError("could not find the Instagram account for this token: add the account ID shown next to the token as the IG_USER_ID secret")
+        j = self._check(requests.get(f"{self.base}/{self.user_id}", params={"fields": "id,username", "access_token": self.token}, timeout=TIMEOUT))
+        return {"user_id": j.get("id", self.user_id), "username": j.get("username")}
 
     def publish_reel(self, q, entry, state, save_cb):
         p = entry["instagram"]
@@ -147,7 +175,9 @@ class IG:
         return state
 
     def refresh(self):
-        r = requests.get(f"{IG_GRAPH}/refresh_access_token", params={"grant_type": "ig_refresh_token", "access_token": self.token}, timeout=TIMEOUT)
+        if self.fb:
+            return None  # system-user tokens never expire
+        r = requests.get(f"{self.host}/refresh_access_token", params={"grant_type": "ig_refresh_token", "access_token": self.token}, timeout=TIMEOUT)
         return self._check(r)
 
 
@@ -195,7 +225,7 @@ class YT:
 def clients():
     out = {}
     if os.environ.get("IG_ACCESS_TOKEN"):
-        out["instagram"] = IG(os.environ["IG_ACCESS_TOKEN"])
+        out["instagram"] = IG(os.environ["IG_ACCESS_TOKEN"], os.environ.get("IG_USER_ID"))
     if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
         out["youtube"] = lambda: YT(os.environ["YT_CLIENT_ID"], os.environ["YT_CLIENT_SECRET"], os.environ["YT_REFRESH_TOKEN"])
     return out
@@ -327,6 +357,9 @@ def main():
         return cmd_check()
     if cmd == "ig-refresh":
         j = IG(os.environ["IG_ACCESS_TOKEN"]).refresh()
+        if j is None:
+            print("system-user token: never expires, nothing to refresh", file=sys.stderr)
+            return 0
         print(j["access_token"])
         print(f"(valid for {int(j.get('expires_in', 0)) // 86400} days)", file=sys.stderr)
         return 0
